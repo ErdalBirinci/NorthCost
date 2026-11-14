@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 627px; font-family: 'Segoe UI', Inter, -apple-system, Arial, sans-serif; background: #0b0f19; color: #f2f6ff; overflow: hidden; }
+  .card { position: relative; width: 1200px; height: 627px; background: radial-gradient(1100px 500px at 78% 20%, rgba(52,211,153,.14), transparent 60%), radial-gradient(900px 600px at 10% 100%, rgba(59,130,246,.16), transparent 60%), #0b0f19; display: flex; }
+  .left { width: 600px; padding: 64px 20px 48px 64px; display: flex; flex-direction: column; justify-content: center; }
+  .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; letter-spacing: 2px; color: #5eead4; text-transform: uppercase; margin-bottom: 14px; }
+  .badge::before { content: '🧭'; font-size: 20px; }
+  h1 { font-size: 84px; line-height: 1; font-weight: 800; letter-spacing: -2px; }
+  h1 span { background: linear-gradient(90deg, #5eead4, #60a5fa); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .tag { font-size: 22px; color: #aeb9cf; margin: 14px 0 26px; line-height: 1.45; }
+  .feats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 26px; }
+  .feat { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 10px 14px; font-size: 16.5px; font-weight: 600; }
+  .stats { display: flex; gap: 12px; margin-bottom: 28px; }
+  .stat { text-align: center; background: rgba(94,234,212,.1); border: 1px solid rgba(94,234,212,.35); border-radius: 12px; padding: 8px 18px; }
+  .stat b { display: block; font-size: 26px; color: #5eead4; }
+  .stat small { font-size: 12.5px; color: #aeb9cf; letter-spacing: .5px; }
+  .links { font-size: 17px; color: #7d8aa5; }
+  .links b { color: #f2f6ff; }
+  .right { position: relative; width: 600px; }
+  .map { position: absolute; inset: 40px 48px 40px 10px; border-radius: 24px; background: linear-gradient(160deg, #0d1830 0%, #0a2e2b 55%, #12332a 100%); border: 1px solid rgba(94,234,212,.3); overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+  .map svg.coast { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .5; }
+  .bubble { position: absolute; background: rgba(7,13,26,.92); border: 1px solid rgba(94,234,212,.55); color: #f2f6ff; border-radius: 999px; padding: 7px 14px; font-size: 15.5px; font-weight: 700; white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,.45); }
+  .bubble.hot { border-color: rgba(251,113,133,.7); }
+  .bubble.cheap { border-color: rgba(52,211,153,.7); }
+  .legend { position: absolute; left: 18px; bottom: 16px; right: 18px; background: rgba(7,13,26,.9); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: 10px 16px; }
+  .legend small { font-size: 12.5px; color: #aeb9cf; letter-spacing: 1px; text-transform: uppercase; }
+  .legend .bar { height: 10px; border-radius: 99px; margin: 8px 0 4px; background: linear-gradient(90deg, #34d399, #a3e635, #fbbf24, #fb7185); }
+  .legend .ends { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; }
+  .live { position: absolute; top: 16px; right: 18px; background: rgba(52,211,153,.16); border: 1px solid rgba(52,211,153,.5); color: #a7f3d0; font-size: 13px; font-weight: 700; border-radius: 999px; padding: 6px 14px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="left">
+    <div class="badge">Free interactive map</div>
+    <h1>North<span>Cost</span></h1>
+    <p class="tag">What does everyday life <b>really</b> cost in the Nordics? Click any region — rent, salaries, daylight &amp; more.</p>
+    <div class="feats">
+      <div class="feat">⚖️ 4-region compare</div>
+      <div class="feat">💸 Salary duel</div>
+      <div class="feat">🧭 Find-my-match quiz</div>
+      <div class="feat">📈 Rent trend 2023→26</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>60</b><small>REGIONS</small></div>
+      <div class="stat"><b>50</b><small>CITIES</small></div>
+      <div class="stat"><b>5</b><small>LANGUAGES</small></div>
+      <div class="stat"><b>FI·SE·NO·DK</b><small>COUNTRIES</small></div>
+    </div>
+    <p class="links">🌍 <b>erdalbirinci.github.io/NorthCost</b> &nbsp;·&nbsp; 💻 github.com/ErdalBirinci/NorthCost</p>
+  </div>
+  <div class="right">
+    <div class="map">
+      <svg class="coast" viewBox="0 0 540 547" preserveAspectRatio="xMidYMid slice">
+        <path d="M120,40 L200,30 L260,70 L300,60 L340,110 L320,180 L360,240 L330,320 L360,400 L300,470 L230,440 L190,360 L150,300 L110,220 L90,130 Z" fill="none" stroke="#5eead4" stroke-width="2.5" opacity=".8"/>
+        <path d="M360,120 L430,110 L470,170 L440,250 L460,330 L410,420 L370,380 L390,290 L350,220 Z" fill="none" stroke="#60a5fa" stroke-width="2.5" opacity=".7"/>
+        <circle cx="200" cy="150" r="3.5" fill="#5eead4"/><circle cx="260" cy="230" r="3.5" fill="#5eead4"/><circle cx="310" cy="300" r="3.5" fill="#fbbf24"/><circle cx="240" cy="330" r="3.5" fill="#5eead4"/><circle cx="400" cy="200" r="3.5" fill="#fb7185"/><circle cx="420" cy="300" r="3.5" fill="#fbbf24"/>
+      </svg>
+      <span class="live">● Updated Nov 2026</span>
+      <span class="bubble" style="top:88px;left:60px">Tromsø · 2,460 €</span>
+      <span class="bubble hot" style="top:200px;left:200px">Oslo · 3,000 €</span>
+      <span class="bubble" style="top:290px;left:60px">Stockholm · 2,325 €</span>
+      <span class="bubble cheap" style="top:120px;right:36px">Kainuu · 1,330 €</span>
+      <span class="bubble" style="bottom:110px;right:60px">Copenhagen · 2,744 €</span>
+      <div class="legend"><small>Monthly total · Single</small><div class="bar"></div><div class="ends"><span>1,330 €</span><span>3,000 €</span></div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
