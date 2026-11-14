@@ -54,6 +54,8 @@
 .quiz-hit{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#f2f6ff;border-radius:12px;padding:11px 13px;margin-top:8px;cursor:pointer;font-size:14px;text-align:left}
 .quiz-hit:hover{background:rgba(94,234,212,.12)}
 .quiz-hit small{color:var(--muted);font-variant-numeric:tabular-nums}
+.cur-chip{display:inline-block;background:rgba(94,234,212,.15);border:1px solid rgba(94,234,212,.45);color:#5eead4;border-radius:999px;padding:1px 9px;font-size:11px;font-weight:700;letter-spacing:.4px;vertical-align:1px}
+.nat-sub{color:var(--muted);font-size:11px;font-weight:400;font-variant-numeric:tabular-nums}
 .modal-wide{max-width:760px}
 @media print{
   header,.map-toggles,.tools,.leaflet-container,.consent,.modal,.drawer,.hero-cards,#spark,#footNote,.src-badge,.map-cta,.cta-btn,.ghost-btn,#quizGo,#fixSend{display:none!important}

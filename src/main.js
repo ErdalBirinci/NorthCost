@@ -37,6 +37,8 @@ const pname = () => ({ student: T().pStudent, single: T().pSingle, couple: T().p
 const M = (v, cur = 'EUR') => fmtMoney(v, curMode, lang, cur);
 const Mx = v => fmtMoney(v, curMode === 'local' ? 'eur' : curMode, lang);
 const Md = (v, cur = 'EUR', d = 1) => fmtMoney(v, curMode, lang, cur, d);
+const natSub = (v, cur, dec = 0) => (cur && cur !== 'EUR' && curMode !== 'local') ? `<br><small class="nat-sub">≈ ${fmtMoney(v, 'local', lang, cur, dec)}</small>` : '';
+const natPair = (v1, v2, cur, d1 = 0, d2 = 0) => (cur && cur !== 'EUR' && curMode !== 'local') ? `<br><small class="nat-sub">≈ ${fmtMoney(v1, 'local', lang, cur, d1)} / ${fmtMoney(v2, 'local', lang, cur, d2)}</small>` : '';
 const altMoney = (v, cur) => {
   if (curMode === 'eur') return (cur && cur !== 'EUR') ? fmtMoney(v, 'local', lang, cur) : fmtMoney(v, 'usd', lang);
   return fmtMoney(v, 'eur', lang);
@@ -239,9 +241,9 @@ function renderPanel() {
   const circ = 2 * Math.PI * 26;
   el.innerHTML = `
     <button class="sheet-handle" id="sheetHandle">··· ${t.sheetUp}</button>
-    ${x.img ? `<div class="photo photo-hero"><img src="${x.img}" alt="${rname(r)}" loading="lazy" /><div class="photo-grad"></div><div class="photo-total"><small>${pname()} • ${t.inclRent}</small><b>${M(total, r.cur)}</b><span>≈ ${altMoney(total, r.cur)}</span></div><a href="${x.src || 'https://commons.wikimedia.org'}" target="_blank" rel="noopener">${t.photoCredit}</a></div>` : ''}
+    ${x.img ? `<div class="photo photo-hero"><img src="${x.img}" alt="${rname(r)}" loading="lazy" /><div class="photo-grad"></div><div class="photo-total"><small>${pname()} • ${t.inclRent}</small><b>${M(total, r.cur)}</b><span>≈ ${(r.cur !== 'EUR' && curMode !== 'local') ? fmtMoney(total, 'local', lang, r.cur) : altMoney(total, r.cur)}</span></div><a href="${x.src || 'https://commons.wikimedia.org'}" target="_blank" rel="noopener">${t.photoCredit}</a></div>` : ''}
     <div class="panel-hero"><div class="flag">📍</div>
-      <div><h2>${rname(r)}</h2><div class="sub">${r.fi || r.geo} • ${r.cities.join(' • ')} • ${t.avgSalary} ${M(r.maas, r.cur)}</div></div>
+      <div><h2>${rname(r)}</h2><div class="sub">${r.fi || r.geo} • ${r.cities.join(' • ')} • ${t.avgSalary} ${M(r.maas, r.cur)}${r.cur !== 'EUR' ? ` <span class="cur-chip">${r.cur}</span>` : ''}</div></div>
       ${consent.fav ? `<button class="fav-star" id="favStar" aria-label="${t.favT}">${fav ? '★' : '☆'}</button>` : ''}
     </div>
     <p style="color:var(--muted);font-size:14px;margin:0 0 6px">${rblurb(r)}</p>
@@ -286,18 +288,18 @@ function renderPanel() {
     <div class="wx" id="wxBox">…</div>
     <div class="section-title">${t.detail}</div>
     <table class="detail-table">
-      <tr><td>${t.d1}</td><td>${M(r.kira1, r.cur)}${t.perMonth}</td></tr>
-      <tr><td>${t.d1b}</td><td>${M(r.kira1d, r.cur)}${t.perMonth}</td></tr>
-      <tr><td>${t.d3}</td><td>${M(r.kira3, r.cur)}${t.perMonth}</td></tr>
-      <tr><td>${t.dUtil}</td><td>${M(r.fatura, r.cur)}${t.perMonth}</td></tr>
-      <tr><td>${t.dNet}</td><td>${M(r.internet, r.cur)}${t.perMonth}</td></tr>
-      <tr><td>${t.dTicket}</td><td>${Md(r.bilet, r.cur)} / ${M(r.aylikKart, r.cur)}</td></tr>
-      <tr><td>${t.dFuel}</td><td>${Md(r.benzin, r.cur, 2)} / ${Md(r.taksi, r.cur)}</td></tr>
-      <tr><td>${t.dRest}</td><td>${M(r.ucuzOgun, r.cur)} / ${M(r.ortaRestoran, r.cur)}</td></tr>
-      <tr><td>${t.dCafe}</td><td>${Md(r.kahve, r.cur)} / ${M(r.bira, r.cur)}</td></tr>
-      <tr><td>${t.dMilk}</td><td>${Md(r.sut, r.cur)} / ${Md(r.ekmek, r.cur)}</td></tr>
-      <tr><td>${t.dEgg}</td><td>${M(r.yumurta12, r.cur)} / ${M(r.tavukKg, r.cur)}</td></tr>
-      <tr><td>${t.dApple}</td><td>${Md(r.elmaKg, r.cur)}</td></tr>
+      <tr><td>${t.d1}</td><td>${M(r.kira1, r.cur)}${t.perMonth}${natSub(r.kira1, r.cur)}</td></tr>
+      <tr><td>${t.d1b}</td><td>${M(r.kira1d, r.cur)}${t.perMonth}${natSub(r.kira1d, r.cur)}</td></tr>
+      <tr><td>${t.d3}</td><td>${M(r.kira3, r.cur)}${t.perMonth}${natSub(r.kira3, r.cur)}</td></tr>
+      <tr><td>${t.dUtil}</td><td>${M(r.fatura, r.cur)}${t.perMonth}${natSub(r.fatura, r.cur)}</td></tr>
+      <tr><td>${t.dNet}</td><td>${M(r.internet, r.cur)}${t.perMonth}${natSub(r.internet, r.cur)}</td></tr>
+      <tr><td>${t.dTicket}</td><td>${Md(r.bilet, r.cur)} / ${M(r.aylikKart, r.cur)}${natPair(r.bilet, r.aylikKart, r.cur)}</td></tr>
+      <tr><td>${t.dFuel}</td><td>${Md(r.benzin, r.cur, 2)} / ${Md(r.taksi, r.cur)}${natPair(r.benzin, r.taksi, r.cur, 1, 1)}</td></tr>
+      <tr><td>${t.dRest}</td><td>${M(r.ucuzOgun, r.cur)} / ${M(r.ortaRestoran, r.cur)}${natPair(r.ucuzOgun, r.ortaRestoran, r.cur)}</td></tr>
+      <tr><td>${t.dCafe}</td><td>${Md(r.kahve, r.cur)} / ${M(r.bira, r.cur)}${natPair(r.kahve, r.bira, r.cur)}</td></tr>
+      <tr><td>${t.dMilk}</td><td>${Md(r.sut, r.cur)} / ${Md(r.ekmek, r.cur)}${natPair(r.sut, r.ekmek, r.cur)}</td></tr>
+      <tr><td>${t.dEgg}</td><td>${M(r.yumurta12, r.cur)} / ${M(r.tavukKg, r.cur)}${natPair(r.yumurta12, r.tavukKg, r.cur)}</td></tr>
+      <tr><td>${t.dApple}</td><td>${Md(r.elmaKg, r.cur)}${natSub(r.elmaKg, r.cur)}</td></tr>
     </table>
     <div class="section-title">${t.citiesIn}</div>
     <div class="city-chips">${r.cities.map(c => `<button data-city="${c}">${c}</button>`).join('')}</div>
@@ -520,7 +522,7 @@ function initCompare() {
     document.getElementById('cmpResult').innerHTML = head + rows.map(([l, fn, lowWin]) => {
       const vs = Rs.map(fn);
       const best = lowWin ? Math.min(...vs) : Math.max(...vs);
-      return `<div class="cmp-table-row"><small>${l}</small>` + Rs.map((r, i) => `<span class="${vs[i] === best ? 'cmp-winner' : ''}"><b>${Mx(vs[i])}</b>${vs[i] === best ? ' ✓' : ''}</span>`).join('') + `</div>`;
+      return `<div class="cmp-table-row"><small>${l}</small>` + Rs.map((r, i) => `<span class="${vs[i] === best ? 'cmp-winner' : ''}"><b>${Mx(vs[i])}</b>${vs[i] === best ? ' ✓' : ''}${natSub(vs[i], Rs[i].cur)}</span>`).join('') + `</div>`;
     }).join('') + (() => {
       const sorted = [...Rs].sort((x, y) => x.profiles[profile] - y.profiles[profile]);
       const cheap = sorted[0], exp = sorted[sorted.length - 1];
@@ -633,7 +635,7 @@ function renderRank() {
   const th = (k, label) => `<th data-k="${k}">${label}${rankKey === k ? (rankDir === 1 ? ' ▲' : ' ▼') : ''}</th>`;
   const box = document.getElementById('rankResult');
   box.innerHTML = `<table class="home-table rank-table"><tr><th>${t.cRegion}</th>${th('total', t.rkTotal)}${th('rent', t.cmpRent)}${th('salary', t.cmpSalary)}${th('burden', t.rkBurden)}${th('day', t.rkDay)}</tr>` +
-    rows.map(({ r, total, rent, salary, burden, day }, i) => `<tr data-id="${r.id}"><td><b>#${i + 1}</b> ${rname(r)}</td><td>${Mx(total)}</td><td>${Mx(rent)}</td><td>${Mx(salary)}</td><td>${pct1(burden)}</td><td>${day < 0 ? '—' : '☀ ' + day.toFixed(1) + 'h'}</td></tr>`).join('') + `</table>`;
+    rows.map(({ r, total, rent, salary, burden, day }, i) => `<tr data-id="${r.id}"><td><b>#${i + 1}</b> ${rname(r)}</td><td>${Mx(total)}${natSub(total, r.cur)}</td><td>${Mx(rent)}${natSub(rent, r.cur)}</td><td>${Mx(salary)}${natSub(salary, r.cur)}</td><td>${pct1(burden)}</td><td>${day < 0 ? '—' : '☀ ' + day.toFixed(1) + 'h'}</td></tr>`).join('') + `</table>`;
   box.querySelectorAll('th[data-k]').forEach(h => h.onclick = () => { const k = h.dataset.k; if (rankKey === k) rankDir *= -1; else { rankKey = k; rankDir = 1; } renderRank(); });
   box.querySelectorAll('tr[data-id]').forEach(tr => tr.onclick = () => { document.getElementById('rankModal').classList.add('hidden'); selectRegion(tr.dataset.id, true); });
 }
