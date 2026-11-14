@@ -1,0 +1,1 @@
+{"name": "NorthCost — Nordic living cost map", "short_name": "NorthCost", "start_url": "./", "display": "standalone", "background_color": "#0b0f19", "theme_color": "#0b0f19", "description": "Compare living costs, salaries and daylight across Finland, Sweden, Norway and Denmark.", "icons": [{"src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml"}]}
