@@ -7,8 +7,7 @@
   body { width: 1200px; height: 627px; font-family: 'Segoe UI', Inter, -apple-system, Arial, sans-serif; background: #0b0f19; color: #f2f6ff; overflow: hidden; }
   .card { position: relative; width: 1200px; height: 627px; background: radial-gradient(1100px 500px at 78% 20%, rgba(52,211,153,.14), transparent 60%), radial-gradient(900px 600px at 10% 100%, rgba(59,130,246,.16), transparent 60%), #0b0f19; display: flex; }
   .left { width: 600px; padding: 64px 20px 48px 64px; display: flex; flex-direction: column; justify-content: center; }
-  .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; letter-spacing: 2px; color: #5eead4; text-transform: uppercase; margin-bottom: 14px; }
-  .badge::before { content: '🧭'; font-size: 20px; }
+  .badge { display: block; font-size: 15px; font-weight: 700; letter-spacing: 3px; color: #5eead4; text-transform: uppercase; margin-bottom: 14px; }
   h1 { font-size: 84px; line-height: 1; font-weight: 800; letter-spacing: -2px; }
   h1 span { background: linear-gradient(90deg, #5eead4, #60a5fa); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .tag { font-size: 22px; color: #aeb9cf; margin: 14px 0 26px; line-height: 1.45; }
@@ -36,7 +35,7 @@
 <body>
 <div class="card">
   <div class="left">
-    <div class="badge">Free interactive map</div>
+    <div class="badge">Interactive cost-of-living map</div>
     <h1>North<span>Cost</span></h1>
     <p class="tag">What does everyday life <b>really</b> cost in the Nordics? Click any region — rent, salaries, daylight &amp; more.</p>
     <div class="feats">
