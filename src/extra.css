@@ -56,8 +56,10 @@
 .quiz-hit small{color:var(--muted);font-variant-numeric:tabular-nums}
 .cur-chip{display:inline-block;background:rgba(94,234,212,.15);border:1px solid rgba(94,234,212,.45);color:#5eead4;border-radius:999px;padding:1px 9px;font-size:11px;font-weight:700;letter-spacing:.4px;vertical-align:1px}
 .nat-sub{color:var(--muted);font-size:11px;font-weight:400;font-variant-numeric:tabular-nums}
-.donate-btn{background:rgba(159,232,112,.13)!important;border:1px solid rgba(159,232,112,.55)!important;color:#c8f5a5!important;text-decoration:none;align-content:center;font-weight:700}
-.donate-btn:hover{background:rgba(159,232,112,.28)!important;box-shadow:0 0 18px rgba(159,232,112,.35)}
+.donate-btn{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#9fe870,#5eead4);color:#06281c;border:0;border-radius:999px;padding:9px 20px;font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap;box-shadow:0 0 16px rgba(159,232,112,.45);animation:donatePulse 2.2s ease-in-out infinite}
+.donate-btn:hover{transform:translateY(-1px) scale(1.04);box-shadow:0 0 28px rgba(159,232,112,.7);color:#06281c}
+@keyframes donatePulse{0%,100%{box-shadow:0 0 10px rgba(159,232,112,.35)}50%{box-shadow:0 0 26px rgba(159,232,112,.75)}}
+@media (prefers-reduced-motion: reduce){.donate-btn{animation:none}}
 .modal-wide{max-width:760px}
 @media print{
   header,.map-toggles,.tools,.leaflet-container,.consent,.modal,.drawer,.hero-cards,#spark,#footNote,.src-badge,.map-cta,.cta-btn,.ghost-btn,#quizGo,#fixSend{display:none!important}
