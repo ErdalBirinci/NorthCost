@@ -56,6 +56,8 @@
 .quiz-hit small{color:var(--muted);font-variant-numeric:tabular-nums}
 .cur-chip{display:inline-block;background:rgba(94,234,212,.15);border:1px solid rgba(94,234,212,.45);color:#5eead4;border-radius:999px;padding:1px 9px;font-size:11px;font-weight:700;letter-spacing:.4px;vertical-align:1px}
 .nat-sub{color:var(--muted);font-size:11px;font-weight:400;font-variant-numeric:tabular-nums}
+.donate-btn{background:rgba(159,232,112,.13)!important;border:1px solid rgba(159,232,112,.55)!important;color:#c8f5a5!important;text-decoration:none;align-content:center;font-weight:700}
+.donate-btn:hover{background:rgba(159,232,112,.28)!important;box-shadow:0 0 18px rgba(159,232,112,.35)}
 .modal-wide{max-width:760px}
 @media print{
   header,.map-toggles,.tools,.leaflet-container,.consent,.modal,.drawer,.hero-cards,#spark,#footNote,.src-badge,.map-cta,.cta-btn,.ghost-btn,#quizGo,#fixSend{display:none!important}
