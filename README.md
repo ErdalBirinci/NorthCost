@@ -121,6 +121,62 @@ Pushing to `main` automatically builds and deploys to GitHub Pages
 `.github/workflows/deploy.yml`. The Vite `base` is set to `/NorthCost/`
 for the project-site subpath.
 
+## 🇫🇮 Suomeksi
+
+**NorthCost** on ilmainen, interaktiivinen elinkustannusten karttaopas
+Pohjoismaihin. Klikkaa mitä tahansa aluetta kartalla ja näe heti, mitä arki
+siellä maksaa: vuokrat, ruoka, liikenne, sähkö, palkat, päivänvalo, ilmasto
+ja paljon muuta — **Suomessa, Ruotsissa, Norjassa ja Tanskassa
+(60 aluetta, 50 kaupunkia)**.
+
+🌍 **Live-demo:** https://erdalbirinci.github.io/NorthCost/
+
+- 🗺️ Lämpökartta 60 alueesta + hintakuplat; väritys viidellä mittarilla
+- ⚖️ Jopa **4 alueen vertailu** jopa maiden välillä + jaettava linkki
+- 🏆 **Ranking**-taulukko kaikista alueista (klikkaa otsikkoa järjestääksesi)
+- 💸 **Palkkakaksintaistelu**: kaksi kaupunkia, kaksi nettopalkkaa
+- 🧭 **Aluevisa**: 3 kysymystä → 3 parasta aluetta sinulle
+- 📈 **Vuokratrendi 2023 → 2026** virallisista vuokraindekseistä
+  (SE +18 %, NO ~+16 %, DK ~+12 %, FI +2 % pääkaupunki / +5 % muu maa)
+- 🌤️ Todellinen ilmasto (Open-Meteo) + lämmitysvaroitus
+- 🖨️ Tulostettava budjettiraportti, ✏️ hintakorjausehdotukset,
+  💼 paikalliset työpaikkalinkit, offline-PWA
+- 5 kieltä (EN · FI · SV · NO · DA), valuutta EUR / USD / paikallinen (kr)
+- Kaikki karttatasot ilmaisia, **ei API-avainta tarvita**
+
+```sh
+npm install
+npm run dev      # → http://127.0.0.1:5173/
+```
+
+## 🇸🇪 På svenska
+
+**NorthCost** är en gratis, interaktiv kartguide över levnadskostnader i
+Norden. Klicka på valfri region och se direkt vad vardagen kostar där:
+hyror, mat, transport, el, löner, dagsljus, klimat och mycket mer — i
+**Finland, Sverige, Norge och Danmark (60 regioner, 50 städer)**.
+
+🌍 **Live-demo:** https://erdalbirinci.github.io/NorthCost/
+
+- 🗺️ Värmekarta över 60 regioner + prisbubblor; färglägg med fem mått
+- ⚖️ Jämför upp till **4 regioner** även mellan länder + delbar länk
+- 🏆 **Rankningstabell** över alla regioner (klicka för att sortera om)
+- 💸 **Löneduell**: två städer, två nettolöner
+- 🧭 **Regionsquiz**: 3 frågor → dina 3 bästa regioner
+- 📈 **Hyrestrend 2023 → 2026** från officiella hyresindex
+  (SE +18 %, NO ~+16 %, DK ~+12 %, FI +2 % huvudstad / +5 % övriga)
+- 🌤️ Verkligt klimat (Open-Meteo) + värmevarning
+- 🖨️ Utskrivbar budgetrapport, ✏️ prisförslag från användare,
+  💼 lokala jobblänkar, offline-PWA
+- 5 språk (EN · FI · SV · NO · DA), valuta EUR / USD / lokal (kr)
+- Alla kartlager är gratis, **ingen API-nyckel krävs**
+
+```sh
+npm install
+npm run dev      # → http://127.0.0.1:5173/
+```
+
 ## 📄 License
 
-MIT — fork it, translate it, make it yours. Attribution appreciated.
+MIT — see [LICENSE](LICENSE). Fork it, translate it, make it yours.
+Attribution appreciated.
