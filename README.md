@@ -90,10 +90,26 @@ Honest labelling matters more than false precision. Each figure is one of two ki
 
 | Kind | Items | Basis |
 |---|---|---|
-| ✅ **Official statistics** | Utilities/electricity, transit passes, district heating, national rent levels, rent trends, daylight, climate | SSB (NO), SCB (SE), Statistics Denmark / Landsbyggefonden (DK), Statistics Finland (FI), HSL/Ruter/SL/DOT fare sheets, Open-Meteo |
-| 📊 **Market / listing estimates** | City-centre 1-bedroom rents for capital and major cities | 2026 asking rents from live listing portals (Bolighub DK, hyresdata SE, Finn NO), plus city cost surveys |
+| ✅ **Official statistics** | Utilities/electricity, transit passes, district heating, regional rent gradients, rent trends, daylight, climate | SSB (NO), SCB (SE), Statistics Denmark / Landsbyggefonden (DK), Statistics Finland (FI), HSL/Ruter/SL/DOT fare sheets, Open-Meteo |
+| 📊 **Market / listing estimates** | City-centre 1-bedroom rents for all 60 regions | 2026 asking rents from live listing portals (Bolighub DK, hyresdata SE, Finn NO), plus city cost surveys |
 
-Why the split: national statistics offices publish rent *levels* by region and room count, but not "city-centre 1-bedroom" for every city — and in Sweden/Denmark the regulated first-hand stock differs sharply from what a newcomer actually pays. Where only a market figure exists, the app uses the asking rent and labels it as an estimate. Norway utilities are computed from official SSB inputs: 159 kWh/m²/yr (block flat) × 85 m² = 13,515 kWh/yr, × 1.21 kr/kWh (2026 Q1–Q3 average after state support) = **1,364 kr/mo**, plus fastledd **250 kr** and tenant water/waste **900 kr** → **≈2,500 kr/mo annual average**. A January peak (1.63× consumption, per SSB) reaches ≈3,370 kr — the figure shown is the annual average, not the winter peak.
+Why the split: national statistics offices publish rent *levels* by region and room count, but not "city-centre 1-bedroom" for every city — and in Sweden/Denmark the regulated first-hand stock differs sharply from what a newcomer actually pays. Where only a market figure exists, the app uses the asking rent and labels it as an estimate.
+
+**How every region is priced.** One method is applied across all 60 regions, so the map never mixes incompatible bases:
+
+| Country | Rent basis for the 1-bedroom figure | Regional scaling |
+|---|---|---|
+| 🇫🇮 Finland | StatFi 2026 Q2 new-lease **€/m²** for the region × 50 m² | official, per region |
+| 🇸🇪 Sweden | 2026 listing median for Stockholm (9,600 kr) | SCB 2026 **kr/m²** per län, anchored on Stockholm (144 kr/m²), with verified listing medians for Uppsala (10,150) and Skåne (10,000) |
+| 🇳🇴 Norway | 2026 listing median for Oslo (19,000 kr) | SSB 2025 2-room levels per zone, rescaled so each zone matches its official level |
+| 🇩🇰 Denmark | 2026 listing median per region (Bolighub) | direct, by region |
+
+Two deliberate consequences, both backed by the official data rather than by intuition:
+
+- **Uppsala is marginally the most expensive Swedish region** (SCB 146 vs 144 kr/m², listings +5%).
+- **Swedish totals look low next to the other three countries** because the rent line is the *first-hand contract* market. A second-hand (andrahand) contract in Stockholm typically costs 40–60% more; the app shows the contract median, not that premium.
+
+Transport costs use each region's official 30-day pass plus 15% for occasional trips; where a regional operator publishes no pass, the national median applies. Outside-centre rents are 72% of the centre figure and 3-bedroom rents 1.7× the 1-bedroom figure, uniformly across the dataset. Norway utilities are computed from official SSB inputs: 159 kWh/m²/yr (block flat) × 85 m² = 13,515 kWh/yr, × 1.21 kr/kWh (2026 Q1–Q3 average after state support) = **1,364 kr/mo**, plus fastledd **250 kr** and tenant water/waste **900 kr** → **≈2,500 kr/mo annual average**. A January peak (1.63× consumption, per SSB) reaches ≈3,370 kr — the figure shown is the annual average, not the winter peak.
 
 ---
 
