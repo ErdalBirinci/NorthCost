@@ -29,6 +29,10 @@
       "zoom": 6
     }
   },
+  "secondhand": {
+    "SE": 1.5,
+    "DK": 1.3
+  },
   "base": {
     "SE": {
       "market": 4440,

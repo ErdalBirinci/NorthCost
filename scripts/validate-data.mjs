@@ -49,6 +49,18 @@ for (const [code, c] of Object.entries(CURRENCIES)) {
   if (!c.sym) fail(`currencies: ${code} has no symbol`);
 }
 
+// ---------- second-hand rent factors (the contract/2nd-hand switch) ----------
+const SH = countriesRaw.secondhand;
+if (!SH || typeof SH !== 'object') fail('countries: secondhand map missing');
+else {
+  for (const [cc, f] of Object.entries(SH)) {
+    if (!CURRENCY_OF[cc]) fail(`secondhand: unknown country ${cc}`);
+    if (!(typeof f === 'number' && f > 1 && f <= 2)) fail(`secondhand: ${cc} factor ${f} out of (1, 2]`);
+  }
+  if (SH.SE !== 1.5) fail('secondhand: SE factor must be 1.5 (andrahand 40-60%)');
+  if (SH.DK !== 1.3) fail('secondhand: DK factor must be 1.3 (fremleje 20-40%)');
+}
+
 // ---------- regions ----------
 const all = [...fiRaw, ...noRaw];
 if (all.length !== 60) fail(`regions: expected 60, found ${all.length}`);
@@ -132,6 +144,16 @@ for (const g of GOLDEN) {
   }
   if (!near(r.kira1d * g.rate, g.kira1d)) fail(`golden ${g.id}: outside-centre rent changed`);
   if (!near(r.kira3 * g.rate, g.kira3)) fail(`golden ${g.id}: 3-bedroom rent changed`);
+}
+// second-hand premium math, pinned end to end: Stockholm's effective total is
+// the contract total plus half the contract rent (SE factor 1.5)
+{
+  const r = REGIONS.find(x => x.id === 'stockholm');
+  const f = countriesRaw.secondhand?.SE;
+  const expected = 19900 + 9600 * (1.5 - 1); // 24700 kr
+  if (r && f && !near((r.profiles.single + r.kira1 * (f - 1)) * CURRENCIES.SEK.rate, expected)) {
+    fail('secondhand: Stockholm effective total changed — check the premium math');
+  }
 }
 
 // ---------- derived figures: recomputed from raw JSON ----------

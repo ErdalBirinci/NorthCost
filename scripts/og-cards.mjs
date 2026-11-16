@@ -7,7 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { REGIONS, CURRENCIES } from '../src/data.js';
+import { REGIONS, CURRENCIES, SECONDHAND, effRegion } from '../src/data.js';
 
 const OUT = 'public/og';
 const TMP = 'scripts/.og-tmp';
@@ -30,8 +30,13 @@ const COUNTRY = { FI: 'Finland', SE: 'Sweden', NO: 'Norway', DK: 'Denmark' };
 const eur = n => '€' + Math.round(n).toLocaleString('en-US');
 const kr = (n, cur) => Math.round(n * CURRENCIES[cur].rate).toLocaleString('sv-SE') + ' kr';
 
-function card(r) {
-  const rent = r.kira1, pass = r.aylikKart, food = r.market, total = r.profiles.single;
+function card(r, mode) {
+  const v = mode === 'sh' ? effRegion(r, true) : r;
+  const f = SECONDHAND[r.country];
+  const rent = v.kira1, pass = v.aylikKart, food = v.market, total = v.profiles.single;
+  const where = COUNTRY[r.country]
+    ? COUNTRY[r.country] + (r.geo ? ' · ' + r.geo : '') + (mode === 'sh' ? ` · 🔑 2nd-hand ×${f}` : '')
+    : '';
   return `<!doctype html><meta charset="utf-8"><style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{width:1200px;height:630px;overflow:hidden;position:relative;background:#0b0f19;
@@ -60,7 +65,7 @@ function card(r) {
   </style><body><div class="glow"></div><div class="glow2"></div><div class="glow3"></div><div class="wrap">
     <div class="top">
       <div class="brand"><i>🧭</i>NorthCost</div>
-      <div class="where">${COUNTRY[r.country] ? COUNTRY[r.country] + (r.geo ? ' · ' + r.geo : '') : ''}</div>
+      <div class="where">${where}</div>
     </div>
     <h1>${r.name_en}</h1>
     <div class="cities">${(r.cities || []).join(' · ')}</div>
@@ -93,10 +98,12 @@ const shoot = (html, name) => {
 };
 
 const only = process.env.OG_ONLY?.split(',');
+const wants = id => !only || only.includes(id) || only.includes(id.replace(/-sh$/, ''));
 let n = 0;
 for (const r of REGIONS) {
-  if (only && !only.includes(r.id)) continue;
-  shoot(card(r), r.id); n++;
+  // second-hand variants for the two countries with a regulated stock
+  if (wants(r.id)) { shoot(card(r), r.id); n++; }
+  if (SECONDHAND[r.country] && wants(r.id + '-sh')) { shoot(card(r, 'sh'), r.id + '-sh'); n++; }
 }
 shoot(card({
   country: null, name_en: 'Cost of living across the Nordics', cities: ['60 regions', 'Finland · Sweden · Norway · Denmark'],

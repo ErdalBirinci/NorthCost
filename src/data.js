@@ -21,6 +21,12 @@ import cities from '../data/cities.json' with { type: 'json' };
 export const CURRENCIES = currencies;
 export const COUNTRY = countries.meta;
 export const BASE = countries.base;
+// Second-hand market premium over first-hand contract rent, by country.
+// SE 1.5: andrahand contracts run 40-60% above first-hand (midpoint). DK 1.3:
+// furnished/fremleje sublets run 20-40% above standard leases (midpoint).
+// FI and NO have no entry: their rental markets are effectively free-market
+// already, so the contract figure IS the market figure.
+export const SECONDHAND = countries.secondhand ?? {};
 export const LANGS = ['en', 'fi', 'sv', 'no', 'da'];
 
 // Transport cost = monthly pass + 15% for occasional single trips.
@@ -72,6 +78,20 @@ function buildRegion(raw) {
 }
 
 export const REGIONS = [...fiRegions, ...nordicRegions].map(buildRegion);
+
+// Presentation transform for the contract/second-hand switch. Only SE and DK
+// carry a premium; everywhere else the region passes through untouched.
+export function effRegion(r, secondhand) {
+  if (!secondhand) return r;
+  const f = SECONDHAND[r.country];
+  if (!f || f <= 1) return r;
+  const single = r.profiles.single + r.kira1 * (f - 1);
+  return {
+    ...r,
+    kira1: r.kira1 * f, kira1d: r.kira1d * f, kira3: r.kira3 * f,
+    profiles: { student: single * 0.6, single, couple: single * 1.38, family: single * 2.02 },
+  };
+}
 
 export const CITIES = cities.map(c => ({
   name: c.name, regionId: c.regionId, country: c.country, lat: c.lat, lng: c.lng,

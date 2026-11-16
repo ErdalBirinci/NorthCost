@@ -107,7 +107,7 @@ Why the split: national statistics offices publish rent *levels* by region and r
 Two deliberate consequences, both backed by the official data rather than by intuition:
 
 - **Uppsala is marginally the most expensive Swedish region** (SCB 146 vs 144 kr/m², listings +5%).
-- **Swedish totals look low next to the other three countries** because the rent line is the *first-hand contract* market. A second-hand (andrahand) contract in Stockholm typically costs 40–60% more; the app shows the contract median, not that premium.
+- **Swedish totals look low next to the other three countries** because the default rent line is the *first-hand contract* market. The 📜 Contract / 🔑 2nd-hand switch in the top bar re-prices Sweden and Denmark to the second-hand market: totals, ranking, map colours and share cards all follow. The premium is ×1.5 for Sweden (andrahand contracts typically run 40–60% above first-hand) and ×1.3 for Denmark (furnished/fremleje sublets typically run 20–40% above standard leases). Both factors are labelled estimates; Finland and Norway have no factor because their rental markets are effectively free-market already.
 
 Transport costs use each region's official 30-day pass plus 15% for occasional trips; where a regional operator publishes no pass, the national median applies. Outside-centre rents are 72% of the centre figure and 3-bedroom rents 1.7× the 1-bedroom figure, uniformly across the dataset.
 

@@ -1,12 +1,16 @@
 import './style.css';
 import './extra.css';
-import { REGIONS, CITIES, COUNTRY, fmtMoney, CURRENCIES } from './data.js';
+import { REGIONS, CITIES, COUNTRY, fmtMoney, CURRENCIES, SECONDHAND, effRegion } from './data.js';
 import { STR } from './i18n.js';
 import { EXT } from './extra.js';
 
 let lang = 'en';
 let profile = 'single';
 let curMode = 'eur'; // 'eur' | 'usd' | 'local'
+let rentMode = 'contract'; // 'contract' | 'sh'
+// Effective region under the rent-market switch: SE/DK rents scale by the
+// second-hand premium, everything else passes through untouched.
+const E = r => effRegion(r, rentMode === 'sh');
 let country = 'ALL'; // 'ALL' | 'FI' | 'SE' | 'NO' | 'DK'
 let selectedId = 'stockholm';
 let metric = 'total';
@@ -114,7 +118,8 @@ const blabel = b => b['label_' + lang] || b.label_en;
 
 const pct1 = v => (v * 100).toFixed(v < 0.1 ? 1 : 0) + '%';
 const metricFmt = (v, cur = 'EUR') => metric === 'afford' ? pct1(v) : M(v, cur);
-function metricValue(r) {
+function metricValue(r0) {
+  const r = E(r0);
   if (metric === 'afford') return r.kira1 / r.maas;
   if (metric === 'kira') return r.kira1;
   if (metric === 'market') return r.market;
@@ -187,7 +192,7 @@ function refreshMarkers() {
   if (useCluster) clusterGroup = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 42 });
   const [min, max] = minMax();
   CITIES.forEach(c => {
-    const r = byId[c.regionId];
+    const r = E(byId[c.regionId]);
     if (!r || (country !== 'ALL' && r.country !== country)) return;
     const v = r.profiles[profile];
     const pill = metric === 'afford' ? pct1(metricValue(r)) : M(v, r.cur);
@@ -222,11 +227,12 @@ function bar(label, value, max, cur = 'EUR') {
 
 function renderPanel() {
   const t = T();
-  const r = byId[selectedId];
+  const r0 = byId[selectedId];
+  const r = E(r0);
   const el = document.getElementById('detailPanel');
   const total = r.profiles[profile];
   const _vis = visRegions();
-  const avg = Math.round(_vis.reduce((a, x) => a + x.profiles[profile], 0) / _vis.length);
+  const avg = Math.round(_vis.reduce((a, x) => a + E(x).profiles[profile], 0) / _vis.length);
   const diff = Math.round(((total - avg) / avg) * 100);
   const kiraPay = Math.round((r.kira1 / total) * 100);
   const x = X(selectedId);
@@ -255,6 +261,7 @@ function renderPanel() {
       <div class="gauge"><div class="gauge-fill" style="width:${Math.min(100, pct / 0.6)}%"></div><div class="gauge-rule" style="left:50%"></div></div>
       <div class="gauge-lbls"><span>0%</span><span>30%</span><span>60%</span></div>
     </div>
+    ${rentMode === 'sh' ? `<div class="compare-note">${SECONDHAND[r0.country] ? '🔑 ' + t.shOn(SECONDHAND[r0.country]) : '📜 ' + t.shSame}</div>` : ''}
     <div class="compare-note">${t.affordT(pct, band)}</div>
     <div class="section-title">${t.expenses}</div>
     <div class="bars">
@@ -336,7 +343,7 @@ async function loadWx(r) {
 
 function renderStats() {
   const t = T();
-  const vals = [...visRegions()].sort((a, b) => a.profiles[profile] - b.profiles[profile]);
+  const vals = [...visRegions()].map(E).sort((a, b) => a.profiles[profile] - b.profiles[profile]);
   const cheap = vals[0], exp = vals[vals.length - 1];
   const avg = Math.round(vals.reduce((a, x) => a + x.profiles[profile], 0) / vals.length);
   document.getElementById('statsStrip').innerHTML = `
@@ -505,7 +512,7 @@ function initCompare() {
   d.innerHTML = blank + REGIONS.map(r => `<option value="${r.id}">${rname(r)}</option>`).join('');
   const render = () => {
     const t = T();
-    const Rs = [a, b, c, d].map(s => byId[s.value]).filter(Boolean);
+    const Rs = [a, b, c, d].map(s => byId[s.value]).filter(Boolean).map(E);
     const rows = [
       [t.cmpTotal(pname()), r => r.profiles[profile], true],
       [t.cmpRent, r => r.kira1, true],
@@ -550,7 +557,7 @@ function initCalc() {
   buildRegionOptions(sel, selectedId);
   const render = () => {
     const t = T();
-    const r = byId[sel.value];
+    const r = E(byId[sel.value]);
     const base = r.profiles[profile];
     const homeF = parseFloat(document.getElementById('calcHome').value);
     const eat = parseFloat(document.getElementById('calcEat').value);
@@ -573,7 +580,7 @@ function initCalc() {
 
 // ---------- deep links ----------
 function syncURL() {
-  const p = new URLSearchParams({ region: selectedId, profile, lang, metric, country, cur: curMode });
+  const p = new URLSearchParams({ region: selectedId, profile, lang, metric, country, cur: curMode, rent: rentMode });
   history.replaceState(null, '', location.pathname + '?' + p.toString());
 }
 function applyFromURL() {
@@ -587,6 +594,10 @@ function applyFromURL() {
   const mt = p.get('metric'); if (mt && ['total','kira','market','ulasim','afford'].includes(mt)) { metric = mt; document.getElementById('metricSelect').value = mt; }
   const cy = p.get('country'); if (cy && ['ALL','FI','SE','NO','DK'].includes(cy)) country = cy;
   const cu = p.get('cur'); if (cu && ['eur','usd','local'].includes(cu)) curMode = cu;
+  const rn = p.get('rent'); if (rn === 'sh' || rn === 'contract') {
+    rentMode = rn;
+    document.querySelectorAll('#rentSegment button').forEach(x => x.classList.toggle('active', x.dataset.rent === rn));
+  }
 }
 
 // ---------- favorites ----------
@@ -596,7 +607,7 @@ function renderFavDrawer() {
   if (!consent.fav) { box.innerHTML = `<p class="empty-note">${t.favDisabled}</p>`; return; }
   if (!favs.size) { box.innerHTML = `<p class="empty-note">${t.favEmpty}</p>`; return; }
   box.innerHTML = [...favs].map(id => {
-    const r = byId[id]; if (!r) return '';
+    const r = E(byId[id]); if (!r) return '';
     return `<div class="fav-row"><span><b>${rshort(r)}</b><br>${t.citiesIn2}: ${r.cities.join(', ')}<br>${t.rentShort}: ${M(r.kira1, r.cur)} · ${t.salShort}: ${M(r.maas, r.cur)}</span><span><b>${M(r.profiles[profile], r.cur)}</b><br><button data-unfav="${id}">✕</button></span></div>`;
   }).join('');
   box.querySelectorAll('[data-unfav]').forEach(b => b.onclick = () => { favs.delete(b.dataset.unfav); saveFavs(); renderFavDrawer(); renderPanel(); });
@@ -625,11 +636,11 @@ function cityOptions(sel, val) {
 let rankKey = 'total', rankDir = 1;
 function renderRank() {
   const t = T();
-  const rows = [...visRegions()].map(r => ({ r, total: r.profiles[profile], rent: r.kira1, salary: r.maas, burden: r.kira1 / r.maas, day: X(r.id).daylight ?? daylightFromLat(r.center[0]) ?? -1 }));
+  const rows = [...visRegions()].map(r0 => { const r = E(r0); return { r, total: r.profiles[profile], rent: r.kira1, salary: r.maas, burden: r.kira1 / r.maas, day: X(r.id).daylight ?? daylightFromLat(r.center[0]) ?? -1 }; });
   rows.sort((x, y) => (x[rankKey] - y[rankKey]) * rankDir);
   const th = (k, label) => `<th data-k="${k}">${label}${rankKey === k ? (rankDir === 1 ? ' ▲' : ' ▼') : ''}</th>`;
   const box = document.getElementById('rankResult');
-  box.innerHTML = `<table class="home-table rank-table"><tr><th>${t.cRegion}</th>${th('total', t.rkTotal)}${th('rent', t.cmpRent)}${th('salary', t.cmpSalary)}${th('burden', t.rkBurden)}${th('day', t.rkDay)}</tr>` +
+  box.innerHTML = `<table class="home-table rank-table"><tr><th>${t.cRegion}</th>${th('total', t.rkTotal + (rentMode === 'sh' ? ' · 🔑' : ''))}${th('rent', t.cmpRent)}${th('salary', t.cmpSalary)}${th('burden', t.rkBurden)}${th('day', t.rkDay)}</tr>` +
     rows.map(({ r, total, rent, salary, burden, day }, i) => `<tr data-id="${r.id}"><td><b>#${i + 1}</b> ${rname(r)}</td><td>${Mx(total)}${natSub(total, r.cur)}</td><td>${Mx(rent)}${natSub(rent, r.cur)}</td><td>${Mx(salary)}${natSub(salary, r.cur)}</td><td>${pct1(burden)}</td><td>${day < 0 ? '—' : '☀ ' + day.toFixed(1) + 'h'}</td></tr>`).join('') + `</table>`;
   box.querySelectorAll('th[data-k]').forEach(h => h.onclick = () => { const k = h.dataset.k; if (rankKey === k) rankDir *= -1; else { rankKey = k; rankDir = 1; } renderRank(); });
   box.querySelectorAll('tr[data-id]').forEach(tr => tr.onclick = () => { document.getElementById('rankModal').classList.add('hidden'); selectRegion(tr.dataset.id, true); });
@@ -653,8 +664,8 @@ function quizRender() {
     renderStats(); refreshLegend(); refreshMarkers(); syncURL();
   }
   const key = { work: 'is', study: 'ogrenci', nature: 'doga' }[want];
-  let pool = [...visRegions()];
-  if (budget !== 'any') pool = pool.filter(r => r.profiles[who] <= +budget);
+      let pool = [...visRegions()].map(E);
+    if (budget !== 'any') pool = pool.filter(r => r.profiles[who] <= +budget);
   const top = pool.map(r => {
     const s = r.skor, base = (s.is + s.ogrenci + s.doga + s.ulasim) / 4;
     return { r, score: want === 'cheap' ? -r.profiles[who] : s[key] * 0.65 + base * 0.35 };
@@ -691,8 +702,8 @@ function simRender() {
   const t = T();
   const code = homeCode();
   document.querySelectorAll('.sim-net-lbl').forEach(o => o.textContent = t.simNet(code));
-  const pick = id => { const c = CITIES.find(x => x.name === document.getElementById(id).value); return c && byId[c.regionId]; };
-  const A = pick('simCityA') || byId[selectedId], B = pick('simCityB') || byId[selectedId];
+  const pick = id => { const c = CITIES.find(x => x.name === document.getElementById(id).value); return c && E(byId[c.regionId]); };
+  const A = pick('simCityA') || E(byId[selectedId]), B = pick('simCityB') || E(byId[selectedId]);
   const raw = id => Math.max(0, parseFloat(document.getElementById(id).value) || 0);
   const conv = v => code === 'USD' ? v / CURR.USD.rate : v;
   const la = Math.round(conv(raw('simNetA')) - A.profiles.single), lb = Math.round(conv(raw('simNetB')) - B.profiles.single);
@@ -732,7 +743,7 @@ function initTools() {
   const sSel = document.getElementById('salRegion');
   const salRender = () => {
     const t = T();
-    const r = byId[sSel.value] || byId[selectedId];
+    const r = E(byId[sSel.value] || byId[selectedId]);
     const inp = Math.max(0, parseFloat(document.getElementById('salGross').value) || 0);
     const g = curMode === 'usd' ? inp / CURRENCIES.USD.rate : curMode === 'local' ? inp / (CURRENCIES[r.cur] || CURRENCIES.EUR).rate : inp;
     const net = Math.round(g * (1 - effRate(g) / 100));
@@ -774,7 +785,7 @@ function initTools() {
       ['Copenhagen', 'KKIK', 600, 950], ['Aarhus', 'A. Ungdomsbolig', 500, 800],
     ].map(([city, org, lo, hi]) => {
       const c = CITIES.find(x => x.name === city);
-      const r = byId[c.regionId];
+      const r = E(byId[c.regionId]);
       return `<tr><td><b>${city}</b> (${org})<br><small>${Mx(lo)}–${Mx(hi)}</small></td><td>${M(r.profiles.student, r.cur)}</td><td>${M(r.kira1, r.cur)}</td><td>${r.skor.ogrenci}</td></tr>`;
     }).join('');
     const sr = byId[selectedId];
@@ -794,7 +805,7 @@ function initTools() {
     const fees = [311, 124, 62, 62].slice(0, day).reduce((a, b) => a + b, 0);
     const ben = kids * 100;
     const net = fees - ben;
-    const r = byId[selectedId];
+    const r = E(byId[selectedId]);
     const fnp = document.getElementById('famNoteP');
     if (fnp) fnp.textContent = r.country === 'FI' ? t.famNote : t.famNote2;
     document.getElementById('famResult').innerHTML = t.famRes(M(fees, r.cur), M(ben, r.cur), (net >= 0 ? '+' : '−') + M(Math.abs(net), r.cur).replace('-','')) +
@@ -809,7 +820,7 @@ function initTools() {
     const ht = curMode === 'usd' ? inp / CURRENCIES.USD.rate : inp;
     document.querySelector('[data-i18n="homeRent"]').textContent = t.homeRent(homeCode());
     document.querySelector('[data-i18n="homeTotal"]').textContent = t.homeTotal(homeCode());
-    const rows = [...visRegions()].map(r => ({ r, d: r.profiles.single - ht })).sort((a, b) => a.d - b.d);
+    const rows = [...visRegions()].map(r0 => { const r = E(r0); return { r, d: r.profiles.single - ht }; }).sort((a, b) => a.d - b.d);
     document.getElementById('homeResult').innerHTML =
       `<table class="home-table"><tr><th>${city}</th><th>Single</th><th>Δ</th></tr>` +
       rows.map(({ r, d }) => `<tr><td>${rname(r)}</td><td>${Mx(r.profiles.single)}</td><td class="${Math.abs(d) < ht*0.03 ? 'diff-same' : d < 0 ? 'diff-cheap' : 'diff-exp'}">${d >= 0 ? '+' : '−'}${Mx(Math.abs(d)).replace('-','')} ${Math.abs(d) < ht*0.03 ? t.homeSame : d < 0 ? t.homeCheaper : t.homePricier}</td></tr>`).join('') + `</table>`;
@@ -850,6 +861,19 @@ document.getElementById('profileSegment').addEventListener('click', e => {
   btn.classList.add('active');
   profile = btn.dataset.profile;
   renderStats(); renderPanel(); refreshLegend(); refreshMarkers(); syncURL();
+});
+document.getElementById('rentSegment').addEventListener('click', e => {
+  const btn = e.target.closest('button'); if (!btn) return;
+  document.querySelectorAll('#rentSegment button').forEach(x => x.classList.remove('active'));
+  btn.classList.add('active');
+  rentMode = btn.dataset.rent;
+  renderStats(); renderPanel(); refreshLegend(); refreshMarkers();
+  const cm = document.getElementById('compareModal');
+  if (!cm.classList.contains('hidden')) cm._render();
+  const lm = document.getElementById('calcModal');
+  if (!lm.classList.contains('hidden')) lm._render();
+  if (window._toolRerender) window._toolRerender();
+  syncURL();
 });
 document.getElementById('currencyBtn').onclick = () => {
   curMode = curMode === 'eur' ? 'usd' : curMode === 'usd' ? 'local' : 'eur';
