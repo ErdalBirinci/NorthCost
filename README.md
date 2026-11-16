@@ -84,6 +84,17 @@ offline-capable PWA · shareable deep links for everything.
 - Salaries are **average net estimates**; figures are rounded estimates,
   not quotes. See *Sources* inside the app for the full list.
 
+### Data provenance: official statistics vs market estimates
+
+Honest labelling matters more than false precision. Each figure is one of two kinds:
+
+| Kind | Items | Basis |
+|---|---|---|
+| ✅ **Official statistics** | Utilities/electricity, transit passes, district heating, national rent levels, rent trends, daylight, climate | SSB (NO), SCB (SE), Statistics Denmark / Landsbyggefonden (DK), Statistics Finland (FI), HSL/Ruter/SL/DOT fare sheets, Open-Meteo |
+| 📊 **Market / listing estimates** | City-centre 1-bedroom rents for capital and major cities | 2026 asking rents from live listing portals (Bolighub DK, hyresdata SE, Finn NO), plus city cost surveys |
+
+Why the split: national statistics offices publish rent *levels* by region and room count, but not "city-centre 1-bedroom" for every city — and in Sweden/Denmark the regulated first-hand stock differs sharply from what a newcomer actually pays. Where only a market figure exists, the app uses the asking rent and labels it as an estimate. Norway utilities are computed from official SSB price (≈121 øre/kWh after support) × official consumption (159 kWh/m²/yr for a block flat), plus fixed grid charges.
+
 ---
 
 ## 🛠️ Run locally

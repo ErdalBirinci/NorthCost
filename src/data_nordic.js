@@ -13,7 +13,7 @@ export const COUNTRY = {
 
 const BASE = {
   SE: { market:4440, ulasim:720, fatura:2110, internet:310, gsm:220, benzin:15.8, bilet:36, aylikKart:640, taksi:15.6, ucuzOgun:140, ortaRestoran:870, kahve:51, bira:76, sut:16, ekmek:30, yumurta12:42, tavukKg:120, elmaKg:30 },
-  NO: { market:4970, ulasim:690, fatura:1150, internet:370, gsm:260, benzin:23.5, bilet:40, aylikKart:530, taksi:18, ucuzOgun:190, ortaRestoran:1110, kahve:55, bira:110, sut:23, ekmek:39, yumurta12:56, tavukKg:150, elmaKg:31 },
+  NO: { market:4970, ulasim:690, fatura:1550, internet:370, gsm:260, benzin:23.5, bilet:40, aylikKart:530, taksi:18, ucuzOgun:190, ortaRestoran:1110, kahve:55, bira:110, sut:23, ekmek:39, yumurta12:56, tavukKg:150, elmaKg:31 },
   DK: { market:3290, ulasim:600, fatura:1200, internet:250, gsm:150, benzin:17.5, bilet:24, aylikKart:530, taksi:15, ucuzOgun:130, ortaRestoran:750, kahve:45, bira:64, sut:13, ekmek:30, yumurta12:39, tavukKg:92, elmaKg:22 },
 };
 
@@ -55,7 +55,7 @@ maas:36200, kira1:15700, kira1d:10450, kira3:26450, market:5000, ulasim:870, fat
 mkR({ id:"uppsala", country:"SE", cur:"SEK", fi:"Uppsala", geo:"Uppsala län", en:"Uppsala County (Uppsala)", svN:"Uppsala län (Uppsala)", center:[59.86,17.64], cities:["Uppsala","Enköping"],
 be:"University city 40 minutes from Stockholm: strong research, slightly softer rents.", bf:"Yliopistokaupunki 40 minuuttia Tukholmasta: vahva tutkimus, hieman pehmeämmät vuokrat.", bs:"Universitetsstad 40 minuter från Stockholm: stark forskning, något mjukare hyror.", bn:"Universitetsby 40 minutter fra Stockholm: sterk forskning, noe mykere leier.", bd:"Universitetsby 40 minutter fra Stockholm: stærk forskning, lidt blødere leje.",
 te:["🎓 University","🚂 Near capital"], tf:["🎓 Yliopisto","🚂 Lähellä pääkaupunkia"], ts:["🎓 Universitet","🚂 Nära huvudstaden"], tn:["🎓 Universitet","🚂 Nær hovedstaden"], td:["🎓 Universitet","🚂 Tæt på hovedstaden"],
-maas:32210, kira1:10450, market:4670, ulasim:780, fatura:2220, skor:{is:78,ogrenci:95,doga:72,ulasim:85} }),
+maas:32210, kira1:10150, market:4670, ulasim:780, fatura:2220, skor:{is:78,ogrenci:95,doga:72,ulasim:85} }),
 mkR({ id:"sodermanland", country:"SE", cur:"SEK", fi:"Södermanland", geo:"Södermanlands län", en:"Södermanland (Nyköping)", svN:"Södermanlands län (Nyköping)", center:[59.0,16.6], cities:["Nyköping","Eskilstuna"],
 be:"Commuter county south of Stockholm: small-town prices, capital within reach.", bf:"Tukholman eteläpuolinen pendelöintialue: pikkukaupunkien hinnat, pääkaupunki ulottuvilla.", bs:"Pendlingslän söder om Stockholm: småstadspriser, huvudstaden inom räckhåll.", bn:"Pendlerfylke sør for Stockholm: småbypriser, hovedstaden innen rekkevidde.", bd:"Pendleramt syd for Stockholm: småbypriser, hovedstaden inden for rækkevidde.",
 te:["🚂 Commuters","🌲 Affordable"], tf:["🚂 Pendelöinti","🌲 Edullinen"], ts:["🚂 Pendling","🌲 Prisvärt"], tn:["🚂 Pendling","🌲 Rimelig"], td:["🚂 Pendling","🌲 Billig"],
@@ -137,7 +137,7 @@ maas:30550, kira1:9110, fatura:2500, skor:{is:62,ogrenci:65,doga:99,ulasim:55} }
 mkR({ id:"oslo", country:"NO", cur:"NOK", fi:"Oslo", geo:"Oslo", en:"Oslo (Oslo)", center:[59.91,10.75], cities:["Oslo"],
 be:"Fjord-side capital: Norway's highest pay, priciest homes, oil-wealth polish.", bf:"Vuonon pääkaupunki: Norjan korkeimmat palkat, kalleimmat kodit, öljyvarallisuuden kiilto.", bs:"Fjordhuvudstad: Norges högsta löner, dyraste bostäder, oljerikedomens glans.", bn:"Fjordhovedstad: Norges høyeste lønninger, dyreste boliger, oljerikdommens glans.", bd:"Fjordhovedstad: Norges højeste lønninger, dyreste boliger, olierigdommens glans.",
 te:["💼 Capital","⛽ Oil wealth"], tf:["💼 Pääkaupunki","⛽ Öljyvarallisuus"], ts:["💼 Huvudstad","⛽ Oljerikedom"], tn:["💼 Hovedstad","⛽ Oljerikdom"], td:["💼 Hovedstad","⛽ Olierigdom"],
-maas:46730, kira1:19000, kira1d:15500, kira3:30140, market:5390, ulasim:810, fatura:1300, aylikKart:495, bilet:45, ucuzOgun:210, ortaRestoran:1200, kahve:56, bira:110, sut:24, ekmek:41, yumurta12:58, tavukKg:150, elmaKg:32, skor:{is:97,ogrenci:88,doga:80,ulasim:98} }),
+maas:46730, kira1:19000, kira1d:15500, kira3:30140, market:5390, ulasim:810, fatura:1650, aylikKart:495, bilet:45, ucuzOgun:210, ortaRestoran:1200, kahve:56, bira:110, sut:24, ekmek:41, yumurta12:58, tavukKg:150, elmaKg:32, skor:{is:97,ogrenci:88,doga:80,ulasim:98} }),
 mkR({ id:"akershus", country:"NO", cur:"NOK", fi:"Akershus", geo:"Akershus", en:"Akershus (Lillestrøm)", center:[59.95,11.0], cities:["Lillestrøm","Ski"],
 be:"Oslo's commuter belt: family houses, fast trains, fjord suburbs.", bf:"Oslon pendelöintivyöhyke: omakotitaloja, nopeita junia, vuonolähiöitä.", bs:"Oslos pendlingsbälte: villor, snabbtåg, fjordförorter.", bn:"Oslos pendlerbelte: eneboliger, hurtigtog, fjordforsteder.", bd:"Oslos pendlerbælte: villaer, hurtigtoge, fjordforstæder.",
 te:["🚂 Commuters","🏠 Houses"], tf:["🚂 Pendelöinti","🏠 Talot"], ts:["🚂 Pendling","🏠 Villor"], tn:["🚂 Pendling","🏠 Eneboliger"], td:["🚂 Pendling","🏠 Villaer"],
@@ -198,7 +198,7 @@ maas:38580, kira1:11100, market:5180, fatura:3910, skor:{is:55,ogrenci:55,doga:1
 mkR({ id:"hovedstaden", country:"DK", cur:"DKK", fi:"Hovedstaden", geo:"Region Hovedstaden", geoAlt:"Hovedstaden", en:"Capital Region (Copenhagen)", daN:"Region Hovedstaden (København)", center:[55.7,12.5], cities:["Copenhagen","Frederiksberg","Helsingør"],
 be:"Copenhagen of Nyhavn and Noma: Nordic cool, harbour baths, high pay and prices.", bf:"Nyhavnin ja Noman Kööpenhamina: pohjoismaista coolia, satamakylpylöitä, korkeat palkat ja hinnat.", bs:"Nyhavns och Nomas Köpenhamn: nordisk coolhet, hamnbad, höga löner och priser.", bn:"Nyhavns og Nomas København: nordisk kulhet, havnebad, høye lønninger og priser.", bd:"Nyhavns og Nomas København: nordisk coolness, havnebade, høje lønninger og priser.",
 te:["🚲 Bikes","🍽️ Noma"], tf:["🚲 Pyörät","🍽️ Noma"], ts:["🚲 Cyklar","🍽️ Noma"], tn:["🚲 Sykler","🍽️ Noma"], td:["🚲 Cykler","🍽️ Noma"],
-maas:32590, kira1:14000, kira1d:10460, kira3:23700, market:3510, ulasim:750, fatura:1210, aylikKart:530, bilet:24, taksi:16.4, ucuzOgun:130, ortaRestoran:800, kahve:46, bira:64, sut:14, ekmek:31, yumurta12:40, tavukKg:93, elmaKg:22, skor:{is:96,ogrenci:90,doga:70,ulasim:100} }),
+maas:32590, kira1:14850, kira1d:10460, kira3:23700, market:3510, ulasim:750, fatura:1210, aylikKart:530, bilet:24, taksi:16.4, ucuzOgun:130, ortaRestoran:800, kahve:46, bira:64, sut:14, ekmek:31, yumurta12:40, tavukKg:93, elmaKg:22, skor:{is:96,ogrenci:90,doga:70,ulasim:100} }),
 mkR({ id:"sjaelland", country:"DK", cur:"DKK", fi:"Sjælland", geo:"Region Sjælland", geoAlt:"Sjælland", en:"Zealand (Roskilde)", daN:"Region Sjælland (Roskilde)", center:[55.4,11.8], cities:["Roskilde","Næstved"],
 be:"Viking ships of Roskilde and white cliffs of Møn: capital commuter belt.", bf:"Roskilden viikinkilaivat ja Møn-saaren valkoiset kalliot: pääkaupungin pendelöintivyöhyke.", bs:"Vikingaskeppen i Roskilde och Møns klint: huvudstadens pendlingsbälte.", bn:"Vikingskipene i Roskilde og Møns klint: hovedstadens pendlerbelte.", bd:"Vikingeskibene i Roskilde og Møns Klint: hovedstadens pendlerbælte.",
 te:["🛶 Vikings","🚂 Commuters"], tf:["🛶 Viikingit","🚂 Pendelöinti"], ts:["🛶 Vikingar","🚂 Pendling"], tn:["🛶 Vikinger","🚂 Pendling"], td:["🛶 Vikinger","🚂 Pendling"],
@@ -206,15 +206,15 @@ maas:29150, kira1:10470, market:3290, ulasim:640, fatura:1160, skor:{is:70,ogren
 mkR({ id:"syddanmark", country:"DK", cur:"DKK", fi:"Syddanmark", geo:"Region Syddanmark", geoAlt:"Syddanmark", en:"Southern Denmark (Odense)", daN:"Region Syddanmark (Odense)", center:[55.3,9.5], cities:["Odense","Esbjerg","Kolding"],
 be:"Andersen's Odense and Lego's Billund: fairy tales, family parks, fair prices.", bf:"Andersenin Odense ja Legon Billund: satuja, perhepuistoja, reiluja hintoja.", bs:"Andersens Odense och Legos Billund: sagor, familjeparker, rimliga priser.", bn:"Andersens Odense og Legos Billund: eventyr, familieparker, rimelige priser.", bd:"Andersens Odense og Legos Billund: eventyr, familieparker, rimelige priser.",
 te:["🧱 Lego","📖 Andersen"], tf:["🧱 Lego","📖 Andersen"], ts:["🧱 Lego","📖 Andersen"], tn:["🧱 Lego","📖 Andersen"], td:["🧱 Lego","📖 Andersen"],
-maas:28780, kira1:6950, market:3250, skor:{is:72,ogrenci:72,doga:76,ulasim:76} }),
+maas:28780, kira1:7600, market:3250, skor:{is:72,ogrenci:72,doga:76,ulasim:76} }),
 mkR({ id:"midtjylland", country:"DK", cur:"DKK", fi:"Midtjylland", geo:"Region Midtjylland", geoAlt:"Midtjylland", en:"Central Jutland (Aarhus)", daN:"Region Midtjylland (Aarhus)", center:[56.2,9.5], cities:["Aarhus","Viborg","Herning"],
 be:"Aarhus of ARoS rainbow and street food: Denmark's youthful second city.", bf:"Aarhus ARoS-sateenkaareineen ja katuruokineen: Tanskan nuorekas kakkoskaupunki.", bs:"Aarhus med ARoS-regnbågen och street food: Danmarks ungdomliga andrastad.", bn:"Aarhus med ARoS-regnbuen og street food: Danmarks ungdommelige andreby.", bd:"Aarhus med ARoS-regnbuen og street food: Danmarks ungdommelige andenby.",
 te:["🌈 ARoS","🎓 Students"], tf:["🌈 ARoS","🎓 Opiskelijat"], ts:["🌈 ARoS","🎓 Studenter"], tn:["🌈 ARoS","🎓 Studenter"], td:["🌈 ARoS","🎓 Studerende"],
-maas:29900, kira1:8930, market:3330, ulasim:660, skor:{is:82,ogrenci:90,doga:78,ulasim:84} }),
+maas:29900, kira1:9700, market:3330, ulasim:660, skor:{is:82,ogrenci:90,doga:78,ulasim:84} }),
 mkR({ id:"nordjylland", country:"DK", cur:"DKK", fi:"Nordjylland", geo:"Region Nordjylland", geoAlt:"Nordjylland", en:"North Jutland (Aalborg)", daN:"Region Nordjylland (Aalborg)", center:[57.3,10.0], cities:["Aalborg","Hjørring"],
 be:"Aalborg's waterfront and Skagen's light: dunes, bunkers, Denmark's low costs.", bf:"Aalborgin ranta ja Skagenin valo: dyynejä, bunkkereita, Tanskan matalat kulut.", bs:"Aalborgs hamnfront och Skagens ljus: dyner, bunkrar, Danmarks låga kostnader.", bn:"Aalborgs havnefront og Skagens lys: dyner, bunkere, Danmarks lave kostnader.", bd:"Aalborgs havnefront og Skagens lys: klitter, bunkere, Danmarks lave omkostninger.",
 te:["💡 Skagen light","💰 Cheap"], tf:["💡 Skagenin valo","💰 Halpa"], ts:["💡 Skagenljus","💰 Billig"], tn:["💡 Skagenlys","💰 Billig"], td:["💡 Skagenlys","💰 Billig"],
-maas:28030, kira1:6360, market:3210, fatura:1200, skor:{is:66,ogrenci:70,doga:84,ulasim:70} }),
+maas:28030, kira1:6500, market:3210, fatura:1200, skor:{is:66,ogrenci:70,doga:84,ulasim:70} }),
 ];
 
 export const CITIES_NORDIC = [
