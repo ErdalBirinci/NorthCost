@@ -109,7 +109,11 @@ Two deliberate consequences, both backed by the official data rather than by int
 - **Uppsala is marginally the most expensive Swedish region** (SCB 146 vs 144 kr/m², listings +5%).
 - **Swedish totals look low next to the other three countries** because the rent line is the *first-hand contract* market. A second-hand (andrahand) contract in Stockholm typically costs 40–60% more; the app shows the contract median, not that premium.
 
-Transport costs use each region's official 30-day pass plus 15% for occasional trips; where a regional operator publishes no pass, the national median applies. Outside-centre rents are 72% of the centre figure and 3-bedroom rents 1.7× the 1-bedroom figure, uniformly across the dataset. Norway utilities are computed from official SSB inputs: 159 kWh/m²/yr (block flat) × 85 m² = 13,515 kWh/yr, × 1.21 kr/kWh (2026 Q1–Q3 average after state support) = **1,364 kr/mo**, plus fastledd **250 kr** and tenant water/waste **900 kr** → **≈2,500 kr/mo annual average**. A January peak (1.63× consumption, per SSB) reaches ≈3,370 kr — the figure shown is the annual average, not the winter peak.
+Transport costs use each region's official 30-day pass plus 15% for occasional trips; where a regional operator publishes no pass, the national median applies. Outside-centre rents are 72% of the centre figure and 3-bedroom rents 1.7× the 1-bedroom figure, uniformly across the dataset.
+
+The dataset stores **measurements only**. Anything that follows from them — outside-centre and 3-bedroom rents, the monthly transport cost, all four household totals, and the EUR conversion — is computed by `src/data.js` at load time, so a figure can never contradict the one it was derived from. `npm run build` re-derives everything and fails on any drift.
+
+Every region also has a 1200×630 share card in `public/og/`, plus a stub page at `/r/<region>/` that carries that card's Open Graph tags for link previews and forwards the visitor to the map. Norway utilities are computed from official SSB inputs: 159 kWh/m²/yr (block flat) × 85 m² = 13,515 kWh/yr, × 1.21 kr/kWh (2026 Q1–Q3 average after state support) = **1,364 kr/mo**, plus fastledd **250 kr** and tenant water/waste **900 kr** → **≈2,500 kr/mo annual average**. A January peak (1.63× consumption, per SSB) reaches ≈3,370 kr — the figure shown is the annual average, not the winter peak.
 
 ---
 
@@ -117,24 +121,41 @@ Transport costs use each region's official 30-day pass plus 15% for occasional t
 
 ```sh
 npm install
-npm run dev      # → http://127.0.0.1:5173/
-npm run build    # → dist/
+npm run dev       # validates the data, then → http://127.0.0.1:5173/NorthCost/
+npm run build     # validate → vite build → per-region preview stubs → dist/
+npm run validate  # data checks only
+npm run og        # re-render the 60 social cards into public/og/
 ```
 
 No framework, no backend, no secrets. Static files only.
+
+The build refuses to run on broken data: `scripts/validate-data.mjs` re-derives every
+computed figure and fails the deploy on a mismatch, a missing translation, a rent
+ladder that does not increase, a score outside 0-100, or a city pointing at a
+region that does not exist.
 
 ## 📁 Project structure
 
 ```
 index.html          # page shell + all modals
+data/               # the dataset — the only place numbers live
+  regions.fi.json      # 19 Finnish regions, EUR
+  regions.nordic.json  # 41 Swedish/Norwegian/Danish regions, native kr
+  cities.json          # 50 map pins, notes in five languages
+  currencies.json      # single FX source of truth (ECB, Nov 2026)
+  countries.json       # per-country cost defaults + map view
 src/
+  data.js           # loader: derives rents, transport, totals, EUR conversion
   main.js           # all app logic (map, panels, tools, URL state)
-  data.js           # Finland: 19 regions, cities, currencies, rates
-  data_nordic.js    # Sweden/Norway/Denmark: 41 regions + cities
   extra.js          # per-region extras (photos, daylight, transit…)
   i18n.js           # EN/FI/SV/NO/DA strings (no service names in UI)
   style.css / extra.css
+scripts/
+  validate-data.mjs # build-time data checks (runs before dev and build)
+  og-cards.mjs      # renders the 1200x630 preview cards via headless Chrome
+  og-stubs.mjs      # per-region share pages that carry the OG tags
 public/
+  og/               # 61 generated preview cards
   geo/dk-regions.geojson   # vendored Denmark boundaries
   sw.js / manifest.webmanifest / icons/   # PWA
 docs/screenshots/   # images used in this README

@@ -1,0 +1,1557 @@
+[
+  {
+    "id": "uusimaa",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Uusimaa (Helsinki region)",
+      "fi": "Uusimaa (Helsingin seutu)",
+      "sv": "Nyland (Helsingforsregionen)",
+      "no": "Nyland (Helsingforsregionen)",
+      "da": "Nyland (Helsingforsregionen)"
+    },
+    "blurb": {
+      "en": "The country's economic heart. Highest salaries, by far the priciest rents. Metro, trams and job opportunities at their peak.",
+      "fi": "Maan taloudellinen keskus. Korkeimmat palkat, selvästi kalleimmat vuokrat. Metro, ratikat ja parhaat työmahdollisuudet.",
+      "sv": "Landets ekonomiska hjärta. Högst löner, klart dyraste hyrorna. Metro, spårvagnar och jobbmöjligheter på topp.",
+      "no": "Landets økonomiske hjerte. Høyest lønn, klart dyreste leier. Metro, trikk og jobbmuligheter på topp.",
+      "da": "Landets økonomiske hjerte. Højeste lønninger, klart dyreste huslejer. Metro, sporvogne og jobmuligheder i top."
+    },
+    "tags": {
+      "en": [
+        "💼 Business capital",
+        "🚇 Metro",
+        "🌊 Baltic coast"
+      ],
+      "fi": [
+        "💼 Työn keskus",
+        "🚇 Metro",
+        "🌊 Itämeren rannikko"
+      ],
+      "sv": [
+        "💼 Affärscentrum",
+        "🚇 Metro",
+        "🌊 Östersjökusten"
+      ],
+      "no": [
+        "💼 Næringslivssentrum",
+        "🚇 Metro",
+        "🌊 Østersjøkysten"
+      ],
+      "da": [
+        "💼 Erhvervshovedstad",
+        "🚇 Metro",
+        "🌊 Østersøkysten"
+      ]
+    },
+    "fi": "Uusimaa",
+    "center": [
+      60.25,
+      24.9
+    ],
+    "cities": [
+      "Helsinki",
+      "Espoo",
+      "Vantaa"
+    ],
+    "cost": {
+      "kira1": 1100,
+      "market": 380,
+      "fatura": 131,
+      "internet": 30,
+      "benzin": 2.12,
+      "bilet": 3.3,
+      "aylikKart": 74,
+      "taksi": 1.2,
+      "ucuzOgun": 15,
+      "ortaRestoran": 90,
+      "kahve": 5.2,
+      "bira": 7,
+      "sut": 1,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12.5,
+      "elmaKg": 1.8,
+      "maas": 2950
+    },
+    "skor": {
+      "is": 98,
+      "ogrenci": 92,
+      "doga": 70,
+      "ulasim": 100
+    }
+  },
+  {
+    "id": "pirkanmaa",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Pirkanmaa (Tampere region)",
+      "fi": "Pirkanmaa (Tampereen seutu)",
+      "sv": "Birkaland (Tammerfors)",
+      "no": "Birkaland (Tammerfors)",
+      "da": "Birkaland (Tammerfors)"
+    },
+    "blurb": {
+      "en": "Student-friendly tech city Tampere. Rents ~20% below Helsinki, strong university and startup scene.",
+      "fi": "Opiskelijaystävällinen teknologiakaupunki Tampere. Vuokrat ~20 % Helsinkiä edullisemmat, vahva yliopisto ja startup-kenttä.",
+      "sv": "Studentvänliga teknikstaden Tammerfors. Hyrorna ca 20 % under Helsingfors, starkt universitet och startup-scen.",
+      "no": "Studentvennlige teknologibyen Tammerfors. Leiene rundt 20 % under Helsingfors, sterkt universitet og startup-miljø.",
+      "da": "Studievenlige teknologiby Tammerfors. Huslejer ca. 20 % under Helsingfors, stærkt universitet og startup-miljø."
+    },
+    "tags": {
+      "en": [
+        "🎓 Student paradise",
+        "🏭 Technology",
+        "🌲 Lake district"
+      ],
+      "fi": [
+        "🎓 Opiskelijaparatiisi",
+        "🏭 Teknologia",
+        "🌲 Järvialue"
+      ],
+      "sv": [
+        "🎓 Studentparadis",
+        "🏭 Teknik",
+        "🌲 Sjödistrikt"
+      ],
+      "no": [
+        "🎓 Studentparadis",
+        "🏭 Teknologi",
+        "🌲 Innsjødistrikt"
+      ],
+      "da": [
+        "🎓 Studenterparadis",
+        "🏭 Teknologi",
+        "🌲 Sødistrikt"
+      ]
+    },
+    "fi": "Pirkanmaa",
+    "center": [
+      61.7,
+      23.9
+    ],
+    "cities": [
+      "Tampere",
+      "Nokia",
+      "Ylöjärvi"
+    ],
+    "cost": {
+      "kira1": 850,
+      "market": 340,
+      "fatura": 110,
+      "internet": 28,
+      "benzin": 2.15,
+      "bilet": 2.5,
+      "aylikKart": 65,
+      "taksi": 1.2,
+      "ucuzOgun": 13,
+      "ortaRestoran": 80,
+      "kahve": 4.8,
+      "bira": 6.5,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2610
+    },
+    "skor": {
+      "is": 85,
+      "ogrenci": 98,
+      "doga": 80,
+      "ulasim": 88
+    }
+  },
+  {
+    "id": "varsinaissuomi",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Southwest Finland (Turku)",
+      "fi": "Varsinais-Suomi (Turun seutu)",
+      "sv": "Egentliga Finland (Åbo)",
+      "no": "Egentliga Finland (Åbo)",
+      "da": "Egentliga Finland (Åbo)"
+    },
+    "blurb": {
+      "en": "Historic former capital Turku, gateway to the archipelago. Reasonable rents, lively summers, ferry link to Sweden.",
+      "fi": "Historiallinen entinen pääkaupunki Turku, saariston portti. Kohtuulliset vuokrat, vilkas kesä, laivayhteys Ruotsiin.",
+      "sv": "Historiska forna huvudstaden Åbo, porten till skärgården. Rimliga hyror, livliga somrar, färja till Sverige.",
+      "no": "Historiske tidligere hovedstaden Åbo, porten til skjærgården. Rimelige leier, livlige somre, ferge til Sverige.",
+      "da": "Historiske tidligere hovedstad Åbo, porten til skærgården. Rimelige huslejer, livlige somre, færge til Sverige."
+    },
+    "tags": {
+      "en": [
+        "⛴️ Archipelago",
+        "🏰 History",
+        "🎓 University"
+      ],
+      "fi": [
+        "⛴️ Saaristo",
+        "🏰 Historia",
+        "🎓 Yliopisto"
+      ],
+      "sv": [
+        "⛴️ Skärgård",
+        "🏰 Historia",
+        "🎓 Universitet"
+      ],
+      "no": [
+        "⛴️ Skjærgård",
+        "🏰 Historie",
+        "🎓 Universitet"
+      ],
+      "da": [
+        "⛴️ Skærgård",
+        "🏰 Historie",
+        "🎓 Universitet"
+      ]
+    },
+    "fi": "Varsinais-Suomi",
+    "center": [
+      60.4,
+      22.4
+    ],
+    "cities": [
+      "Turku",
+      "Kaarina",
+      "Raisio"
+    ],
+    "cost": {
+      "kira1": 780,
+      "market": 340,
+      "fatura": 108,
+      "internet": 28,
+      "benzin": 2.15,
+      "bilet": 3,
+      "aylikKart": 57,
+      "taksi": 1.2,
+      "ucuzOgun": 13,
+      "ortaRestoran": 78,
+      "kahve": 4.7,
+      "bira": 6.5,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2520
+    },
+    "skor": {
+      "is": 80,
+      "ogrenci": 94,
+      "doga": 82,
+      "ulasim": 85
+    }
+  },
+  {
+    "id": "pohjoispohjanmaa",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "North Ostrobothnia (Oulu)",
+      "fi": "Pohjois-Pohjanmaa (Oulu)",
+      "sv": "Norra Österbotten (Uleåborg)",
+      "no": "Norra Österbotten (Uleåborg)",
+      "da": "Norra Österbotten (Uleåborg)"
+    },
+    "blurb": {
+      "en": "The North's tech star Oulu. Low rents, nature and northern lights on your doorstep, 5G and game studios here.",
+      "fi": "Pohjoisen teknologiakaupunki Oulu. Edulliset vuokrat, luonto ja revontulet lähellä, 5G ja pelistudiot täällä.",
+      "sv": "Norrlands teknologiska stjärna Uleåborg. Låga hyror, natur och norrsken inpå knuten, 5G och spelstudior här.",
+      "no": "Nordens teknologiske stjerne Uleåborg. Lave leier, natur og nordlys rett utenfor døren, 5G og spillstudioer her.",
+      "da": "Nordens teknologiske stjerne Uleåborg. Lave huslejer, natur og nordlys lige uden for døren, 5G og spilstudier her."
+    },
+    "tags": {
+      "en": [
+        "🌌 Northern lights",
+        "📡 6G trials",
+        "🎿 Winter sports"
+      ],
+      "fi": [
+        "🌌 Revontulet",
+        "📡 6G-testit",
+        "🎿 Talviurheilu"
+      ],
+      "sv": [
+        "🌌 Norrsken",
+        "📡 6G-försök",
+        "🎿 Vintersport"
+      ],
+      "no": [
+        "🌌 Nordlys",
+        "📡 6G-forsøk",
+        "🎿 Vintersport"
+      ],
+      "da": [
+        "🌌 Nordlys",
+        "📡 6G-forsøg",
+        "🎿 Vintersport"
+      ]
+    },
+    "fi": "Pohjois-Pohjanmaa",
+    "center": [
+      65,
+      25.5
+    ],
+    "cities": [
+      "Oulu",
+      "Kempele",
+      "Raahe"
+    ],
+    "cost": {
+      "kira1": 710,
+      "market": 335,
+      "fatura": 115,
+      "internet": 27,
+      "benzin": 2.16,
+      "bilet": 2.8,
+      "aylikKart": 64,
+      "taksi": 1.2,
+      "ucuzOgun": 12.5,
+      "ortaRestoran": 78,
+      "kahve": 4.6,
+      "bira": 6.5,
+      "sut": 1,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.8,
+      "maas": 2570
+    },
+    "skor": {
+      "is": 82,
+      "ogrenci": 88,
+      "doga": 95,
+      "ulasim": 78
+    }
+  },
+  {
+    "id": "lappi",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Lapland (Rovaniemi)",
+      "fi": "Lappi (Rovaniemi)",
+      "sv": "Lappland (Rovaniemi)",
+      "no": "Lappland (Rovaniemi)",
+      "da": "Lappland (Rovaniemi)"
+    },
+    "blurb": {
+      "en": "Santa's home, polar nights and husky safaris. Cheap rents, but heating and distances push costs up.",
+      "fi": "Joulupukin koti, kaamos ja huskysafarit. Edulliset vuokrat, mutta lämmitys ja etäisyydet nostavat kuluja.",
+      "sv": "Tomtens hem, polarnatt och hundspannssafari. Billiga hyror, men uppvärmning och avstånd driver upp kostnaderna.",
+      "no": "Nissens hjem, mørketid og hundespannsafari. Billige leier, men oppvarming og avstander driver kostnadene opp.",
+      "da": "Julemandens hjem, mørketid og hundeslædesafari. Billige huslejer, men opvarmning og afstande driver omkostningerne op."
+    },
+    "tags": {
+      "en": [
+        "🎅 Santa Claus",
+        "🦌 Reindeer",
+        "❄️ Polar night"
+      ],
+      "fi": [
+        "🎅 Joulupukki",
+        "🦌 Porot",
+        "❄️ Kaamos"
+      ],
+      "sv": [
+        "🎅 Tomten",
+        "🦌 Renar",
+        "❄️ Polarnatt"
+      ],
+      "no": [
+        "🎅 Julenissen",
+        "🦌 Reinsdyr",
+        "❄️ Mørketid"
+      ],
+      "da": [
+        "🎅 Julemanden",
+        "🦌 Rensdyr",
+        "❄️ Mørketid"
+      ]
+    },
+    "fi": "Lappi",
+    "center": [
+      67.5,
+      26.5
+    ],
+    "cities": [
+      "Rovaniemi",
+      "Kemi",
+      "Tornio"
+    ],
+    "cost": {
+      "kira1": 730,
+      "market": 370,
+      "fatura": 160,
+      "internet": 28,
+      "benzin": 2.2,
+      "bilet": 3.3,
+      "aylikKart": 57,
+      "taksi": 1.3,
+      "ucuzOgun": 14,
+      "ortaRestoran": 82,
+      "kahve": 5,
+      "bira": 6.8,
+      "sut": 1.05,
+      "ekmek": 2.2,
+      "yumurta12": 3.3,
+      "tavukKg": 12.8,
+      "elmaKg": 2.2,
+      "maas": 2390
+    },
+    "skor": {
+      "is": 65,
+      "ogrenci": 70,
+      "doga": 100,
+      "ulasim": 60
+    }
+  },
+  {
+    "id": "kesksuomi",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Central Finland (Jyväskylä)",
+      "fi": "Keski-Suomi (Jyväskylä)",
+      "sv": "Mellersta Finland (Jyväskylä)",
+      "no": "Mellersta Finland (Jyväskylä)",
+      "da": "Mellersta Finland (Jyväskylä)"
+    },
+    "blurb": {
+      "en": "University city Jyväskylä amid a thousand lakes. Balanced costs, strong sports and education culture.",
+      "fi": "Yliopistokaupunki Jyväskylä tuhansien järvien keskellä. Tasapainoiset kulut, vahva urheilu- ja koulutuskulttuuri.",
+      "sv": "Universitetsstaden Jyväskylä bland tusen sjöar. Balanserade kostnader, stark idrotts- och utbildningskultur.",
+      "no": "Universitetsbyen Jyväskylä blant tusen innsjøer. Balanserte kostnader, sterk idretts- og utdanningskultur.",
+      "da": "Universitetsbyen Jyväskylä blandt tusind søer. Balancerede omkostninger, stærk idræts- og uddannelseskultur."
+    },
+    "tags": {
+      "en": [
+        "🏃 Sports capital",
+        "📚 University",
+        "🌊 Lakes"
+      ],
+      "fi": [
+        "🏃 Urheilupääkaupunki",
+        "📚 Yliopisto",
+        "🌊 Järvet"
+      ],
+      "sv": [
+        "🏃 Idrottsstad",
+        "📚 Universitet",
+        "🌊 Sjöar"
+      ],
+      "no": [
+        "🏃 Idrettsby",
+        "📚 Universitet",
+        "🌊 Innsjøer"
+      ],
+      "da": [
+        "🏃 Idrætsby",
+        "📚 Universitet",
+        "🌊 Søer"
+      ]
+    },
+    "fi": "Keski-Suomi",
+    "center": [
+      62.4,
+      25.8
+    ],
+    "cities": [
+      "Jyväskylä",
+      "Muurame",
+      "Laukaa"
+    ],
+    "cost": {
+      "kira1": 730,
+      "market": 330,
+      "fatura": 112,
+      "internet": 27,
+      "benzin": 2.15,
+      "bilet": 2.7,
+      "aylikKart": 60,
+      "taksi": 1.2,
+      "ucuzOgun": 12,
+      "ortaRestoran": 76,
+      "kahve": 4.6,
+      "bira": 6.3,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2440
+    },
+    "skor": {
+      "is": 72,
+      "ogrenci": 90,
+      "doga": 92,
+      "ulasim": 72
+    }
+  },
+  {
+    "id": "pohjoissavo",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "North Savo (Kuopio)",
+      "fi": "Pohjois-Savo (Kuopio)",
+      "sv": "Norra Savolax (Kuopio)",
+      "no": "Norra Savolax (Kuopio)",
+      "da": "Norra Savolax (Kuopio)"
+    },
+    "blurb": {
+      "en": "Lakeside Kuopio, home of health research and kalakukko. Affordable rents, calm living.",
+      "fi": "Järvenrantakaupunki Kuopio, terveystutkimuksen ja kalakukon koti. Edulliset vuokrat, rauhallinen elämä.",
+      "sv": "Kuopio vid sjön, hem för hälsoforskning och kalakukko. Överkomliga hyror, lugnt liv.",
+      "no": "Kuopio ved innsjøen, hjem for helseforskning og kalakukko. Overkommelige leier, rolig liv.",
+      "da": "Kuopio ved søen, hjem for sundhedsforskning og kalakukko. Overkommelige huslejer, roligt liv."
+    },
+    "tags": {
+      "en": [
+        "🐟 Kalakukko",
+        "🏥 Health hub",
+        "🌲 Calm living"
+      ],
+      "fi": [
+        "🐟 Kalakukko",
+        "🏥 Terveyskeskus",
+        "🌲 Rauhallinen elämä"
+      ],
+      "sv": [
+        "🐟 Kalakukko",
+        "🏥 Hälsocentrum",
+        "🌲 Lugnt liv"
+      ],
+      "no": [
+        "🐟 Kalakukko",
+        "🏥 Helsehub",
+        "🌲 Rolig tilværelse"
+      ],
+      "da": [
+        "🐟 Kalakukko",
+        "🏥 Sundhedscenter",
+        "🌲 Roligt liv"
+      ]
+    },
+    "fi": "Pohjois-Savo",
+    "center": [
+      63,
+      27.6
+    ],
+    "cities": [
+      "Kuopio",
+      "Siilinjärvi",
+      "Varkaus"
+    ],
+    "cost": {
+      "kira1": 750,
+      "market": 325,
+      "fatura": 110,
+      "internet": 27,
+      "benzin": 2.15,
+      "bilet": 2.7,
+      "aylikKart": 62,
+      "taksi": 1.2,
+      "ucuzOgun": 12,
+      "ortaRestoran": 75,
+      "kahve": 4.5,
+      "bira": 6.2,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2390
+    },
+    "skor": {
+      "is": 68,
+      "ogrenci": 82,
+      "doga": 93,
+      "ulasim": 68
+    }
+  },
+  {
+    "id": "pohjoiskarjala",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "North Karelia (Joensuu)",
+      "fi": "Pohjois-Karjala (Joensuu)",
+      "sv": "Norra Karelen (Joensuu)",
+      "no": "Norra Karelen (Joensuu)",
+      "da": "Norra Karelen (Joensuu)"
+    },
+    "blurb": {
+      "en": "Forest region near the Russian border. Among Finland's cheapest rents — a nature lover's dream.",
+      "fi": "Metsäaluetta Venäjän rajan tuntumassa. Maan edullisimpia vuokria — luonnonystävän unelma.",
+      "sv": "Skogsregion nära ryska gränsen. Bland Finlands billigaste hyror — en dröm för naturälskare.",
+      "no": "Skogsregion nær den russiske grensen. Blant Finlands billigste leier — en drøm for naturvenner.",
+      "da": "Skovregion tæt på den russiske grænse. Blandt Finlands billigste huslejer — en drøm for naturvenner."
+    },
+    "tags": {
+      "en": [
+        "🌲 Forest",
+        "💰 Cheapest rents",
+        "🦉 Wildlife"
+      ],
+      "fi": [
+        "🌲 Metsä",
+        "💰 Edullisin vuokra",
+        "🦉 Villieläimet"
+      ],
+      "sv": [
+        "🌲 Skog",
+        "💰 Billigast hyror",
+        "🦉 Djurliv"
+      ],
+      "no": [
+        "🌲 Skog",
+        "💰 Billigste leier",
+        "🦉 Dyreliv"
+      ],
+      "da": [
+        "🌲 Skov",
+        "💰 Billigste huslejer",
+        "🦉 Dyreliv"
+      ]
+    },
+    "fi": "Pohjois-Karjala",
+    "center": [
+      62.8,
+      30
+    ],
+    "cities": [
+      "Joensuu",
+      "Kontiolahti",
+      "Lieksa"
+    ],
+    "cost": {
+      "kira1": 720,
+      "market": 320,
+      "fatura": 112,
+      "internet": 26,
+      "benzin": 2.18,
+      "bilet": 2.6,
+      "aylikKart": 69,
+      "taksi": 1.3,
+      "ucuzOgun": 11.5,
+      "ortaRestoran": 72,
+      "kahve": 4.3,
+      "bira": 6,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2270
+    },
+    "skor": {
+      "is": 60,
+      "ogrenci": 78,
+      "doga": 96,
+      "ulasim": 60
+    }
+  },
+  {
+    "id": "etelasavo",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "South Savo (Mikkeli)",
+      "fi": "Etelä-Savo (Mikkeli)",
+      "sv": "Södra Savolax (S:t Michel)",
+      "no": "Södra Savolax (S:t Michel)",
+      "da": "Södra Savolax (S:t Michel)"
+    },
+    "blurb": {
+      "en": "Lake Saimaa and the Savonlinna Opera Festival. The cottage (mökki) capital — ideal for retirement.",
+      "fi": "Saimaan ja Savonlinnan oopperajuhlien aluetta. Kesämökkien pääkaupunki — ihanteellinen eläköitymiseen.",
+      "sv": "Sjön Saimen och Savonlinna operafestival. Stugornas (mökki) huvudstad — perfekt för pensionärer.",
+      "no": "Innsjøen Saimen og Savonlinna operafestival. Hyttenes (mökki) hovedstad — ideelt for pensjonister.",
+      "da": "Søen Saimen og Savonlinna operafestival. Sommerhusenes (mökki) hovedstad — ideelt for pensionister."
+    },
+    "tags": {
+      "en": [
+        "🎭 Opera festival",
+        "🏡 Cottage culture",
+        "🦭 Saimaa seal"
+      ],
+      "fi": [
+        "🎭 Oopperajuhlat",
+        "🏡 Mökkikulttuuri",
+        "🦭 Saimaannorppa"
+      ],
+      "sv": [
+        "🎭 Operafestival",
+        "🏡 Stugkultur",
+        "🦭 Saimenvikare"
+      ],
+      "no": [
+        "🎭 Operafestival",
+        "🏡 Hyttekultur",
+        "🦭 Saimasel"
+      ],
+      "da": [
+        "🎭 Operafestival",
+        "🏡 Sommerhuskultur",
+        "🦭 Saimasæl"
+      ]
+    },
+    "fi": "Etelä-Savo",
+    "center": [
+      61.9,
+      27.5
+    ],
+    "cities": [
+      "Mikkeli",
+      "Savonlinna",
+      "Pieksämäki"
+    ],
+    "cost": {
+      "kira1": 640,
+      "market": 325,
+      "fatura": 115,
+      "internet": 26,
+      "benzin": 2.15,
+      "bilet": 2.6,
+      "aylikKart": 62,
+      "taksi": 1.2,
+      "ucuzOgun": 11.5,
+      "ortaRestoran": 72,
+      "kahve": 4.3,
+      "bira": 6,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2220
+    },
+    "skor": {
+      "is": 55,
+      "ogrenci": 65,
+      "doga": 97,
+      "ulasim": 58
+    }
+  },
+  {
+    "id": "etelakarjala",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "South Karelia (Lappeenranta)",
+      "fi": "Etelä-Karjala (Lappeenranta)",
+      "sv": "Södra Karelen (Villmanstrand)",
+      "no": "Södra Karelen (Villmanstrand)",
+      "da": "Södra Karelen (Villmanstrand)"
+    },
+    "blurb": {
+      "en": "Border-trade city Lappeenranta. Lakeside living at low cost, with a surprising number of sunny days.",
+      "fi": "Rajakaupan kaupunki Lappeenranta. Järven rannalla edullisesti, aurinkoisia päiviä yllättävän paljon.",
+      "sv": "Gränshandelsstaden Villmanstrand. Sjönära boende till låg kostnad, med förvånansvärt många soliga dagar.",
+      "no": "Grensehandelsbyen Villmanstrand. Liv ved innsjøen til lav kostnad, med overraskende mange solrike dager.",
+      "da": "Grænsehandelsbyen Villmanstrand. Liv ved søen til lav pris, med overraskende mange solskinsdage."
+    },
+    "tags": {
+      "en": [
+        "☀️ Sunny",
+        "🏒 Border city",
+        "🌊 Saimaa"
+      ],
+      "fi": [
+        "☀️ Aurinkoinen",
+        "🏒 Rajakaupunki",
+        "🌊 Saimaa"
+      ],
+      "sv": [
+        "☀️ Soligt",
+        "🏒 Gränsstad",
+        "🌊 Saimen"
+      ],
+      "no": [
+        "☀️ Solrikt",
+        "🏒 Grenseby",
+        "🌊 Saimen"
+      ],
+      "da": [
+        "☀️ Solrigt",
+        "🏒 Grænseby",
+        "🌊 Saimen"
+      ]
+    },
+    "fi": "Etelä-Karjala",
+    "center": [
+      61.06,
+      28.18
+    ],
+    "cities": [
+      "Lappeenranta",
+      "Imatra"
+    ],
+    "cost": {
+      "kira1": 700,
+      "market": 325,
+      "fatura": 112,
+      "internet": 26,
+      "benzin": 2.15,
+      "bilet": 2.6,
+      "aylikKart": 62,
+      "taksi": 1.2,
+      "ucuzOgun": 12,
+      "ortaRestoran": 74,
+      "kahve": 4.4,
+      "bira": 6.2,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2310
+    },
+    "skor": {
+      "is": 62,
+      "ogrenci": 75,
+      "doga": 88,
+      "ulasim": 66
+    }
+  },
+  {
+    "id": "kymenlaakso",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Kymenlaakso (Kotka–Kouvola)",
+      "fi": "Kymenlaakso (Kotka–Kouvola)",
+      "sv": "Kymmenedalen (Kotka–Kouvola)",
+      "no": "Kymmenedalen (Kotka–Kouvola)",
+      "da": "Kymmenedalen (Kotka–Kouvola)"
+    },
+    "blurb": {
+      "en": "Port city Kotka and national parks. One hour by train to Helsinki, half the rents.",
+      "fi": "Satamakaupunki Kotka ja kansallispuistot. Helsinkiin junalla tunti, vuokrat puolet.",
+      "sv": "Hamnstaden Kotka och nationalparker. En timme med tåg till Helsingfors, halva hyran.",
+      "no": "Havnebyen Kotka og nasjonalparker. Én time med tog til Helsingfors, halve leien.",
+      "da": "Havnebyen Kotka og nationalparker. En time med tog til Helsingfors, halv husleje."
+    },
+    "tags": {
+      "en": [
+        "⚓ Harbour",
+        "🚂 Near Helsinki",
+        "🌲 National parks"
+      ],
+      "fi": [
+        "⚓ Satama",
+        "🚂 Lähellä Helsinkiä",
+        "🌲 Kansallispuisto"
+      ],
+      "sv": [
+        "⚓ Hamn",
+        "🚂 Nära Helsingfors",
+        "🌲 Nationalparker"
+      ],
+      "no": [
+        "⚓ Havn",
+        "🚂 Nær Helsingfors",
+        "🌲 Nasjonalparker"
+      ],
+      "da": [
+        "⚓ Havn",
+        "🚂 Tæt på Helsingfors",
+        "🌲 Nationalparker"
+      ]
+    },
+    "fi": "Kymenlaakso",
+    "center": [
+      60.7,
+      27
+    ],
+    "cities": [
+      "Kotka",
+      "Kouvola",
+      "Hamina"
+    ],
+    "cost": {
+      "kira1": 630,
+      "market": 325,
+      "fatura": 110,
+      "internet": 26,
+      "benzin": 2.15,
+      "bilet": 2.7,
+      "aylikKart": 62,
+      "taksi": 1.2,
+      "ucuzOgun": 12,
+      "ortaRestoran": 74,
+      "kahve": 4.4,
+      "bira": 6.2,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2350
+    },
+    "skor": {
+      "is": 64,
+      "ogrenci": 68,
+      "doga": 85,
+      "ulasim": 74
+    }
+  },
+  {
+    "id": "paijathame",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Päijät-Häme (Lahti)",
+      "fi": "Päijät-Häme (Lahti)",
+      "sv": "Päijänne-Tavastland (Lahtis)",
+      "no": "Päijänne-Tavastland (Lahtis)",
+      "da": "Päijänne-Tavastland (Lahtis)"
+    },
+    "blurb": {
+      "en": "Ski and design city Lahti. One hour to the capital, affordable rents, winter sports close by.",
+      "fi": "Hiihto- ja muotoilukaupunki Lahti. Pääkaupunkiin tunti, edulliset vuokrat, talviurheilu lähellä.",
+      "sv": "Skid- och designstaden Lahtis. En timme till huvudstaden, överkomliga hyror, vintersport nära.",
+      "no": "Ski- og designbyen Lahtis. Én time til hovedstaden, overkommelige leier, vintersport i nærheten.",
+      "da": "Ski- og designbyen Lahtis. En time til hovedstaden, overkommelige huslejer, vintersport tæt på."
+    },
+    "tags": {
+      "en": [
+        "🎿 Skiing",
+        "🎨 Design",
+        "🚄 Fast train"
+      ],
+      "fi": [
+        "🎿 Hiihto",
+        "🎨 Muotoilu",
+        "🚄 Pikajuna"
+      ],
+      "sv": [
+        "🎿 Skidåkning",
+        "🎨 Design",
+        "🚄 Snabbtåg"
+      ],
+      "no": [
+        "🎿 Ski",
+        "🎨 Design",
+        "🚄 Hurtigtog"
+      ],
+      "da": [
+        "🎿 Ski",
+        "🎨 Design",
+        "🚄 Hurtigtog"
+      ]
+    },
+    "fi": "Päijät-Häme",
+    "center": [
+      60.98,
+      25.65
+    ],
+    "cities": [
+      "Lahti",
+      "Hollola",
+      "Orimattila"
+    ],
+    "cost": {
+      "kira1": 670,
+      "market": 330,
+      "fatura": 110,
+      "internet": 26,
+      "benzin": 2.15,
+      "bilet": 2.8,
+      "aylikKart": 62,
+      "taksi": 1.2,
+      "ucuzOgun": 12,
+      "ortaRestoran": 75,
+      "kahve": 4.5,
+      "bira": 6.3,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2390
+    },
+    "skor": {
+      "is": 68,
+      "ogrenci": 72,
+      "doga": 86,
+      "ulasim": 78
+    }
+  },
+  {
+    "id": "kantahame",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Tavastia Proper (Hämeenlinna)",
+      "fi": "Kanta-Häme (Hämeenlinna)",
+      "sv": "Egentliga Tavastland (Tavastehus)",
+      "no": "Egentliga Tavastland (Tavastehus)",
+      "da": "Egentliga Tavastland (Tavastehus)"
+    },
+    "blurb": {
+      "en": "Medieval castle Hämeenlinna, halfway between Helsinki and Tampere. A favourite for suburban living.",
+      "fi": "Keskiaikainen Hämeen linna, puolimatkassa Helsinki–Tampere. Suosittu väljä asuminen.",
+      "sv": "Medeltida Tavastehus slott, halvvägs mellan Helsingfors och Tammerfors. Populärt för förortsliv.",
+      "no": "Middelalderborgen Tavastehus, halvveis mellom Helsingfors og Tammerfors. Populært for forstadsliv.",
+      "da": "Middelalderborgen Tavastehus, halvvejs mellem Helsingfors og Tammerfors. Populært til forstadsliv."
+    },
+    "tags": {
+      "en": [
+        "🏰 Castle",
+        "🚂 Rail hub",
+        "🌾 Rural calm"
+      ],
+      "fi": [
+        "🏰 Linna",
+        "🚂 Vaihtoyhteys",
+        "🌾 Maalaisrauha"
+      ],
+      "sv": [
+        "🏰 Slott",
+        "🚂 Järnvägsknut",
+        "🌾 Lantlig ro"
+      ],
+      "no": [
+        "🏰 Borg",
+        "🚂 Jernbaneknutepunkt",
+        "🌾 Landlig ro"
+      ],
+      "da": [
+        "🏰 Slot",
+        "🚂 Jernbaneknudepunkt",
+        "🌾 Landlig ro"
+      ]
+    },
+    "fi": "Kanta-Häme",
+    "center": [
+      60.9,
+      24.4
+    ],
+    "cities": [
+      "Hämeenlinna",
+      "Riihimäki",
+      "Forssa"
+    ],
+    "cost": {
+      "kira1": 730,
+      "market": 330,
+      "fatura": 110,
+      "internet": 26,
+      "benzin": 2.15,
+      "bilet": 2.8,
+      "aylikKart": 62,
+      "taksi": 1.2,
+      "ucuzOgun": 12,
+      "ortaRestoran": 75,
+      "kahve": 4.5,
+      "bira": 6.3,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2390
+    },
+    "skor": {
+      "is": 66,
+      "ogrenci": 66,
+      "doga": 82,
+      "ulasim": 80
+    }
+  },
+  {
+    "id": "satakunta",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Satakunta (Pori)",
+      "fi": "Satakunta (Pori)",
+      "sv": "Satakunta (Björneborg)",
+      "no": "Satakunta (Björneborg)",
+      "da": "Satakunta (Björneborg)"
+    },
+    "blurb": {
+      "en": "Summer festival Pori Jazz and UNESCO-listed Old Rauma. Affordable coastal living by the sea.",
+      "fi": "Kesäfestivaali Pori Jazz ja Unescon Vanha Rauma. Edullista rannikkoasumista meren äärellä.",
+      "sv": "Sommarfestivalen Björneborg Jazz och UNESCO-märkta Gamla Raumo. Överkomligt boende vid havet.",
+      "no": "Sommerfestivalen Bjørneborg Jazz og UNESCO-listede gamle Raumo. Overkommelig bolig ved havet.",
+      "da": "Sommerfestivalen Bjørneborg Jazz og UNESCO-fredede gamle Raumo. Overkommelig bolig ved havet."
+    },
+    "tags": {
+      "en": [
+        "🎷 Pori Jazz",
+        "🏘️ UNESCO Rauma",
+        "🏖️ Beach"
+      ],
+      "fi": [
+        "🎷 Pori Jazz",
+        "🏘️ Unescon Rauma",
+        "🏖️ Ranta"
+      ],
+      "sv": [
+        "🎷 Pori Jazz",
+        "🏘️ UNESCO Raumo",
+        "🏖️ Strand"
+      ],
+      "no": [
+        "🎷 Pori Jazz",
+        "🏘️ UNESCO Raumo",
+        "🏖️ Strand"
+      ],
+      "da": [
+        "🎷 Pori Jazz",
+        "🏘️ UNESCO Raumo",
+        "🏖️ Strand"
+      ]
+    },
+    "fi": "Satakunta",
+    "center": [
+      61.4,
+      22.2
+    ],
+    "cities": [
+      "Pori",
+      "Rauma",
+      "Ulvila"
+    ],
+    "cost": {
+      "kira1": 550,
+      "market": 325,
+      "fatura": 108,
+      "internet": 26,
+      "benzin": 2.15,
+      "bilet": 2.6,
+      "aylikKart": 62,
+      "taksi": 1.2,
+      "ucuzOgun": 12,
+      "ortaRestoran": 74,
+      "kahve": 4.4,
+      "bira": 6.2,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2350
+    },
+    "skor": {
+      "is": 64,
+      "ogrenci": 68,
+      "doga": 84,
+      "ulasim": 66
+    }
+  },
+  {
+    "id": "etelapohjanmaa",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "South Ostrobothnia (Seinäjoki)",
+      "fi": "Etelä-Pohjanmaa (Seinäjoki)",
+      "sv": "Södra Österbotten (Seinäjoki)",
+      "no": "Södra Österbotten (Seinäjoki)",
+      "da": "Södra Österbotten (Seinäjoki)"
+    },
+    "blurb": {
+      "en": "Entrepreneurial plains region. Spacious homes, low rents, strong local economy.",
+      "fi": "Yrittäjähenkinen lakeus. Tilavat kodit, edulliset vuokrat, vahva paikallistalous.",
+      "sv": "Företagsamma slättlandskap. Rymliga bostäder, låga hyror, stark lokal ekonomi.",
+      "no": "Gründerske sletter. Rommelige boliger, lave leier, sterk lokal økonomi.",
+      "da": "Iværksætterprægede sletter. Rummelige boliger, lave huslejer, stærk lokal økonomi."
+    },
+    "tags": {
+      "en": [
+        "🤠 Enterprise",
+        "🌲 Plains",
+        "🏠 Spacious homes"
+      ],
+      "fi": [
+        "🤠 Yrittäjyys",
+        "🌾 Lakeus",
+        "🏠 Tilavat kodit"
+      ],
+      "sv": [
+        "🤠 Företagsamhet",
+        "🌲 Slätter",
+        "🏠 Rymliga hem"
+      ],
+      "no": [
+        "🤠 Gründerånd",
+        "🌲 Sletter",
+        "🏠 Rommelige hjem"
+      ],
+      "da": [
+        "🤠 Iværksætteri",
+        "🌲 Sletter",
+        "🏠 Rummelige hjem"
+      ]
+    },
+    "fi": "Etelä-Pohjanmaa",
+    "center": [
+      62.8,
+      22.8
+    ],
+    "cities": [
+      "Seinäjoki",
+      "Lapua",
+      "Kauhava"
+    ],
+    "cost": {
+      "kira1": 720,
+      "market": 320,
+      "fatura": 110,
+      "internet": 26,
+      "benzin": 2.16,
+      "bilet": 2.6,
+      "aylikKart": 62,
+      "taksi": 1.2,
+      "ucuzOgun": 11.5,
+      "ortaRestoran": 73,
+      "kahve": 4.3,
+      "bira": 6,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2350
+    },
+    "skor": {
+      "is": 66,
+      "ogrenci": 62,
+      "doga": 78,
+      "ulasim": 64
+    }
+  },
+  {
+    "id": "pohjanmaa",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Ostrobothnia (Vaasa)",
+      "fi": "Pohjanmaa (Vaasa)",
+      "sv": "Österbotten (Vasa)",
+      "no": "Österbotten (Vasa)",
+      "da": "Österbotten (Vasa)"
+    },
+    "blurb": {
+      "en": "Swedish-speaking coast, energy-tech hub Vaasa. Bilingual, tidy, windy.",
+      "fi": "Ruotsinkielinen rannikko, energiateknologian keskus Vaasa. Kaksikielinen, siisti, tuulinen.",
+      "sv": "Svenskspråkig kust, energitekniknavet Vasa. Tvåspråkigt, prydligt, blåsigt.",
+      "no": "Svenskspråklig kyst, energiteknologihuben Vasa. Tospråklig, ryddig, vindfull.",
+      "da": "Svensktalende kyst, energiteknologihubben Vasa. Tosproget, ordentligt, blæsende."
+    },
+    "tags": {
+      "en": [
+        "🔋 Energy hub",
+        "🇸🇪 Bilingual",
+        "⛴️ Ferry to Umeå"
+      ],
+      "fi": [
+        "🔋 Energia",
+        "🇸🇪 Kaksikielinen",
+        "⛴️ Lautta Uumajaan"
+      ],
+      "sv": [
+        "🔋 Energinav",
+        "🇸🇪 Tvåspråkigt",
+        "⛴️ Färja till Umeå"
+      ],
+      "no": [
+        "🔋 Energihub",
+        "🇸🇪 Tospråklig",
+        "⛴️ Ferge til Umeå"
+      ],
+      "da": [
+        "🔋 Energihub",
+        "🇸🇪 Tosproget",
+        "⛴️ Færge til Umeå"
+      ]
+    },
+    "fi": "Pohjanmaa",
+    "center": [
+      63,
+      21.6
+    ],
+    "cities": [
+      "Vaasa",
+      "Jakobstad",
+      "Kokkola"
+    ],
+    "cost": {
+      "kira1": 660,
+      "market": 335,
+      "fatura": 110,
+      "internet": 27,
+      "benzin": 2.16,
+      "bilet": 2.8,
+      "aylikKart": 62,
+      "taksi": 1.2,
+      "ucuzOgun": 12.5,
+      "ortaRestoran": 76,
+      "kahve": 4.6,
+      "bira": 6.4,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2480
+    },
+    "skor": {
+      "is": 74,
+      "ogrenci": 74,
+      "doga": 86,
+      "ulasim": 70
+    }
+  },
+  {
+    "id": "keskipohjanmaa",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Central Ostrobothnia (Kokkola)",
+      "fi": "Keski-Pohjanmaa (Kokkola)",
+      "sv": "Mellersta Österbotten (Karleby)",
+      "no": "Mellersta Österbotten (Karleby)",
+      "da": "Mellersta Österbotten (Karleby)"
+    },
+    "blurb": {
+      "en": "Small but efficient coastal region. Known for chemicals and choirs, very affordable rents.",
+      "fi": "Pieni mutta tehokas rannikkoalue. Kemian ja kuoromusiikin tuntema, erittäin edulliset vuokrat.",
+      "sv": "Liten men effektiv kustregion. Känd för kemi och körer, mycket överkomliga hyror.",
+      "no": "Liten, men effektiv kystregion. Kjent for kjemi og kor, svært overkommelige leier.",
+      "da": "Lille, men effektiv kystregion. Kendt for kemi og kor, meget overkommelige huslejer."
+    },
+    "tags": {
+      "en": [
+        "🎶 Music",
+        "⚗️ Chemicals",
+        "💰 Affordable"
+      ],
+      "fi": [
+        "🎶 Musiikki",
+        "⚗️ Kemia",
+        "💰 Edullinen"
+      ],
+      "sv": [
+        "🎶 Musik",
+        "⚗️ Kemi",
+        "💰 Överkomligt"
+      ],
+      "no": [
+        "🎶 Musikk",
+        "⚗️ Kjemi",
+        "💰 Overkommelig"
+      ],
+      "da": [
+        "🎶 Musik",
+        "⚗️ Kemi",
+        "💰 Overkommeligt"
+      ]
+    },
+    "fi": "Keski-Pohjanmaa",
+    "center": [
+      63.8,
+      23.8
+    ],
+    "cities": [
+      "Kokkola",
+      "Kannus"
+    ],
+    "cost": {
+      "kira1": 670,
+      "market": 320,
+      "fatura": 112,
+      "internet": 26,
+      "benzin": 2.16,
+      "bilet": 2.6,
+      "aylikKart": 62,
+      "taksi": 1.2,
+      "ucuzOgun": 11.5,
+      "ortaRestoran": 73,
+      "kahve": 4.3,
+      "bira": 6,
+      "sut": 0.95,
+      "ekmek": 2,
+      "yumurta12": 3.1,
+      "tavukKg": 12,
+      "elmaKg": 1.7,
+      "maas": 2310
+    },
+    "skor": {
+      "is": 60,
+      "ogrenci": 60,
+      "doga": 80,
+      "ulasim": 60
+    }
+  },
+  {
+    "id": "kainuu",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Kainuu (Kajaani)",
+      "fi": "Kainuu (Kajaani)",
+      "sv": "Kajanaland (Kajana)",
+      "no": "Kajanaland (Kajana)",
+      "da": "Kajanaland (Kajana)"
+    },
+    "blurb": {
+      "en": "Wilderness and the LUMI supercomputer. Among Finland's cheapest regions — a hidden gem for remote workers.",
+      "fi": "Erämaata ja supertietokone LUMI. Maan edullisimpia alueita — etätyöläisen salainen aarre.",
+      "sv": "Vildmark och superdatorn LUMI. Bland Finlands billigaste regioner — en dold pärla för distansarbetare.",
+      "no": "Villmark og superdatamaskinen LUMI. Blant Finlands billigste regioner — en skjult perle for fjernarbeidere.",
+      "da": "Vildmark og supercomputeren LUMI. Blandt Finlands billigste regioner — en skjult perle for fjernarbejdere."
+    },
+    "tags": {
+      "en": [
+        "💻 Supercomputer",
+        "🐻 Wilderness",
+        "💰 Cheapest"
+      ],
+      "fi": [
+        "💻 Supertietokone",
+        "🐻 Erämaa",
+        "💰 Edullisin"
+      ],
+      "sv": [
+        "💻 Superdator",
+        "🐻 Vildmark",
+        "💰 Billigast"
+      ],
+      "no": [
+        "💻 Superdatamaskin",
+        "🐻 Villmark",
+        "💰 Billigst"
+      ],
+      "da": [
+        "💻 Supercomputer",
+        "🐻 Vildmark",
+        "💰 Billigst"
+      ]
+    },
+    "fi": "Kainuu",
+    "center": [
+      64.2,
+      27.7
+    ],
+    "cities": [
+      "Kajaani",
+      "Kuhmo",
+      "Sotkamo"
+    ],
+    "cost": {
+      "kira1": 670,
+      "market": 330,
+      "fatura": 118,
+      "internet": 27,
+      "benzin": 2.2,
+      "bilet": 2.7,
+      "aylikKart": 62,
+      "taksi": 1.3,
+      "ucuzOgun": 11.5,
+      "ortaRestoran": 70,
+      "kahve": 4.3,
+      "bira": 6,
+      "sut": 1,
+      "ekmek": 2.1,
+      "yumurta12": 3.2,
+      "tavukKg": 12.3,
+      "elmaKg": 1.9,
+      "maas": 2220
+    },
+    "skor": {
+      "is": 52,
+      "ogrenci": 58,
+      "doga": 98,
+      "ulasim": 52
+    }
+  },
+  {
+    "id": "ahvenanmaa",
+    "country": "FI",
+    "currency": "EUR",
+    "name": {
+      "en": "Åland (Mariehamn)",
+      "fi": "Ahvenanmaa (Maarianhamina)",
+      "sv": "Åland (Mariehamn)",
+      "no": "Åland (Mariehamn)",
+      "da": "Åland (Mariehamn)"
+    },
+    "blurb": {
+      "en": "Autonomous Swedish-speaking archipelago. Shipping and tourism, tax-free shopping, calm island rhythm.",
+      "fi": "Itsehallinnollinen ruotsinkielinen saaristo. Merenkulkua ja matkailua, verotonta ostosta, rauhallinen saarirytmi.",
+      "sv": "Självstyrt svenskspråkigt örike. Sjöfart och turism, taxfree-handel, lugn örytm.",
+      "no": "Selvstyrt svensktalende øyrike. Sjøfart og turisme, taxfree-handel, rolig øyrytme.",
+      "da": "Selvstyret svensktalende ørige. Søfart og turisme, taxfree-handel, rolig ø-rytme."
+    },
+    "tags": {
+      "en": [
+        "🏝️ Autonomous islands",
+        "🛳️ Shipping",
+        "🛍️ Tax-free"
+      ],
+      "fi": [
+        "🏝️ Itsehallinto",
+        "🛳️ Merenkulku",
+        "🛍️ Veroton"
+      ],
+      "sv": [
+        "🏝️ Självstyrande öar",
+        "🛳️ Sjöfart",
+        "🛍️ Taxfree"
+      ],
+      "no": [
+        "🏝️ Selvstyrte øyer",
+        "🛳️ Sjøfart",
+        "🛍️ Taxfree"
+      ],
+      "da": [
+        "🏝️ Selvstyrede øer",
+        "🛳️ Søfart",
+        "🛍️ Taxfree"
+      ]
+    },
+    "fi": "Ahvenanmaa",
+    "center": [
+      60.15,
+      19.95
+    ],
+    "cities": [
+      "Mariehamn",
+      "Jomala"
+    ],
+    "cost": {
+      "kira1": 720,
+      "market": 360,
+      "fatura": 112,
+      "internet": 29,
+      "benzin": 2.18,
+      "bilet": 3,
+      "aylikKart": 55,
+      "taksi": 1.2,
+      "ucuzOgun": 13,
+      "ortaRestoran": 82,
+      "kahve": 4.8,
+      "bira": 6.5,
+      "sut": 1.05,
+      "ekmek": 2.2,
+      "yumurta12": 3.3,
+      "tavukKg": 12.8,
+      "elmaKg": 2,
+      "maas": 2480
+    },
+    "skor": {
+      "is": 62,
+      "ogrenci": 55,
+      "doga": 99,
+      "ulasim": 55
+    }
+  }
+]

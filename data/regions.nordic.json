@@ -1,0 +1,2610 @@
+[
+  {
+    "id": "stockholm",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Stockholm County (Stockholm)",
+      "fi": "Stockholm County (Stockholm)",
+      "sv": "Stockholms län (Stockholm)",
+      "no": "Stockholms län (Stockholm)",
+      "da": "Stockholms län (Stockholm)"
+    },
+    "blurb": {
+      "en": "Capital of Scandinavia: top salaries, the priciest Swedish rents, world-class transit.",
+      "fi": "Skandinavian pääkaupunki: huippupalkat, Ruotsin kalleimmat vuokrat, maailmanluokan joukkoliikenne.",
+      "sv": "Skandinaviens huvudstad: topplöner, Sveriges dyraste hyror, kollektivtrafik i världsklass.",
+      "no": "Skandinavias hovedstad: topplønninger, Sveriges dyreste leier, kollektivtransport i verdensklasse.",
+      "da": "Skandinaviens hovedstad: toplønninger, Sveriges dyreste leje, kollektivtrafik i verdensklasse."
+    },
+    "tags": {
+      "en": [
+        "💼 Capital",
+        "🚇 SL transit"
+      ],
+      "fi": [
+        "💼 Pääkaupunki",
+        "🚇 SL-liikenne"
+      ],
+      "sv": [
+        "💼 Huvudstad",
+        "🚇 SL-trafik"
+      ],
+      "no": [
+        "💼 Hovedstad",
+        "🚇 SL-trafikk"
+      ],
+      "da": [
+        "💼 Hovedstad",
+        "🚇 SL-trafik"
+      ]
+    },
+    "geo": "Stockholms län",
+    "fi": "Stockholm",
+    "center": [
+      59.33,
+      18.07
+    ],
+    "cities": [
+      "Stockholm",
+      "Södertälje",
+      "Norrtälje"
+    ],
+    "cost": {
+      "kira1": 9600,
+      "market": 5000,
+      "fatura": 2410,
+      "bilet": 44,
+      "aylikKart": 1060,
+      "ucuzOgun": 170,
+      "ortaRestoran": 1000,
+      "kahve": 50,
+      "bira": 80,
+      "sut": 17,
+      "ekmek": 38,
+      "yumurta12": 51,
+      "tavukKg": 130,
+      "elmaKg": 34,
+      "maas": 36200
+    },
+    "skor": {
+      "is": 98,
+      "ogrenci": 90,
+      "doga": 68,
+      "ulasim": 100
+    }
+  },
+  {
+    "id": "uppsala",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Uppsala County (Uppsala)",
+      "fi": "Uppsala County (Uppsala)",
+      "sv": "Uppsala län (Uppsala)",
+      "no": "Uppsala län (Uppsala)",
+      "da": "Uppsala län (Uppsala)"
+    },
+    "blurb": {
+      "en": "University city 40 minutes from Stockholm: strong research, slightly softer rents.",
+      "fi": "Yliopistokaupunki 40 minuuttia Tukholmasta: vahva tutkimus, hieman pehmeämmät vuokrat.",
+      "sv": "Universitetsstad 40 minuter från Stockholm: stark forskning, något mjukare hyror.",
+      "no": "Universitetsby 40 minutter fra Stockholm: sterk forskning, noe mykere leier.",
+      "da": "Universitetsby 40 minutter fra Stockholm: stærk forskning, lidt blødere leje."
+    },
+    "tags": {
+      "en": [
+        "🎓 University",
+        "🚂 Near capital"
+      ],
+      "fi": [
+        "🎓 Yliopisto",
+        "🚂 Lähellä pääkaupunkia"
+      ],
+      "sv": [
+        "🎓 Universitet",
+        "🚂 Nära huvudstaden"
+      ],
+      "no": [
+        "🎓 Universitet",
+        "🚂 Nær hovedstaden"
+      ],
+      "da": [
+        "🎓 Universitet",
+        "🚂 Tæt på hovedstaden"
+      ]
+    },
+    "geo": "Uppsala län",
+    "fi": "Uppsala",
+    "center": [
+      59.86,
+      17.64
+    ],
+    "cities": [
+      "Uppsala",
+      "Enköping"
+    ],
+    "cost": {
+      "kira1": 10150,
+      "market": 4670,
+      "fatura": 2220,
+      "aylikKart": 1150,
+      "maas": 32210
+    },
+    "skor": {
+      "is": 78,
+      "ogrenci": 95,
+      "doga": 72,
+      "ulasim": 85
+    }
+  },
+  {
+    "id": "sodermanland",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Södermanland (Nyköping)",
+      "fi": "Södermanland (Nyköping)",
+      "sv": "Södermanlands län (Nyköping)",
+      "no": "Södermanlands län (Nyköping)",
+      "da": "Södermanlands län (Nyköping)"
+    },
+    "blurb": {
+      "en": "Commuter county south of Stockholm: small-town prices, capital within reach.",
+      "fi": "Tukholman eteläpuolinen pendelöintialue: pikkukaupunkien hinnat, pääkaupunki ulottuvilla.",
+      "sv": "Pendlingslän söder om Stockholm: småstadspriser, huvudstaden inom räckhåll.",
+      "no": "Pendlerfylke sør for Stockholm: småbypriser, hovedstaden innen rekkevidde.",
+      "da": "Pendleramt syd for Stockholm: småbypriser, hovedstaden inden for rækkevidde."
+    },
+    "tags": {
+      "en": [
+        "🚂 Commuters",
+        "🌲 Affordable"
+      ],
+      "fi": [
+        "🚂 Pendelöinti",
+        "🌲 Edullinen"
+      ],
+      "sv": [
+        "🚂 Pendling",
+        "🌲 Prisvärt"
+      ],
+      "no": [
+        "🚂 Pendling",
+        "🌲 Rimelig"
+      ],
+      "da": [
+        "🚂 Pendling",
+        "🌲 Billig"
+      ]
+    },
+    "geo": "Södermanlands län",
+    "fi": "Södermanland",
+    "center": [
+      59,
+      16.6
+    ],
+    "cities": [
+      "Nyköping",
+      "Eskilstuna"
+    ],
+    "cost": {
+      "kira1": 8200,
+      "aylikKart": 710,
+      "maas": 29990
+    },
+    "skor": {
+      "is": 64,
+      "ogrenci": 60,
+      "doga": 80,
+      "ulasim": 74
+    }
+  },
+  {
+    "id": "ostergotland",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Östergötland (Linköping)",
+      "fi": "Östergötland (Linköping)",
+      "sv": "Östergötlands län (Linköping)",
+      "no": "Östergötlands län (Linköping)",
+      "da": "Östergötlands län (Linköping)"
+    },
+    "blurb": {
+      "en": "Tech and aviation hub Linköping plus industrial Norrköping: balanced east-coast living.",
+      "fi": "Teknologia- ja ilmailukeskus Linköping sekä teollinen Norrköping: tasapainoista itärannikon elämää.",
+      "sv": "Teknik- och flyghubb Linköping plus industriella Norrköping: balanserat ostkustsliv.",
+      "no": "Teknologi- og luftfartshub Linköping pluss industrielle Norrköping: balansert østkystliv.",
+      "da": "Teknologi- og luftfartshub Linköping plus industrielle Norrköping: balanceret østkystliv."
+    },
+    "tags": {
+      "en": [
+        "✈️ Aviation",
+        "🏭 Industry"
+      ],
+      "fi": [
+        "✈️ Ilmailu",
+        "🏭 Teollisuus"
+      ],
+      "sv": [
+        "✈️ Flyg",
+        "🏭 Industri"
+      ],
+      "no": [
+        "✈️ Luftfart",
+        "🏭 Industri"
+      ],
+      "da": [
+        "✈️ Luftfart",
+        "🏭 Industri"
+      ]
+    },
+    "geo": "Östergötlands län",
+    "fi": "Östergötland",
+    "center": [
+      58.4,
+      15.6
+    ],
+    "cities": [
+      "Linköping",
+      "Norrköping"
+    ],
+    "cost": {
+      "kira1": 8250,
+      "aylikKart": 795,
+      "maas": 30550
+    },
+    "skor": {
+      "is": 74,
+      "ogrenci": 80,
+      "doga": 76,
+      "ulasim": 78
+    }
+  },
+  {
+    "id": "jonkoping",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Jönköping County (Jönköping)",
+      "fi": "Jönköping County (Jönköping)",
+      "sv": "Jönköpings län (Jönköping)",
+      "no": "Jönköpings län (Jönköping)",
+      "da": "Jönköpings län (Jönköping)"
+    },
+    "blurb": {
+      "en": "Lakeside trade city in Småland: entrepreneurial spirit, family-friendly costs.",
+      "fi": "Järvenrantakaupan kaupunki Smålandissa: yrittäjähenkeä, perheystävälliset kulut.",
+      "sv": "Sjöhandelsstad i Småland: entreprenörsanda, familjevänliga kostnader.",
+      "no": "Innsjøhandelsby i Småland: entreprenørånd, familievennlige kostnader.",
+      "da": "Søhandelsby i Småland: iværksætterånd, familievenlige omkostninger."
+    },
+    "tags": {
+      "en": [
+        "🏭 Trade",
+        "👨‍👩‍👧 Family"
+      ],
+      "fi": [
+        "🏭 Kauppa",
+        "👨‍👩‍👧 Perhe"
+      ],
+      "sv": [
+        "🏭 Handel",
+        "👨‍👩‍👧 Familj"
+      ],
+      "no": [
+        "🏭 Handel",
+        "👨‍👩‍👧 Familie"
+      ],
+      "da": [
+        "🏭 Handel",
+        "👨‍👩‍👧 Familie"
+      ]
+    },
+    "geo": "Jönköpings län",
+    "fi": "Jönköping",
+    "center": [
+      57.8,
+      14.2
+    ],
+    "cities": [
+      "Jönköping",
+      "Värnamo"
+    ],
+    "cost": {
+      "kira1": 7350,
+      "aylikKart": 840,
+      "maas": 29990
+    },
+    "skor": {
+      "is": 70,
+      "ogrenci": 66,
+      "doga": 82,
+      "ulasim": 68
+    }
+  },
+  {
+    "id": "kronoberg",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Kronoberg (Växjö)",
+      "fi": "Kronoberg (Växjö)",
+      "sv": "Kronobergs län (Växjö)",
+      "no": "Kronobergs län (Växjö)",
+      "da": "Kronobergs län (Växjö)"
+    },
+    "blurb": {
+      "en": "Forest county around Växjö, Sweden's self-proclaimed greenest city.",
+      "fi": "Metsäalue Växjön ympärillä, Ruotsin itsejulistettu vihrein kaupunki.",
+      "sv": "Skogslän kring Växjö, Sveriges självutnämnda grönaste stad.",
+      "no": "Skogfylke rundt Växjö, Sveriges selverklærte grønneste by.",
+      "da": "Skovamt omkring Växjö, Sveriges selvudnævnte grønneste by."
+    },
+    "tags": {
+      "en": [
+        "🌲 Forest",
+        "♻️ Green"
+      ],
+      "fi": [
+        "🌲 Metsä",
+        "♻️ Vihreä"
+      ],
+      "sv": [
+        "🌲 Skog",
+        "♻️ Grön"
+      ],
+      "no": [
+        "🌲 Skog",
+        "♻️ Grønn"
+      ],
+      "da": [
+        "🌲 Skov",
+        "♻️ Grøn"
+      ]
+    },
+    "geo": "Kronobergs län",
+    "fi": "Kronoberg",
+    "center": [
+      56.9,
+      14.8
+    ],
+    "cities": [
+      "Växjö",
+      "Ljungby"
+    ],
+    "cost": {
+      "kira1": 7150,
+      "aylikKart": 840,
+      "maas": 29430
+    },
+    "skor": {
+      "is": 62,
+      "ogrenci": 70,
+      "doga": 88,
+      "ulasim": 62
+    }
+  },
+  {
+    "id": "kalmar",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Kalmar County (Kalmar)",
+      "fi": "Kalmar County (Kalmar)",
+      "sv": "Kalmar län (Kalmar)",
+      "no": "Kalmar län (Kalmar)",
+      "da": "Kalmar län (Kalmar)"
+    },
+    "blurb": {
+      "en": "Baltic coast with Öland bridge: summer towns, calm prices, castle views.",
+      "fi": "Itämeren rannikko Öölannin siltoineen: kesäkaupunkeja, rauhalliset hinnat, linna.",
+      "sv": "Östersjökust med Ölandsbron: sommarstäder, lugna priser, slottsvyer.",
+      "no": "Østersjøkyst med Ölandsbroen: sommerbyer, rolige priser, slottsutsikt.",
+      "da": "Østersøkyst med Ölandsbroen: sommerbyer, rolige priser, slotsudsigt."
+    },
+    "tags": {
+      "en": [
+        "🏰 Castle",
+        "🏖️ Coast"
+      ],
+      "fi": [
+        "🏰 Linna",
+        "🏖️ Rannikko"
+      ],
+      "sv": [
+        "🏰 Slott",
+        "🏖️ Kust"
+      ],
+      "no": [
+        "🏰 Slott",
+        "🏖️ Kyst"
+      ],
+      "da": [
+        "🏰 Slot",
+        "🏖️ Kyst"
+      ]
+    },
+    "geo": "Kalmar län",
+    "fi": "Kalmar",
+    "center": [
+      57,
+      16.3
+    ],
+    "cities": [
+      "Kalmar",
+      "Västervik"
+    ],
+    "cost": {
+      "kira1": 7050,
+      "aylikKart": 840,
+      "maas": 28880
+    },
+    "skor": {
+      "is": 58,
+      "ogrenci": 62,
+      "doga": 86,
+      "ulasim": 60
+    }
+  },
+  {
+    "id": "gotland",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Gotland (Visby)",
+      "fi": "Gotland (Visby)",
+      "sv": "Gotlands län (Visby)",
+      "no": "Gotlands län (Visby)",
+      "da": "Gotlands län (Visby)"
+    },
+    "blurb": {
+      "en": "Medieval island of Visby: UNESCO walls, peak summers, ferry lifeline.",
+      "fi": "Keskiaikainen Visbyn saari: Unescon muurit, huippukesät, lauttayhteys.",
+      "sv": "Medeltida Visby-ön: Unescomurar, högsommar, färjeförbindelse.",
+      "no": "Middelalderske Visby-øy: Unesco-murer, høysommer, ferjeforbindelse.",
+      "da": "Middelalderlige Visby-ø: Unesco-mure, højsommer, færgeforbindelse."
+    },
+    "tags": {
+      "en": [
+        "🏝️ Island",
+        "🏰 Medieval"
+      ],
+      "fi": [
+        "🏝️ Saari",
+        "🏰 Keskiaika"
+      ],
+      "sv": [
+        "🏝️ Ö",
+        "🏰 Medeltid"
+      ],
+      "no": [
+        "🏝️ Øy",
+        "🏰 Middelalder"
+      ],
+      "da": [
+        "🏝️ Ø",
+        "🏰 Middelalder"
+      ]
+    },
+    "geo": "Gotlands län",
+    "fi": "Gotland",
+    "center": [
+      57.6,
+      18.6
+    ],
+    "cities": [
+      "Visby"
+    ],
+    "cost": {
+      "kira1": 8250,
+      "market": 4780,
+      "fatura": 2220,
+      "aylikKart": 1010,
+      "maas": 28880
+    },
+    "skor": {
+      "is": 55,
+      "ogrenci": 58,
+      "doga": 90,
+      "ulasim": 55
+    }
+  },
+  {
+    "id": "blekinge",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Blekinge (Karlskrona)",
+      "fi": "Blekinge (Karlskrona)",
+      "sv": "Blekinge län (Karlskrona)",
+      "no": "Blekinge län (Karlskrona)",
+      "da": "Blekinge län (Karlskrona)"
+    },
+    "blurb": {
+      "en": "Naval city Karlskrona and archipelago: Sweden's garden, gentle costs.",
+      "fi": "Laivastokaupunki Karlskrona ja saaristo: Ruotsin puutarha, lempeät kulut.",
+      "sv": "Marinstaden Karlskrona och skärgård: Sveriges trädgård, milda kostnader.",
+      "no": "Marinebyen Karlskrona og skjærgård: Sveriges hage, milde kostnader.",
+      "da": "Flådebyen Karlskrona og skærgård: Sveriges have, milde omkostninger."
+    },
+    "tags": {
+      "en": [
+        "⚓ Naval base",
+        "🌳 Garden"
+      ],
+      "fi": [
+        "⚓ Laivasto",
+        "🌳 Puutarha"
+      ],
+      "sv": [
+        "⚓ Marinbas",
+        "🌳 Trädgård"
+      ],
+      "no": [
+        "⚓ Marinebase",
+        "🌳 Hage"
+      ],
+      "da": [
+        "⚓ Flådebase",
+        "🌳 Have"
+      ]
+    },
+    "geo": "Blekinge län",
+    "fi": "Blekinge",
+    "center": [
+      56.3,
+      15.3
+    ],
+    "cities": [
+      "Karlskrona",
+      "Karlshamn"
+    ],
+    "cost": {
+      "kira1": 7550,
+      "aylikKart": 840,
+      "maas": 28880
+    },
+    "skor": {
+      "is": 58,
+      "ogrenci": 60,
+      "doga": 84,
+      "ulasim": 60
+    }
+  },
+  {
+    "id": "skane",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Skåne (Malmö)",
+      "fi": "Skåne (Malmö)",
+      "sv": "Skåne län (Malmö)",
+      "no": "Skåne län (Malmö)",
+      "da": "Skåne län (Malmö)"
+    },
+    "blurb": {
+      "en": "Bridge to Copenhagen: Malmö's start-up buzz, Lund's university, milder winters.",
+      "fi": "Silta Kööpenhaminaan: Malmön startup-humu, Lundin yliopisto, leudommat talvet.",
+      "sv": "Bron till Köpenhamn: Malmös startup-surr, Lunds universitet, mildare vintrar.",
+      "no": "Broen til København: Malmøs oppstartsbrus, Lunds universitet, mildere vintre.",
+      "da": "Broen til København: Malmøs startup-susen, Lunds universitet, mildere vintre."
+    },
+    "tags": {
+      "en": [
+        "🌉 Øresund link",
+        "🎓 Lund"
+      ],
+      "fi": [
+        "🌉 Juutinrauman silta",
+        "🎓 Lund"
+      ],
+      "sv": [
+        "🌉 Öresundsförbindelsen",
+        "🎓 Lund"
+      ],
+      "no": [
+        "🌉 Øresundsforbindelsen",
+        "🎓 Lund"
+      ],
+      "da": [
+        "🌉 Øresundsforbindelsen",
+        "🎓 Lund"
+      ]
+    },
+    "geo": "Skåne län",
+    "fi": "Skåne",
+    "center": [
+      55.9,
+      13.5
+    ],
+    "cities": [
+      "Malmö",
+      "Lund",
+      "Helsingborg"
+    ],
+    "cost": {
+      "kira1": 10000,
+      "market": 4670,
+      "fatura": 2110,
+      "aylikKart": 655,
+      "maas": 31660
+    },
+    "skor": {
+      "is": 82,
+      "ogrenci": 90,
+      "doga": 72,
+      "ulasim": 88
+    }
+  },
+  {
+    "id": "halland",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Halland (Halmstad)",
+      "fi": "Halland (Halmstad)",
+      "sv": "Hallands län (Halmstad)",
+      "no": "Hallands län (Halmstad)",
+      "da": "Hallands län (Halmstad)"
+    },
+    "blurb": {
+      "en": "West-coast beaches between Gothenburg and Malmö: surf, spas and commuters.",
+      "fi": "Länsirannikon rannat Göteborgin ja Malmön välissä: surffia, kylpylöitä ja pendelöijiä.",
+      "sv": "Västkuststränder mellan Göteborg och Malmö: surf, spa och pendlare.",
+      "no": "Vestkyststrender mellom Gøteborg og Malmø: surf, spa og pendlere.",
+      "da": "Vestkyststrande mellem Göteborg og Malmø: surf, spa og pendlere."
+    },
+    "tags": {
+      "en": [
+        "🏄 Surf",
+        "🏖️ Beaches"
+      ],
+      "fi": [
+        "🏄 Surffaus",
+        "🏖️ Rannat"
+      ],
+      "sv": [
+        "🏄 Surf",
+        "🏖️ Stränder"
+      ],
+      "no": [
+        "🏄 Surf",
+        "🏖️ Strender"
+      ],
+      "da": [
+        "🏄 Surf",
+        "🏖️ Strande"
+      ]
+    },
+    "geo": "Hallands län",
+    "fi": "Halland",
+    "center": [
+      56.9,
+      12.7
+    ],
+    "cities": [
+      "Halmstad",
+      "Varberg"
+    ],
+    "cost": {
+      "kira1": 8250,
+      "aylikKart": 840,
+      "maas": 30550
+    },
+    "skor": {
+      "is": 66,
+      "ogrenci": 62,
+      "doga": 84,
+      "ulasim": 72
+    }
+  },
+  {
+    "id": "vastragotaland",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Västra Götaland (Gothenburg)",
+      "fi": "Västra Götaland (Gothenburg)",
+      "sv": "Västra Götalands län (Göteborg)",
+      "no": "Västra Götalands län (Göteborg)",
+      "da": "Västra Götalands län (Göteborg)"
+    },
+    "blurb": {
+      "en": "Gothenburg's docks, Volvo and music scene: Sweden's friendly second city.",
+      "fi": "Göteborgin telakat, Volvo ja musiikkiskenet: Ruotsin ystävällinen kakkoskaupunki.",
+      "sv": "Göteborgs hamnar, Volvo och musikscen: Sveriges vänliga andrastad.",
+      "no": "Gøteborgs havner, Volvo og musikkscene: Sveriges vennlige andreby.",
+      "da": "Göteborgs havne, Volvo og musikscene: Sveriges venlige andEN by."
+    },
+    "tags": {
+      "en": [
+        "⚓ Port",
+        "🚗 Volvo"
+      ],
+      "fi": [
+        "⚓ Satama",
+        "🚗 Volvo"
+      ],
+      "sv": [
+        "⚓ Hamn",
+        "🚗 Volvo"
+      ],
+      "no": [
+        "⚓ Havn",
+        "🚗 Volvo"
+      ],
+      "da": [
+        "⚓ Havn",
+        "🚗 Volvo"
+      ]
+    },
+    "geo": "Västra Götalands län",
+    "fi": "Västra Götaland",
+    "center": [
+      58,
+      12.5
+    ],
+    "cities": [
+      "Gothenburg",
+      "Borås",
+      "Trollhättan"
+    ],
+    "cost": {
+      "kira1": 8650,
+      "market": 4780,
+      "fatura": 2170,
+      "aylikKart": 890,
+      "maas": 32210
+    },
+    "skor": {
+      "is": 86,
+      "ogrenci": 88,
+      "doga": 78,
+      "ulasim": 90
+    }
+  },
+  {
+    "id": "varmland",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Värmland (Karlstad)",
+      "fi": "Värmland (Karlstad)",
+      "sv": "Värmlands län (Karlstad)",
+      "no": "Värmlands län (Karlstad)",
+      "da": "Värmlands län (Karlstad)"
+    },
+    "blurb": {
+      "en": "Lake Vänern shores and deep forests: paper industry, rally roads, calm life.",
+      "fi": "Vänern-järven rannat ja syvät metsät: paperiteollisuutta, ralliteitä, rauhallista elämää.",
+      "sv": "Vänerns stränder och djupa skogar: pappersindustri, rallyvägar, lugnt liv.",
+      "no": "Vänerns strender og dype skoger: papirindustri, rallyveier, rolig tilværelse.",
+      "da": "Vänerns bredder og dybe skove: papirindustri, rallyveje, roligt liv."
+    },
+    "tags": {
+      "en": [
+        "🌲 Forest",
+        "🏁 Rally"
+      ],
+      "fi": [
+        "🌲 Metsä",
+        "🏁 Ralli"
+      ],
+      "sv": [
+        "🌲 Skog",
+        "🏁 Rally"
+      ],
+      "no": [
+        "🌲 Skog",
+        "🏁 Rally"
+      ],
+      "da": [
+        "🌲 Skov",
+        "🏁 Rally"
+      ]
+    },
+    "geo": "Värmlands län",
+    "fi": "Värmland",
+    "center": [
+      59.7,
+      13.2
+    ],
+    "cities": [
+      "Karlstad",
+      "Arvika"
+    ],
+    "cost": {
+      "kira1": 7250,
+      "aylikKart": 840,
+      "maas": 29430
+    },
+    "skor": {
+      "is": 62,
+      "ogrenci": 64,
+      "doga": 90,
+      "ulasim": 62
+    }
+  },
+  {
+    "id": "orebro",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Örebro County (Örebro)",
+      "fi": "Örebro County (Örebro)",
+      "sv": "Örebro län (Örebro)",
+      "no": "Örebro län (Örebro)",
+      "da": "Örebro län (Örebro)"
+    },
+    "blurb": {
+      "en": "Central logistics hub with a castle: halfway everywhere in southern Sweden.",
+      "fi": "Keskeinen logistiikkakeskus linnoineen: puolivälissä kaikkialla Etelä-Ruotsissa.",
+      "sv": "Central logistikhubb med slott: halvvägs överallt i södra Sverige.",
+      "no": "Sentralt logistikk-knutepunkt med slott: halvveis overalt i Sør-Sverige.",
+      "da": "Centralt logistikknudepunkt med slot: halvvejs overalt i Sydsverige."
+    },
+    "tags": {
+      "en": [
+        "🏰 Castle",
+        "📦 Logistics"
+      ],
+      "fi": [
+        "🏰 Linna",
+        "📦 Logistiikka"
+      ],
+      "sv": [
+        "🏰 Slott",
+        "📦 Logistik"
+      ],
+      "no": [
+        "🏰 Slott",
+        "📦 Logistikk"
+      ],
+      "da": [
+        "🏰 Slot",
+        "📦 Logistik"
+      ]
+    },
+    "geo": "Örebro län",
+    "fi": "Örebro",
+    "center": [
+      59.3,
+      15.2
+    ],
+    "cities": [
+      "Örebro",
+      "Karlskoga"
+    ],
+    "cost": {
+      "kira1": 8000,
+      "aylikKart": 840,
+      "maas": 29990
+    },
+    "skor": {
+      "is": 68,
+      "ogrenci": 70,
+      "doga": 76,
+      "ulasim": 76
+    }
+  },
+  {
+    "id": "vastmanland",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Västmanland (Västerås)",
+      "fi": "Västmanland (Västerås)",
+      "sv": "Västmanlands län (Västerås)",
+      "no": "Västmanlands län (Västerås)",
+      "da": "Västmanlands län (Västerås)"
+    },
+    "blurb": {
+      "en": "Industrial Västerås on Lake Mälaren: ABB roots, Stockholm commuter belt.",
+      "fi": "Teollinen Västerås Mälaren-järvellä: ABB-juuret, Tukholman pendelöintivyöhyke.",
+      "sv": "Industriella Västerås vid Mälaren: ABB-rötter, Stockholmspendling.",
+      "no": "Industrielle Västerås ved Mälaren: ABB-røtter, Stockholm-pendling.",
+      "da": "Industrielle Västerås ved Mälaren: ABB-rødder, Stockholm-pendling."
+    },
+    "tags": {
+      "en": [
+        "⚡ Industry",
+        "🚂 Commuters"
+      ],
+      "fi": [
+        "⚡ Teollisuus",
+        "🚂 Pendelöinti"
+      ],
+      "sv": [
+        "⚡ Industri",
+        "🚂 Pendling"
+      ],
+      "no": [
+        "⚡ Industri",
+        "🚂 Pendling"
+      ],
+      "da": [
+        "⚡ Industri",
+        "🚂 Pendling"
+      ]
+    },
+    "geo": "Västmanlands län",
+    "fi": "Västmanland",
+    "center": [
+      59.6,
+      16.5
+    ],
+    "cities": [
+      "Västerås",
+      "Köping"
+    ],
+    "cost": {
+      "kira1": 7950,
+      "aylikKart": 840,
+      "maas": 30550
+    },
+    "skor": {
+      "is": 70,
+      "ogrenci": 64,
+      "doga": 72,
+      "ulasim": 76
+    }
+  },
+  {
+    "id": "dalarna",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Dalarna (Falun)",
+      "fi": "Dalarna (Falun)",
+      "sv": "Dalarnas län (Falun)",
+      "no": "Dalarnas län (Falun)",
+      "da": "Dalarnas län (Falun)"
+    },
+    "blurb": {
+      "en": "Red cottages, Dala horses and copper mine: the postcard image of Sweden.",
+      "fi": "Punaiset mökit, dalahevoset ja kuparikaivos: Ruotsin postikorttikuva.",
+      "sv": "Röda stugor, dalahästar och koppargruva: vykortsbilden av Sverige.",
+      "no": "Røde hytter, dalahester og kobbergruve: postkortbildet av Sverige.",
+      "da": "Røde hytter, dalaheste og kobbermine: postkortbilledet af Sverige."
+    },
+    "tags": {
+      "en": [
+        "🐴 Dala horse",
+        "⛏️ Heritage"
+      ],
+      "fi": [
+        "🐴 Dalahevonen",
+        "⛏️ Perintö"
+      ],
+      "sv": [
+        "🐴 Dalahäst",
+        "⛏️ Kulturarv"
+      ],
+      "no": [
+        "🐴 Dalahest",
+        "⛏️ Kulturarv"
+      ],
+      "da": [
+        "🐴 Dalahest",
+        "⛏️ Kulturarv"
+      ]
+    },
+    "geo": "Dalarnas län",
+    "fi": "Dalarna",
+    "center": [
+      60.9,
+      14.5
+    ],
+    "cities": [
+      "Falun",
+      "Borlänge"
+    ],
+    "cost": {
+      "kira1": 7250,
+      "fatura": 2330,
+      "aylikKart": 840,
+      "maas": 29430
+    },
+    "skor": {
+      "is": 58,
+      "ogrenci": 60,
+      "doga": 94,
+      "ulasim": 58
+    }
+  },
+  {
+    "id": "gavleborg",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Gävleborg (Gävle)",
+      "fi": "Gävleborg (Gävle)",
+      "sv": "Gävleborgs län (Gävle)",
+      "no": "Gävleborgs län (Gävle)",
+      "da": "Gävleborgs län (Gävle)"
+    },
+    "blurb": {
+      "en": "Coastal Gävle of the Christmas goat fame: affordable gateway to the north.",
+      "fi": "Rannikon Gävle joulupukkeineen: edullinen portti pohjoiseen.",
+      "sv": "Kuststaden Gävle med julbocken: prisvärd port till norr.",
+      "no": "Kystbyen Gävle med julebukken: rimelig port mot nord.",
+      "da": "Kystbyen Gävle med julebukken: prisbillig port mod nord."
+    },
+    "tags": {
+      "en": [
+        "🐐 Yule goat",
+        "🌊 Coast"
+      ],
+      "fi": [
+        "🐐 Joulupukki",
+        "🌊 Rannikko"
+      ],
+      "sv": [
+        "🐐 Julbock",
+        "🌊 Kust"
+      ],
+      "no": [
+        "🐐 Julebukk",
+        "🌊 Kyst"
+      ],
+      "da": [
+        "🐐 Julebuk",
+        "🌊 Kyst"
+      ]
+    },
+    "geo": "Gävleborgs län",
+    "fi": "Gävleborg",
+    "center": [
+      61.3,
+      16.5
+    ],
+    "cities": [
+      "Gävle",
+      "Hudiksvall"
+    ],
+    "cost": {
+      "kira1": 7350,
+      "aylikKart": 714,
+      "maas": 29430
+    },
+    "skor": {
+      "is": 60,
+      "ogrenci": 62,
+      "doga": 86,
+      "ulasim": 62
+    }
+  },
+  {
+    "id": "vasternorrland",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Västernorrland (Sundsvall)",
+      "fi": "Västernorrland (Sundsvall)",
+      "sv": "Västernorrlands län (Sundsvall)",
+      "no": "Västernorrlands län (Sundsvall)",
+      "da": "Västernorrlands län (Sundsvall)"
+    },
+    "blurb": {
+      "en": "High Coast world heritage and Sundsvall's stone city: north begins here.",
+      "fi": "Korkean rannikon maailmanperintö ja Sundsvallin kivikaupunki: pohjoinen alkaa tästä.",
+      "sv": "Höga kusten-världsarv och Sundsvalls stenstad: norr börjar här.",
+      "no": "Høykysten-verdensarv og Sundsvalls steinby: nord begynner her.",
+      "da": "Højkysten-verdensarv og Sundsvalls stenby: nord begynder her."
+    },
+    "tags": {
+      "en": [
+        "⛰️ High Coast",
+        "🏭 Paper"
+      ],
+      "fi": [
+        "⛰️ Korkea rannikko",
+        "🏭 Paperi"
+      ],
+      "sv": [
+        "⛰️ Höga kusten",
+        "🏭 Papper"
+      ],
+      "no": [
+        "⛰️ Høykysten",
+        "🏭 Papir"
+      ],
+      "da": [
+        "⛰️ Højkysten",
+        "🏭 Papir"
+      ]
+    },
+    "geo": "Västernorrlands län",
+    "fi": "Västernorrland",
+    "center": [
+      62.7,
+      17.3
+    ],
+    "cities": [
+      "Sundsvall",
+      "Örnsköldsvik"
+    ],
+    "cost": {
+      "kira1": 7450,
+      "fatura": 2390,
+      "aylikKart": 840,
+      "maas": 29430
+    },
+    "skor": {
+      "is": 60,
+      "ogrenci": 62,
+      "doga": 92,
+      "ulasim": 58
+    }
+  },
+  {
+    "id": "jamtland",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Jämtland (Östersund)",
+      "fi": "Jämtland (Östersund)",
+      "sv": "Jämtlands län (Östersund)",
+      "no": "Jämtlands län (Östersund)",
+      "da": "Jämtlands län (Östersund)"
+    },
+    "blurb": {
+      "en": "Mountain county of Åre ski resort: wilderness living, long winters.",
+      "fi": "Åren hiihtokeskuksen vuoristoalue: erämaaelämää, pitkät talvet.",
+      "sv": "Fjällänet med skidorten Åre: vildmarksliv, långa vintrar.",
+      "no": "Fjellfylket med skistedet Åre: villmarksliv, lange vintre.",
+      "da": "Fjeldamtet med skisportsstedet Åre: vildmarksliv, lange vintre."
+    },
+    "tags": {
+      "en": [
+        "🎿 Åre skiing",
+        "🏔️ Mountains"
+      ],
+      "fi": [
+        "🎿 Åren hiihto",
+        "🏔️ Vuoret"
+      ],
+      "sv": [
+        "🎿 Åre-skidor",
+        "🏔️ Fjäll"
+      ],
+      "no": [
+        "🎿 Åre-ski",
+        "🏔️ Fjell"
+      ],
+      "da": [
+        "🎿 Åre-ski",
+        "🏔️ Fjeld"
+      ]
+    },
+    "geo": "Jämtlands län",
+    "fi": "Jämtland",
+    "center": [
+      63.2,
+      14.3
+    ],
+    "cities": [
+      "Östersund",
+      "Åre"
+    ],
+    "cost": {
+      "kira1": 6950,
+      "fatura": 2440,
+      "aylikKart": 840,
+      "maas": 28880
+    },
+    "skor": {
+      "is": 55,
+      "ogrenci": 58,
+      "doga": 98,
+      "ulasim": 52
+    }
+  },
+  {
+    "id": "vasterbotten",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Västerbotten (Umeå)",
+      "fi": "Västerbotten (Umeå)",
+      "sv": "Västerbottens län (Umeå)",
+      "no": "Västerbottens län (Umeå)",
+      "da": "Västerbottens län (Umeå)"
+    },
+    "blurb": {
+      "en": "Umeå's student buzz and green battery plants: the north's growth engine.",
+      "fi": "Uumajan opiskelijahumu ja vihreät akkutehtaat: pohjoisen kasvumoottori.",
+      "sv": "Umeås studentsurr och gröna batterifabriker: norrlands tillväxtmotor.",
+      "no": "Umeås studentsus og grønne batterifabrikker: nordlands vekstmotor.",
+      "da": "Umeås studentsusen og grønne batterifabrikker: norrlands vækstmotor."
+    },
+    "tags": {
+      "en": [
+        "🎓 Students",
+        "🔋 Batteries"
+      ],
+      "fi": [
+        "🎓 Opiskelijat",
+        "🔋 Akut"
+      ],
+      "sv": [
+        "🎓 Studenter",
+        "🔋 Batterier"
+      ],
+      "no": [
+        "🎓 Studenter",
+        "🔋 Batterier"
+      ],
+      "da": [
+        "🎓 Studerende",
+        "🔋 Batterier"
+      ]
+    },
+    "geo": "Västerbottens län",
+    "fi": "Västerbotten",
+    "center": [
+      64.6,
+      17.5
+    ],
+    "cities": [
+      "Umeå",
+      "Skellefteå"
+    ],
+    "cost": {
+      "kira1": 7350,
+      "fatura": 2390,
+      "aylikKart": 840,
+      "maas": 29990
+    },
+    "skor": {
+      "is": 68,
+      "ogrenci": 85,
+      "doga": 94,
+      "ulasim": 60
+    }
+  },
+  {
+    "id": "norrbotten",
+    "country": "SE",
+    "currency": "SEK",
+    "name": {
+      "en": "Norrbotten (Luleå)",
+      "fi": "Norrbotten (Luleå)",
+      "sv": "Norrbottens län (Luleå)",
+      "no": "Norrbottens län (Luleå)",
+      "da": "Norrbottens län (Luleå)"
+    },
+    "blurb": {
+      "en": "Arctic county of Kiruna mines and ice hotel: midnight sun, northern lights.",
+      "fi": "Arktinen alue Kiirunan kaivoksineen ja jäähotelleineen: keskiyön aurinko, revontulet.",
+      "sv": "Arktiskt län med Kirunas gruvor och ishotell: midnattssol, norrsken.",
+      "no": "Arktisk fylke med Kirunas gruver og ishotell: midnattssol, nordlys.",
+      "da": "Arktisk amt med Kirunas miner og ishotel: midnatssol, nordlys."
+    },
+    "tags": {
+      "en": [
+        "🌌 Northern lights",
+        "⛏️ Mining"
+      ],
+      "fi": [
+        "🌌 Revontulet",
+        "⛏️ Kaivostoiminta"
+      ],
+      "sv": [
+        "🌌 Norrsken",
+        "⛏️ Gruvor"
+      ],
+      "no": [
+        "🌌 Nordlys",
+        "⛏️ Gruver"
+      ],
+      "da": [
+        "🌌 Nordlys",
+        "⛏️ Miner"
+      ]
+    },
+    "geo": "Norrbottens län",
+    "fi": "Norrbotten",
+    "center": [
+      66.9,
+      20.5
+    ],
+    "cities": [
+      "Luleå",
+      "Kiruna"
+    ],
+    "cost": {
+      "kira1": 7000,
+      "fatura": 2500,
+      "aylikKart": 840,
+      "maas": 30550
+    },
+    "skor": {
+      "is": 62,
+      "ogrenci": 65,
+      "doga": 99,
+      "ulasim": 55
+    }
+  },
+  {
+    "id": "oslo",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Oslo (Oslo)",
+      "fi": "Oslo (Oslo)",
+      "sv": "Oslo (Oslo)",
+      "no": "Oslo (Oslo)",
+      "da": "Oslo (Oslo)"
+    },
+    "blurb": {
+      "en": "Fjord-side capital: Norway's highest pay, priciest homes, oil-wealth polish.",
+      "fi": "Vuonon pääkaupunki: Norjan korkeimmat palkat, kalleimmat kodit, öljyvarallisuuden kiilto.",
+      "sv": "Fjordhuvudstad: Norges högsta löner, dyraste bostäder, oljerikedomens glans.",
+      "no": "Fjordhovedstad: Norges høyeste lønninger, dyreste boliger, oljerikdommens glans.",
+      "da": "Fjordhovedstad: Norges højeste lønninger, dyreste boliger, olierigdommens glans."
+    },
+    "tags": {
+      "en": [
+        "💼 Capital",
+        "⛽ Oil wealth"
+      ],
+      "fi": [
+        "💼 Pääkaupunki",
+        "⛽ Öljyvarallisuus"
+      ],
+      "sv": [
+        "💼 Huvudstad",
+        "⛽ Oljerikedom"
+      ],
+      "no": [
+        "💼 Hovedstad",
+        "⛽ Oljerikdom"
+      ],
+      "da": [
+        "💼 Hovedstad",
+        "⛽ Olierigdom"
+      ]
+    },
+    "geo": "Oslo",
+    "fi": "Oslo",
+    "center": [
+      59.91,
+      10.75
+    ],
+    "cities": [
+      "Oslo"
+    ],
+    "cost": {
+      "kira1": 19000,
+      "kira1d": 15580,
+      "kira3": 30140,
+      "market": 5390,
+      "fatura": 2700,
+      "bilet": 45,
+      "aylikKart": 495,
+      "ucuzOgun": 210,
+      "ortaRestoran": 1200,
+      "kahve": 56,
+      "bira": 110,
+      "sut": 24,
+      "ekmek": 41,
+      "yumurta12": 58,
+      "tavukKg": 150,
+      "elmaKg": 32,
+      "maas": 46730
+    },
+    "skor": {
+      "is": 97,
+      "ogrenci": 88,
+      "doga": 80,
+      "ulasim": 98
+    }
+  },
+  {
+    "id": "akershus",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Akershus (Lillestrøm)",
+      "fi": "Akershus (Lillestrøm)",
+      "sv": "Akershus (Lillestrøm)",
+      "no": "Akershus (Lillestrøm)",
+      "da": "Akershus (Lillestrøm)"
+    },
+    "blurb": {
+      "en": "Oslo's commuter belt: family houses, fast trains, fjord suburbs.",
+      "fi": "Oslon pendelöintivyöhyke: omakotitaloja, nopeita junia, vuonolähiöitä.",
+      "sv": "Oslos pendlingsbälte: villor, snabbtåg, fjordförorter.",
+      "no": "Oslos pendlerbelte: eneboliger, hurtigtog, fjordforsteder.",
+      "da": "Oslos pendlerbælte: villaer, hurtigtoge, fjordforstæder."
+    },
+    "tags": {
+      "en": [
+        "🚂 Commuters",
+        "🏠 Houses"
+      ],
+      "fi": [
+        "🚂 Pendelöinti",
+        "🏠 Talot"
+      ],
+      "sv": [
+        "🚂 Pendling",
+        "🏠 Villor"
+      ],
+      "no": [
+        "🚂 Pendling",
+        "🏠 Eneboliger"
+      ],
+      "da": [
+        "🚂 Pendling",
+        "🏠 Villaer"
+      ]
+    },
+    "geo": "Akershus",
+    "fi": "Akershus",
+    "center": [
+      59.95,
+      11
+    ],
+    "cities": [
+      "Lillestrøm",
+      "Ski"
+    ],
+    "cost": {
+      "kira1": 15600,
+      "market": 5180,
+      "fatura": 2700,
+      "maas": 43330
+    },
+    "skor": {
+      "is": 80,
+      "ogrenci": 70,
+      "doga": 78,
+      "ulasim": 88
+    }
+  },
+  {
+    "id": "ostfold",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Østfold (Fredrikstad)",
+      "fi": "Østfold (Fredrikstad)",
+      "sv": "Østfold (Fredrikstad)",
+      "no": "Østfold (Fredrikstad)",
+      "da": "Østfold (Fredrikstad)"
+    },
+    "blurb": {
+      "en": "Swedish-border county of fortresses and coast: affordable Oslo access.",
+      "fi": "Ruotsin rajan linnoitus- ja rannikkoalue: edullinen yhteys Osloon.",
+      "sv": "Gränslän mot Sverige med fästningar och kust: prisvärd Oslo-närhet.",
+      "no": "Svenskegrensefylke med festninger og kyst: rimelig Oslo-nærhet.",
+      "da": "Svenskegrænseamt med fæstninger og kyst: prisbillig Oslo-nærhed."
+    },
+    "tags": {
+      "en": [
+        "🏰 Fortresses",
+        "🇸🇪 Border"
+      ],
+      "fi": [
+        "🏰 Linnoitukset",
+        "🇸🇪 Raja"
+      ],
+      "sv": [
+        "🏰 Fästningar",
+        "🇸🇪 Gräns"
+      ],
+      "no": [
+        "🏰 Festninger",
+        "🇸🇪 Grense"
+      ],
+      "da": [
+        "🏰 Fæstninger",
+        "🇸🇪 Grænse"
+      ]
+    },
+    "geo": "Østfold",
+    "fi": "Østfold",
+    "center": [
+      59.3,
+      11.1
+    ],
+    "cities": [
+      "Fredrikstad",
+      "Sarpsborg"
+    ],
+    "cost": {
+      "kira1": 12400,
+      "market": 4860,
+      "fatura": 2650,
+      "maas": 38050
+    },
+    "skor": {
+      "is": 66,
+      "ogrenci": 62,
+      "doga": 80,
+      "ulasim": 70
+    }
+  },
+  {
+    "id": "buskerud",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Buskerud (Drammen)",
+      "fi": "Buskerud (Drammen)",
+      "sv": "Buskerud (Drammen)",
+      "no": "Buskerud (Drammen)",
+      "da": "Buskerud (Drammen)"
+    },
+    "blurb": {
+      "en": "Drammen fjord city plus mountain valleys: half the Oslo rent, same jobs.",
+      "fi": "Drammenin vuonokaupunki ja vuoristolaaksot: puolet Oslon vuokrasta, samat työt.",
+      "sv": "Drammens fjordstad plus dalar: halva Oslo-hyran, samma jobb.",
+      "no": "Drammens fjordby pluss fjelldaler: halve Oslo-leien, samme jobber.",
+      "da": "Drammens fjordby plus bjergdale: halve Oslo-lejen, samme job."
+    },
+    "tags": {
+      "en": [
+        "🏔️ Valleys",
+        "🚂 Near Oslo"
+      ],
+      "fi": [
+        "🏔️ Laaksot",
+        "🚂 Lähellä Osloa"
+      ],
+      "sv": [
+        "🏔️ Dalar",
+        "🚂 Nära Oslo"
+      ],
+      "no": [
+        "🏔️ Daler",
+        "🚂 Nær Oslo"
+      ],
+      "da": [
+        "🏔️ Dale",
+        "🚂 Tæt på Oslo"
+      ]
+    },
+    "geo": "Buskerud",
+    "fi": "Buskerud",
+    "center": [
+      60,
+      9.5
+    ],
+    "cities": [
+      "Drammen",
+      "Kongsberg"
+    ],
+    "cost": {
+      "kira1": 12900,
+      "maas": 39110
+    },
+    "skor": {
+      "is": 70,
+      "ogrenci": 64,
+      "doga": 88,
+      "ulasim": 76
+    }
+  },
+  {
+    "id": "innlandet",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Innlandet (Hamar)",
+      "fi": "Innlandet (Hamar)",
+      "sv": "Innlandet (Hamar)",
+      "no": "Innlandet (Hamar)",
+      "da": "Innlandet (Hamar)"
+    },
+    "blurb": {
+      "en": "Inland lakes and Olympic Lillehammer: Norway's cheapest mainland living.",
+      "fi": "Sisämaan järvet ja olympialaisten Lillehammer: Norjan halvinta mannermaata.",
+      "sv": "Insjöar och OS-Lillehammer: Norges billigaste fastland.",
+      "no": "Innlandssjøer og OL-Lillehammer: Norges billigste fastland.",
+      "da": "Indlandssøer og OL-Lillehammer: Norges billigste fastland."
+    },
+    "tags": {
+      "en": [
+        "🏅 Olympics",
+        "💰 Cheap"
+      ],
+      "fi": [
+        "🏅 Olympialaiset",
+        "💰 Halpa"
+      ],
+      "sv": [
+        "🏅 OS",
+        "💰 Billig"
+      ],
+      "no": [
+        "🏅 OL",
+        "💰 Billig"
+      ],
+      "da": [
+        "🏅 OL",
+        "💰 Billig"
+      ]
+    },
+    "geo": "Innlandet",
+    "fi": "Innlandet",
+    "center": [
+      61.5,
+      10
+    ],
+    "cities": [
+      "Hamar",
+      "Lillehammer"
+    ],
+    "cost": {
+      "kira1": 10850,
+      "market": 4860,
+      "fatura": 3100,
+      "maas": 35940
+    },
+    "skor": {
+      "is": 58,
+      "ogrenci": 62,
+      "doga": 94,
+      "ulasim": 58
+    }
+  },
+  {
+    "id": "vestfold",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Vestfold (Tønsberg)",
+      "fi": "Vestfold (Tønsberg)",
+      "sv": "Vestfold (Tønsberg)",
+      "no": "Vestfold (Tønsberg)",
+      "da": "Vestfold (Tønsberg)"
+    },
+    "blurb": {
+      "en": "Viking coast south of Oslo: whaling history, sunny summers, ferries.",
+      "fi": "Viikinkirannikko Oslon eteläpuolella: valaanpyyntihistoriaa, aurinkokesät, lauttoja.",
+      "sv": "Vikingakust söder om Oslo: valfångsthistoria, soliga somrar, färjor.",
+      "no": "Vikingkyst sør for Oslo: hvalfangsthistorie, solrike somre, ferjer.",
+      "da": "Vikingekyst syd for Oslo: hvalfangsthistorie, solrige somre, færger."
+    },
+    "tags": {
+      "en": [
+        "⚓ Vikings",
+        "☀️ Sunny"
+      ],
+      "fi": [
+        "⚓ Viikingit",
+        "☀️ Aurinkoinen"
+      ],
+      "sv": [
+        "⚓ Vikingar",
+        "☀️ Solig"
+      ],
+      "no": [
+        "⚓ Vikinger",
+        "☀️ Solrik"
+      ],
+      "da": [
+        "⚓ Vikinger",
+        "☀️ Solrig"
+      ]
+    },
+    "geo": "Vestfold",
+    "fi": "Vestfold",
+    "center": [
+      59.2,
+      10.3
+    ],
+    "cities": [
+      "Tønsberg",
+      "Sandefjord"
+    ],
+    "cost": {
+      "kira1": 12900,
+      "maas": 38580
+    },
+    "skor": {
+      "is": 68,
+      "ogrenci": 64,
+      "doga": 84,
+      "ulasim": 72
+    }
+  },
+  {
+    "id": "telemark",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Telemark (Skien)",
+      "fi": "Telemark (Skien)",
+      "sv": "Telemark (Skien)",
+      "no": "Telemark (Skien)",
+      "da": "Telemark (Skien)"
+    },
+    "blurb": {
+      "en": "Industrial waterways and Gaustatoppen peak: working county, low costs.",
+      "fi": "Teolliset vesireitit ja Gaustatoppen: työläisalue, matalat kulut.",
+      "sv": "Industrikanaler och Gaustatoppen: arbetslän, låga kostnader.",
+      "no": "Industrikanaler og Gaustatoppen: arbeidsfylke, lave kostnader.",
+      "da": "Industrikanaler og Gaustatoppen: arbejdsamt, lave omkostninger."
+    },
+    "tags": {
+      "en": [
+        "🏭 Industry",
+        "⛰️ Gausta"
+      ],
+      "fi": [
+        "🏭 Teollisuus",
+        "⛰️ Gausta"
+      ],
+      "sv": [
+        "🏭 Industri",
+        "⛰️ Gausta"
+      ],
+      "no": [
+        "🏭 Industri",
+        "⛏️ Gausta"
+      ],
+      "da": [
+        "🏭 Industri",
+        "⛰️ Gausta"
+      ]
+    },
+    "geo": "Telemark",
+    "fi": "Telemark",
+    "center": [
+      59.4,
+      8.8
+    ],
+    "cities": [
+      "Skien",
+      "Porsgrunn"
+    ],
+    "cost": {
+      "kira1": 11350,
+      "maas": 36990
+    },
+    "skor": {
+      "is": 64,
+      "ogrenci": 60,
+      "doga": 88,
+      "ulasim": 64
+    }
+  },
+  {
+    "id": "agder",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Agder (Kristiansand)",
+      "fi": "Agder (Kristiansand)",
+      "sv": "Agder (Kristiansand)",
+      "no": "Agder (Kristiansand)",
+      "da": "Agder (Kristiansand)"
+    },
+    "blurb": {
+      "en": "Norway's riviera around Kristiansand: most sun hours, summer crowds.",
+      "fi": "Norjan riviera Kristiansandin ympärillä: eniten aurinkotunteja, kesäruuhkia.",
+      "sv": "Norges riviera kring Kristiansand: flest soltimmar, sommarträngsel.",
+      "no": "Norges riviera rundt Kristiansand: flest soltimer, sommertrengsel.",
+      "da": "Norges riviera omkring Kristiansand: flest soltimer, sommertravlhed."
+    },
+    "tags": {
+      "en": [
+        "☀️ Sunniest",
+        "🏖️ Riviera"
+      ],
+      "fi": [
+        "☀️ Aurinkoisin",
+        "🏖️ Riviera"
+      ],
+      "sv": [
+        "☀️ Soligast",
+        "🏖️ Riviera"
+      ],
+      "no": [
+        "☀️ Solrikest",
+        "🏖️ Riviera"
+      ],
+      "da": [
+        "☀️ Solrigest",
+        "🏖️ Riviera"
+      ]
+    },
+    "geo": "Agder",
+    "fi": "Agder",
+    "center": [
+      58.4,
+      7.8
+    ],
+    "cities": [
+      "Kristiansand",
+      "Arendal"
+    ],
+    "cost": {
+      "kira1": 11900,
+      "maas": 37520
+    },
+    "skor": {
+      "is": 66,
+      "ogrenci": 66,
+      "doga": 86,
+      "ulasim": 66
+    }
+  },
+  {
+    "id": "rogaland",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Rogaland (Stavanger)",
+      "fi": "Rogaland (Stavanger)",
+      "sv": "Rogaland (Stavanger)",
+      "no": "Rogaland (Stavanger)",
+      "da": "Rogaland (Stavanger)"
+    },
+    "blurb": {
+      "en": "Oil capital Stavanger and Lysefjord: high pay, high prices, dramatic cliffs.",
+      "fi": "Öljypääkaupunki Stavanger ja Lysevuono: korkeat palkat, korkeat hinnat, dramaattiset kalliot.",
+      "sv": "Oljehuvudstad Stavanger och Lysefjorden: höga löner, höga priser, dramatiska klippor.",
+      "no": "Oljehovedstad Stavanger og Lysefjorden: høye lønninger, høye priser, dramatiske klipper.",
+      "da": "Oliehovedstad Stavanger og Lysefjorden: høje lønninger, høje priser, dramatiske klipper."
+    },
+    "tags": {
+      "en": [
+        "🛢️ Oil",
+        "🏔️ Fjords"
+      ],
+      "fi": [
+        "🛢️ Öljy",
+        "🏔️ Vuonot"
+      ],
+      "sv": [
+        "🛢️ Olja",
+        "🏔️ Fjordar"
+      ],
+      "no": [
+        "🛢️ Olje",
+        "🏔️ Fjorder"
+      ],
+      "da": [
+        "🛢️ Olie",
+        "🏔️ Fjorde"
+      ]
+    },
+    "geo": "Rogaland",
+    "fi": "Rogaland",
+    "center": [
+      58.9,
+      5.7
+    ],
+    "cities": [
+      "Stavanger",
+      "Sandnes"
+    ],
+    "cost": {
+      "kira1": 14200,
+      "maas": 42280
+    },
+    "skor": {
+      "is": 84,
+      "ogrenci": 72,
+      "doga": 90,
+      "ulasim": 74
+    }
+  },
+  {
+    "id": "vestland",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Vestland (Bergen)",
+      "fi": "Vestland (Bergen)",
+      "sv": "Vestland (Bergen)",
+      "no": "Vestland (Bergen)",
+      "da": "Vestland (Bergen)"
+    },
+    "blurb": {
+      "en": "Rainy Bergen of Bryggen wharf: fjord gateway, student city, Hanseatic charm.",
+      "fi": "Sateinen Bryggenin Bergen: vuonoportti, opiskelijakaupunki, hansaharmoniaa.",
+      "sv": "Regniga Bryggen-Bergen: fjordport, studentstad, hanseatisk charm.",
+      "no": "Regntunge Bryggen-Bergen: fjordport, studentby, hanseatisk sjarm.",
+      "da": "Regnfulde Bryggen-Bergen: fjordport, studieby, hanseatisk charme."
+    },
+    "tags": {
+      "en": [
+        "🌧️ Rain",
+        "⛰️ Fjords"
+      ],
+      "fi": [
+        "🌧️ Sade",
+        "⛰️ Vuonot"
+      ],
+      "sv": [
+        "🌧️ Regn",
+        "⛰️ Fjordar"
+      ],
+      "no": [
+        "🌧️ Regn",
+        "⛰️ Fjorder"
+      ],
+      "da": [
+        "🌧️ Regn",
+        "⛰️ Fjorde"
+      ]
+    },
+    "geo": "Vestland",
+    "fi": "Vestland",
+    "center": [
+      60.5,
+      6
+    ],
+    "cities": [
+      "Bergen",
+      "Voss"
+    ],
+    "cost": {
+      "kira1": 14800,
+      "market": 5280,
+      "maas": 41750
+    },
+    "skor": {
+      "is": 82,
+      "ogrenci": 88,
+      "doga": 95,
+      "ulasim": 78
+    }
+  },
+  {
+    "id": "moreogromsdal",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Møre og Romsdal (Ålesund)",
+      "fi": "Møre og Romsdal (Ålesund)",
+      "sv": "Møre og Romsdal (Ålesund)",
+      "no": "Møre og Romsdal (Ålesund)",
+      "da": "Møre og Romsdal (Ålesund)"
+    },
+    "blurb": {
+      "en": "Art-nouveau Ålesund and Trollstigen road: fishing wealth, postcard fjords.",
+      "fi": "Jugend-Ålesund ja Trollstigen: kalastusvarallisuutta, postikorttivuonoja.",
+      "sv": "Jugend-Ålesund och Trollstigen: fiskerikedom, vykortsfjordar.",
+      "no": "Jugend-Ålesund og Trollstigen: fiskerikdom, postkortfjorder.",
+      "da": "Jugend-Ålesund og Trollstigen: fiskerigdom, postkortfjorde."
+    },
+    "tags": {
+      "en": [
+        "🎣 Fishing",
+        "🏔️ Fjords"
+      ],
+      "fi": [
+        "🎣 Kalastus",
+        "🏔️ Vuonot"
+      ],
+      "sv": [
+        "🎣 Fiske",
+        "🏔️ Fjordar"
+      ],
+      "no": [
+        "🎣 Fiske",
+        "🏔️ Fjorder"
+      ],
+      "da": [
+        "🎣 Fiskeri",
+        "🏔️ Fjorde"
+      ]
+    },
+    "geo": "Møre og Romsdal",
+    "fi": "Møre og Romsdal",
+    "center": [
+      62.7,
+      7.5
+    ],
+    "cities": [
+      "Ålesund",
+      "Molde"
+    ],
+    "cost": {
+      "kira1": 11900,
+      "maas": 38050
+    },
+    "skor": {
+      "is": 66,
+      "ogrenci": 62,
+      "doga": 95,
+      "ulasim": 62
+    }
+  },
+  {
+    "id": "trondelag",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Trøndelag (Trondheim)",
+      "fi": "Trøndelag (Trondheim)",
+      "sv": "Trøndelag (Trondheim)",
+      "no": "Trøndelag (Trondheim)",
+      "da": "Trøndelag (Trondheim)"
+    },
+    "blurb": {
+      "en": "Tech city Trondheim of Nidaros cathedral and NTNU: historic, youthful, pricey.",
+      "fi": "Teknologiakaupunki Trondheim Nidarosin tuomiokirkkoineen ja NTNU-yliopistoineen: historiallinen, nuorekas, hintava.",
+      "sv": "Teknikstaden Trondheim med Nidarosdomen och NTNU: historisk, ungdomlig, prisig.",
+      "no": "Teknobyn Trondheim med Nidarosdomen og NTNU: historisk, ungdommelig, prisig.",
+      "da": "TeknobYen Trondheim med Nidarosdomen og NTNU: historisk, ungdommelig, pebret."
+    },
+    "tags": {
+      "en": [
+        "🎓 NTNU",
+        "⛪ Cathedral"
+      ],
+      "fi": [
+        "🎓 NTNU",
+        "⛪ Tuomiokirkko"
+      ],
+      "sv": [
+        "🎓 NTNU",
+        "⛪ Domkyrka"
+      ],
+      "no": [
+        "🎓 NTNU",
+        "⛪ Domkirke"
+      ],
+      "da": [
+        "🎓 NTNU",
+        "⛪ Domkirke"
+      ]
+    },
+    "geo": "Trøndelag",
+    "fi": "Trøndelag",
+    "center": [
+      63.5,
+      11
+    ],
+    "cities": [
+      "Trondheim",
+      "Steinkjer"
+    ],
+    "cost": {
+      "kira1": 14750,
+      "maas": 41220
+    },
+    "skor": {
+      "is": 82,
+      "ogrenci": 92,
+      "doga": 88,
+      "ulasim": 78
+    }
+  },
+  {
+    "id": "nordland",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Nordland (Bodø)",
+      "fi": "Nordland (Bodø)",
+      "sv": "Nordland (Bodø)",
+      "no": "Nordland (Bodø)",
+      "da": "Nordland (Bodø)"
+    },
+    "blurb": {
+      "en": "Arctic Bodø of Saltstraumen maelstrom: midnight sun, Lofoten next door.",
+      "fi": "Arktinen Bodø Saltstraumenin pyörteineen: keskiyön aurinko, Lofootit naapurissa.",
+      "sv": "Arktiska Bodø med Saltstraumen: midnattssol, Lofoten intill.",
+      "no": "Arktiske Bodø med Saltstraumen: midnattssol, Lofoten ved siden av.",
+      "da": "Arktiske Bodø med Saltstraumen: midnatssol, Lofoten ved siden af."
+    },
+    "tags": {
+      "en": [
+        "🌊 Maelstrom",
+        "🌌 Midnight sun"
+      ],
+      "fi": [
+        "🌊 Pyörre",
+        "🌌 Keskiyön aurinko"
+      ],
+      "sv": [
+        "🌊 Malström",
+        "🌌 Midnattssol"
+      ],
+      "no": [
+        "🌊 Malstrøm",
+        "🌌 Midnattssol"
+      ],
+      "da": [
+        "🌊 Malstrøm",
+        "🌌 Midnatssol"
+      ]
+    },
+    "geo": "Nordland",
+    "fi": "Nordland",
+    "center": [
+      66.5,
+      14.5
+    ],
+    "cities": [
+      "Bodø",
+      "Narvik"
+    ],
+    "cost": {
+      "kira1": 11900,
+      "fatura": 3000,
+      "maas": 38050
+    },
+    "skor": {
+      "is": 64,
+      "ogrenci": 68,
+      "doga": 98,
+      "ulasim": 58
+    }
+  },
+  {
+    "id": "troms",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Troms (Tromsø)",
+      "fi": "Troms (Tromsø)",
+      "sv": "Troms (Tromsø)",
+      "no": "Troms (Tromsø)",
+      "da": "Troms (Tromsø)"
+    },
+    "blurb": {
+      "en": "Paris of the North Tromsø: aurora capital, Arctic university, polar nights.",
+      "fi": "Pohjolan Pariisi Tromssa: revontulten pääkaupunki, arktinen yliopisto, kaamos.",
+      "sv": "Nordens Paris Tromsø: norrskenshuvudstad, arktiskt universitet, polarnätter.",
+      "no": "Nordens Paris Tromsø: nordlyshovedstad, arktisk universitet, pol netter.",
+      "da": "Nordens Paris Tromsø: nordlyshovedstad, arktisk universitet, polarnætter."
+    },
+    "tags": {
+      "en": [
+        "🌌 Aurora",
+        "🎓 Arctic uni"
+      ],
+      "fi": [
+        "🌌 Revontulet",
+        "🎓 Arktinen yliopisto"
+      ],
+      "sv": [
+        "🌌 Norrsken",
+        "🎓 Arktiskt uni"
+      ],
+      "no": [
+        "🌌 Nordlys",
+        "🎓 Arktisk uni"
+      ],
+      "da": [
+        "🌌 Nordlys",
+        "🎓 Arktisk uni"
+      ]
+    },
+    "geo": "Troms",
+    "fi": "Troms",
+    "center": [
+      69.3,
+      18.5
+    ],
+    "cities": [
+      "Tromsø",
+      "Harstad"
+    ],
+    "cost": {
+      "kira1": 14550,
+      "fatura": 3150,
+      "maas": 39640
+    },
+    "skor": {
+      "is": 68,
+      "ogrenci": 85,
+      "doga": 99,
+      "ulasim": 62
+    }
+  },
+  {
+    "id": "finnmark",
+    "country": "NO",
+    "currency": "NOK",
+    "name": {
+      "en": "Finnmark (Alta)",
+      "fi": "Finnmark (Alta)",
+      "sv": "Finnmark (Alta)",
+      "no": "Finnmark (Alta)",
+      "da": "Finnmark (Alta)"
+    },
+    "blurb": {
+      "en": "Europe's roof: North Cape, king crabs, tax breaks and true wilderness.",
+      "fi": "Euroopan katto: Nordkapp, kuningasrapuja, verohuojennuksia ja aitoa erämaata.",
+      "sv": "Europas tak: Nordkap, kungskrabbor, skatteavdrag och äkta vildmark.",
+      "no": "Europas tak: Nordkapp, kongekrabber, skattefradrag og ekte villmark.",
+      "da": "Europas tag: Nordkap, kongekrabber, skattefradrag og ægte vildmark."
+    },
+    "tags": {
+      "en": [
+        "🦀 King crab",
+        "🧭 North Cape"
+      ],
+      "fi": [
+        "🦀 Kuningasrapu",
+        "🧭 Nordkapp"
+      ],
+      "sv": [
+        "🦀 Kungskrabba",
+        "🧭 Nordkap"
+      ],
+      "no": [
+        "🦀 Kongekrabbe",
+        "🧭 Nordkapp"
+      ],
+      "da": [
+        "🦀 Kongekrabbe",
+        "🧭 Nordkap"
+      ]
+    },
+    "geo": "Finnmark",
+    "fi": "Finnmark",
+    "center": [
+      70.3,
+      24
+    ],
+    "cities": [
+      "Alta",
+      "Hammerfest",
+      "Vadsø"
+    ],
+    "cost": {
+      "kira1": 10750,
+      "market": 5180,
+      "fatura": 3300,
+      "maas": 38580
+    },
+    "skor": {
+      "is": 55,
+      "ogrenci": 55,
+      "doga": 100,
+      "ulasim": 48
+    }
+  },
+  {
+    "id": "hovedstaden",
+    "country": "DK",
+    "currency": "DKK",
+    "name": {
+      "en": "Capital Region (Copenhagen)",
+      "fi": "Capital Region (Copenhagen)",
+      "sv": "Capital Region (Copenhagen)",
+      "no": "Region Hovedstaden (København)",
+      "da": "Region Hovedstaden (København)"
+    },
+    "blurb": {
+      "en": "Copenhagen of Nyhavn and Noma: Nordic cool, harbour baths, high pay and prices.",
+      "fi": "Nyhavnin ja Noman Kööpenhamina: pohjoismaista coolia, satamakylpylöitä, korkeat palkat ja hinnat.",
+      "sv": "Nyhavns och Nomas Köpenhamn: nordisk coolhet, hamnbad, höga löner och priser.",
+      "no": "Nyhavns og Nomas København: nordisk kulhet, havnebad, høye lønninger og priser.",
+      "da": "Nyhavns og Nomas København: nordisk coolness, havnebade, høje lønninger og priser."
+    },
+    "tags": {
+      "en": [
+        "🚲 Bikes",
+        "🍽️ Noma"
+      ],
+      "fi": [
+        "🚲 Pyörät",
+        "🍽️ Noma"
+      ],
+      "sv": [
+        "🚲 Cyklar",
+        "🍽️ Noma"
+      ],
+      "no": [
+        "🚲 Sykler",
+        "🍽️ Noma"
+      ],
+      "da": [
+        "🚲 Cykler",
+        "🍽️ Noma"
+      ]
+    },
+    "geo": "Region Hovedstaden",
+    "geoAlt": "Hovedstaden",
+    "fi": "Hovedstaden",
+    "center": [
+      55.7,
+      12.5
+    ],
+    "cities": [
+      "Copenhagen",
+      "Frederiksberg",
+      "Helsingør"
+    ],
+    "cost": {
+      "kira1": 14850,
+      "kira3": 23700,
+      "market": 3510,
+      "fatura": 1210,
+      "bilet": 24,
+      "aylikKart": 530,
+      "taksi": 16.4,
+      "ucuzOgun": 130,
+      "ortaRestoran": 800,
+      "kahve": 46,
+      "bira": 64,
+      "sut": 14,
+      "ekmek": 31,
+      "yumurta12": 40,
+      "tavukKg": 93,
+      "elmaKg": 22,
+      "maas": 32590
+    },
+    "skor": {
+      "is": 96,
+      "ogrenci": 90,
+      "doga": 70,
+      "ulasim": 100
+    }
+  },
+  {
+    "id": "sjaelland",
+    "country": "DK",
+    "currency": "DKK",
+    "name": {
+      "en": "Zealand (Roskilde)",
+      "fi": "Zealand (Roskilde)",
+      "sv": "Zealand (Roskilde)",
+      "no": "Region Sjælland (Roskilde)",
+      "da": "Region Sjælland (Roskilde)"
+    },
+    "blurb": {
+      "en": "Viking ships of Roskilde and white cliffs of Møn: capital commuter belt.",
+      "fi": "Roskilden viikinkilaivat ja Møn-saaren valkoiset kalliot: pääkaupungin pendelöintivyöhyke.",
+      "sv": "Vikingaskeppen i Roskilde och Møns klint: huvudstadens pendlingsbälte.",
+      "no": "Vikingskipene i Roskilde og Møns klint: hovedstadens pendlerbelte.",
+      "da": "Vikingeskibene i Roskilde og Møns Klint: hovedstadens pendlerbælte."
+    },
+    "tags": {
+      "en": [
+        "🛶 Vikings",
+        "🚂 Commuters"
+      ],
+      "fi": [
+        "🛶 Viikingit",
+        "🚂 Pendelöinti"
+      ],
+      "sv": [
+        "🛶 Vikingar",
+        "🚂 Pendling"
+      ],
+      "no": [
+        "🛶 Vikinger",
+        "🚂 Pendling"
+      ],
+      "da": [
+        "🛶 Vikinger",
+        "🚂 Pendling"
+      ]
+    },
+    "geo": "Region Sjælland",
+    "geoAlt": "Sjælland",
+    "fi": "Sjælland",
+    "center": [
+      55.4,
+      11.8
+    ],
+    "cities": [
+      "Roskilde",
+      "Næstved"
+    ],
+    "cost": {
+      "kira1": 10470,
+      "market": 3290,
+      "fatura": 1160,
+      "aylikKart": 435,
+      "maas": 29150
+    },
+    "skor": {
+      "is": 70,
+      "ogrenci": 66,
+      "doga": 78,
+      "ulasim": 80
+    }
+  },
+  {
+    "id": "syddanmark",
+    "country": "DK",
+    "currency": "DKK",
+    "name": {
+      "en": "Southern Denmark (Odense)",
+      "fi": "Southern Denmark (Odense)",
+      "sv": "Southern Denmark (Odense)",
+      "no": "Region Syddanmark (Odense)",
+      "da": "Region Syddanmark (Odense)"
+    },
+    "blurb": {
+      "en": "Andersen's Odense and Lego's Billund: fairy tales, family parks, fair prices.",
+      "fi": "Andersenin Odense ja Legon Billund: satuja, perhepuistoja, reiluja hintoja.",
+      "sv": "Andersens Odense och Legos Billund: sagor, familjeparker, rimliga priser.",
+      "no": "Andersens Odense og Legos Billund: eventyr, familieparker, rimelige priser.",
+      "da": "Andersens Odense og Legos Billund: eventyr, familieparker, rimelige priser."
+    },
+    "tags": {
+      "en": [
+        "🧱 Lego",
+        "📖 Andersen"
+      ],
+      "fi": [
+        "🧱 Lego",
+        "📖 Andersen"
+      ],
+      "sv": [
+        "🧱 Lego",
+        "📖 Andersen"
+      ],
+      "no": [
+        "🧱 Lego",
+        "📖 Andersen"
+      ],
+      "da": [
+        "🧱 Lego",
+        "📖 Andersen"
+      ]
+    },
+    "geo": "Region Syddanmark",
+    "geoAlt": "Syddanmark",
+    "fi": "Syddanmark",
+    "center": [
+      55.3,
+      9.5
+    ],
+    "cities": [
+      "Odense",
+      "Esbjerg",
+      "Kolding"
+    ],
+    "cost": {
+      "kira1": 7600,
+      "market": 3250,
+      "aylikKart": 435,
+      "maas": 28780
+    },
+    "skor": {
+      "is": 72,
+      "ogrenci": 72,
+      "doga": 76,
+      "ulasim": 76
+    }
+  },
+  {
+    "id": "midtjylland",
+    "country": "DK",
+    "currency": "DKK",
+    "name": {
+      "en": "Central Jutland (Aarhus)",
+      "fi": "Central Jutland (Aarhus)",
+      "sv": "Central Jutland (Aarhus)",
+      "no": "Region Midtjylland (Aarhus)",
+      "da": "Region Midtjylland (Aarhus)"
+    },
+    "blurb": {
+      "en": "Aarhus of ARoS rainbow and street food: Denmark's youthful second city.",
+      "fi": "Aarhus ARoS-sateenkaareineen ja katuruokineen: Tanskan nuorekas kakkoskaupunki.",
+      "sv": "Aarhus med ARoS-regnbågen och street food: Danmarks ungdomliga andrastad.",
+      "no": "Aarhus med ARoS-regnbuen og street food: Danmarks ungdommelige andreby.",
+      "da": "Aarhus med ARoS-regnbuen og street food: Danmarks ungdommelige andenby."
+    },
+    "tags": {
+      "en": [
+        "🌈 ARoS",
+        "🎓 Students"
+      ],
+      "fi": [
+        "🌈 ARoS",
+        "🎓 Opiskelijat"
+      ],
+      "sv": [
+        "🌈 ARoS",
+        "🎓 Studenter"
+      ],
+      "no": [
+        "🌈 ARoS",
+        "🎓 Studenter"
+      ],
+      "da": [
+        "🌈 ARoS",
+        "🎓 Studerende"
+      ]
+    },
+    "geo": "Region Midtjylland",
+    "geoAlt": "Midtjylland",
+    "fi": "Midtjylland",
+    "center": [
+      56.2,
+      9.5
+    ],
+    "cities": [
+      "Aarhus",
+      "Viborg",
+      "Herning"
+    ],
+    "cost": {
+      "kira1": 9995,
+      "market": 3330,
+      "aylikKart": 435,
+      "maas": 29900
+    },
+    "skor": {
+      "is": 82,
+      "ogrenci": 90,
+      "doga": 78,
+      "ulasim": 84
+    }
+  },
+  {
+    "id": "nordjylland",
+    "country": "DK",
+    "currency": "DKK",
+    "name": {
+      "en": "North Jutland (Aalborg)",
+      "fi": "North Jutland (Aalborg)",
+      "sv": "North Jutland (Aalborg)",
+      "no": "Region Nordjylland (Aalborg)",
+      "da": "Region Nordjylland (Aalborg)"
+    },
+    "blurb": {
+      "en": "Aalborg's waterfront and Skagen's light: dunes, bunkers, Denmark's low costs.",
+      "fi": "Aalborgin ranta ja Skagenin valo: dyynejä, bunkkereita, Tanskan matalat kulut.",
+      "sv": "Aalborgs hamnfront och Skagens ljus: dyner, bunkrar, Danmarks låga kostnader.",
+      "no": "Aalborgs havnefront og Skagens lys: dyner, bunkere, Danmarks lave kostnader.",
+      "da": "Aalborgs havnefront og Skagens lys: klitter, bunkere, Danmarks lave omkostninger."
+    },
+    "tags": {
+      "en": [
+        "💡 Skagen light",
+        "💰 Cheap"
+      ],
+      "fi": [
+        "💡 Skagenin valo",
+        "💰 Halpa"
+      ],
+      "sv": [
+        "💡 Skagenljus",
+        "💰 Billig"
+      ],
+      "no": [
+        "💡 Skagenlys",
+        "💰 Billig"
+      ],
+      "da": [
+        "💡 Skagenlys",
+        "💰 Billig"
+      ]
+    },
+    "geo": "Region Nordjylland",
+    "geoAlt": "Nordjylland",
+    "fi": "Nordjylland",
+    "center": [
+      57.3,
+      10
+    ],
+    "cities": [
+      "Aalborg",
+      "Hjørring"
+    ],
+    "cost": {
+      "kira1": 6475,
+      "market": 3210,
+      "fatura": 1200,
+      "aylikKart": 435,
+      "maas": 28030
+    },
+    "skor": {
+      "is": 66,
+      "ogrenci": 70,
+      "doga": 84,
+      "ulasim": 70
+    }
+  }
+]

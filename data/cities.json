@@ -1,0 +1,702 @@
+[
+  {
+    "name": "Helsinki",
+    "regionId": "uusimaa",
+    "country": "FI",
+    "lat": 60.1699,
+    "lng": 24.9384,
+    "note": {
+      "en": "Capital • central 1-bed ~€1,100",
+      "fi": "Pääkaupunki • yksiö keskustassa ~1 100 €",
+      "sv": "Huvudstad • etta i centrum ~1 100 €",
+      "no": "Hovedstad • 1-roms i sentrum ~1 100 €",
+      "da": "Hovedstad • 1-værelses i centrum ~1 100 €"
+    }
+  },
+  {
+    "name": "Espoo",
+    "regionId": "uusimaa",
+    "country": "FI",
+    "lat": 60.2055,
+    "lng": 24.6559,
+    "note": {
+      "en": "Tech campuses",
+      "fi": "Teknologiakampukset",
+      "sv": "Teknikcampus",
+      "no": "Teknologicampuser",
+      "da": "Teknologicampusser"
+    }
+  },
+  {
+    "name": "Vantaa",
+    "regionId": "uusimaa",
+    "country": "FI",
+    "lat": 60.2941,
+    "lng": 25.0408,
+    "note": {
+      "en": "Airport • cheaper rents",
+      "fi": "Lentoasema • edullisempi vuokra",
+      "sv": "Flygplats • billigare hyror",
+      "no": "Flyplass • billigere leier",
+      "da": "Lufthavn • billigere huslejer"
+    }
+  },
+  {
+    "name": "Tampere",
+    "regionId": "pirkanmaa",
+    "country": "FI",
+    "lat": 61.4978,
+    "lng": 23.761,
+    "note": {
+      "en": "Student city • 1-bed ~€900",
+      "fi": "Opiskelijakaupunki • yksiö ~900 €",
+      "sv": "Studentstad • etta ~900 €",
+      "no": "Studentby • 1-roms ~900 €",
+      "da": "Studentby • 1-værelses ~900 €"
+    }
+  },
+  {
+    "name": "Turku",
+    "regionId": "varsinaissuomi",
+    "country": "FI",
+    "lat": 60.4518,
+    "lng": 22.2666,
+    "note": {
+      "en": "Old capital • 1-bed ~€800",
+      "fi": "Vanha pääkaupunki • yksiö ~800 €",
+      "sv": "Forna huvudstaden • etta ~800 €",
+      "no": "Tidligere hovedstad • 1-roms ~800 €",
+      "da": "Tidligere hovedstad • 1-værelses ~800 €"
+    }
+  },
+  {
+    "name": "Oulu",
+    "regionId": "pohjoispohjanmaa",
+    "country": "FI",
+    "lat": 65.0121,
+    "lng": 25.4651,
+    "note": {
+      "en": "Northern tech hub",
+      "fi": "Pohjoisen teknokeskus",
+      "sv": "Tekniknav i norr",
+      "no": "Teknologihub i nord",
+      "da": "Teknologihub i nord"
+    }
+  },
+  {
+    "name": "Jyväskylä",
+    "regionId": "kesksuomi",
+    "country": "FI",
+    "lat": 62.2426,
+    "lng": 25.7473,
+    "note": {
+      "en": "University + lakes",
+      "fi": "Yliopisto + järvet",
+      "sv": "Universitet + sjöar",
+      "no": "Universitet + innsjøer",
+      "da": "Universitet + søer"
+    }
+  },
+  {
+    "name": "Kuopio",
+    "regionId": "pohjoissavo",
+    "country": "FI",
+    "lat": 62.8924,
+    "lng": 27.677,
+    "note": {
+      "en": "Lakeland • calm living",
+      "fi": "Järvialue • rauhallinen elämä",
+      "sv": "Sjöland • lugnt liv",
+      "no": "Innsjøland • rolig liv",
+      "da": "Søland • roligt liv"
+    }
+  },
+  {
+    "name": "Lahti",
+    "regionId": "paijathame",
+    "country": "FI",
+    "lat": 60.9827,
+    "lng": 25.6615,
+    "note": {
+      "en": "Skiing • 1 hour to Helsinki",
+      "fi": "Hiihto • Helsinkiin tunti",
+      "sv": "Skidåkning • 1 timme till Helsingfors",
+      "no": "Ski • 1 time til Helsingfors",
+      "da": "Ski • 1 time til Helsingfors"
+    }
+  },
+  {
+    "name": "Lappeenranta",
+    "regionId": "etelakarjala",
+    "country": "FI",
+    "lat": 61.0587,
+    "lng": 28.1887,
+    "note": {
+      "en": "Border + lake",
+      "fi": "Raja + järvi",
+      "sv": "Gräns + sjö",
+      "no": "Grense + innsjø",
+      "da": "Grænse + sø"
+    }
+  },
+  {
+    "name": "Kotka",
+    "regionId": "kymenlaakso",
+    "country": "FI",
+    "lat": 60.4666,
+    "lng": 26.945,
+    "note": {
+      "en": "Harbour city",
+      "fi": "Satamakaupunki",
+      "sv": "Hamnstad",
+      "no": "Havneby",
+      "da": "Havneby"
+    }
+  },
+  {
+    "name": "Kouvola",
+    "regionId": "kymenlaakso",
+    "country": "FI",
+    "lat": 60.8674,
+    "lng": 26.7042,
+    "note": {
+      "en": "Railway junction",
+      "fi": "Rautatieristeys",
+      "sv": "Järnvägsknut",
+      "no": "Jernbaneknutepunkt",
+      "da": "Jernbaneknudepunkt"
+    }
+  },
+  {
+    "name": "Hämeenlinna",
+    "regionId": "kantahame",
+    "country": "FI",
+    "lat": 60.9959,
+    "lng": 24.4663,
+    "note": {
+      "en": "Castle town",
+      "fi": "Linnakaupunki",
+      "sv": "Slottstad",
+      "no": "Borgby",
+      "da": "Slotby"
+    }
+  },
+  {
+    "name": "Pori",
+    "regionId": "satakunta",
+    "country": "FI",
+    "lat": 61.4851,
+    "lng": 21.7975,
+    "note": {
+      "en": "Pori Jazz • beach",
+      "fi": "Pori Jazz • ranta",
+      "sv": "Pori Jazz • strand",
+      "no": "Pori Jazz • strand",
+      "da": "Pori Jazz • strand"
+    }
+  },
+  {
+    "name": "Rauma",
+    "regionId": "satakunta",
+    "country": "FI",
+    "lat": 61.1272,
+    "lng": 21.5113,
+    "note": {
+      "en": "UNESCO old town",
+      "fi": "Unescon vanhakaupunki",
+      "sv": "UNESCO-gammalstad",
+      "no": "UNESCO-gamlebyen",
+      "da": "UNESCO-gammelby"
+    }
+  },
+  {
+    "name": "Seinäjoki",
+    "regionId": "etelapohjanmaa",
+    "country": "FI",
+    "lat": 62.7875,
+    "lng": 22.8504,
+    "note": {
+      "en": "Entrepreneurial plains",
+      "fi": "Yrittäjälakeus",
+      "sv": "Företagsamma slätter",
+      "no": "Gründersletter",
+      "da": "Iværksættersletter"
+    }
+  },
+  {
+    "name": "Vaasa",
+    "regionId": "pohjanmaa",
+    "country": "FI",
+    "lat": 63.0951,
+    "lng": 21.6165,
+    "note": {
+      "en": "Energy + two languages",
+      "fi": "Energia + kaksi kieltä",
+      "sv": "Energi + två språk",
+      "no": "Energi + to språk",
+      "da": "Energi + to sprog"
+    }
+  },
+  {
+    "name": "Kokkola",
+    "regionId": "keskipohjanmaa",
+    "country": "FI",
+    "lat": 63.8385,
+    "lng": 23.1307,
+    "note": {
+      "en": "Coast • affordable rents",
+      "fi": "Rannikko • edullinen vuokra",
+      "sv": "Kust • överkomliga hyror",
+      "no": "Kyst • overkommelige leier",
+      "da": "Kyst • overkommelige huslejer"
+    }
+  },
+  {
+    "name": "Joensuu",
+    "regionId": "pohjoiskarjala",
+    "country": "FI",
+    "lat": 62.601,
+    "lng": 29.7636,
+    "note": {
+      "en": "Forest capital",
+      "fi": "Metsäpääkaupunki",
+      "sv": "Skogshuvudstad",
+      "no": "Skogshovedstad",
+      "da": "Skovhovedstad"
+    }
+  },
+  {
+    "name": "Mikkeli",
+    "regionId": "etelasavo",
+    "country": "FI",
+    "lat": 61.6887,
+    "lng": 27.2722,
+    "note": {
+      "en": "Cottage country",
+      "fi": "Mökkialue",
+      "sv": "Stugland",
+      "no": "Hytteområde",
+      "da": "Sommerhusland"
+    }
+  },
+  {
+    "name": "Savonlinna",
+    "regionId": "etelasavo",
+    "country": "FI",
+    "lat": 61.8687,
+    "lng": 28.8863,
+    "note": {
+      "en": "Opera festival",
+      "fi": "Oopperajuhlat",
+      "sv": "Operafestival",
+      "no": "Operafestival",
+      "da": "Operafestival"
+    }
+  },
+  {
+    "name": "Rovaniemi",
+    "regionId": "lappi",
+    "country": "FI",
+    "lat": 66.5039,
+    "lng": 25.7294,
+    "note": {
+      "en": "Santa Claus • Arctic",
+      "fi": "Joulupukki • napa",
+      "sv": "Tomten • Arktis",
+      "no": "Julenissen • Arktis",
+      "da": "Julemanden • Arktis"
+    }
+  },
+  {
+    "name": "Kajaani",
+    "regionId": "kainuu",
+    "country": "FI",
+    "lat": 64.2222,
+    "lng": 27.7279,
+    "note": {
+      "en": "Cheapest • wilderness",
+      "fi": "Edullisin • erämaa",
+      "sv": "Billigast • vildmark",
+      "no": "Billigst • villmark",
+      "da": "Billigst • vildmark"
+    }
+  },
+  {
+    "name": "Mariehamn",
+    "regionId": "ahvenanmaa",
+    "country": "FI",
+    "lat": 60.0971,
+    "lng": 19.9348,
+    "note": {
+      "en": "Autonomous capital",
+      "fi": "Itsehallinnon pääkaupunki",
+      "sv": "Självstyrelsens huvudstad",
+      "no": "Selvstyrets hovedstad",
+      "da": "Selvstyrets hovedstad"
+    }
+  },
+  {
+    "name": "Imatra",
+    "regionId": "etelakarjala",
+    "country": "FI",
+    "lat": 61.1711,
+    "lng": 28.7524,
+    "note": {
+      "en": "Rapids + border",
+      "fi": "Putous + raja",
+      "sv": "Fors + gräns",
+      "no": "Foss + grense",
+      "da": "Fos + grænse"
+    }
+  },
+  {
+    "name": "Stockholm",
+    "regionId": "stockholm",
+    "country": "SE",
+    "lat": 59.33,
+    "lng": 18.07,
+    "note": {
+      "en": "Capital • 1-bed ~€1,430",
+      "fi": "Pääkaupunki • yksiö ~1 430 €",
+      "sv": "Huvudstad • etta ~1 430 €",
+      "no": "Hovedstad • 1-roms ~1 430 €",
+      "da": "Hovedstad • 1-værelses ~1 430 €"
+    }
+  },
+  {
+    "name": "Gothenburg",
+    "regionId": "vastragotaland",
+    "country": "SE",
+    "lat": 57.71,
+    "lng": 11.97,
+    "note": {
+      "en": "Port • Volvo • music",
+      "fi": "Satama • Volvo • musiikki",
+      "sv": "Hamn • Volvo • musik",
+      "no": "Havn • Volvo • musikk",
+      "da": "Havn • Volvo • musik"
+    }
+  },
+  {
+    "name": "Malmö",
+    "regionId": "skane",
+    "country": "SE",
+    "lat": 55.61,
+    "lng": 13,
+    "note": {
+      "en": "Bridge to Copenhagen",
+      "fi": "Silta Kööpenhaminaan",
+      "sv": "Bron till Köpenhamn",
+      "no": "Broen til København",
+      "da": "Broen til København"
+    }
+  },
+  {
+    "name": "Uppsala",
+    "regionId": "uppsala",
+    "country": "SE",
+    "lat": 59.86,
+    "lng": 17.64,
+    "note": {
+      "en": "University • cathedral",
+      "fi": "Yliopisto • tuomiokirkko",
+      "sv": "Universitet • domkyrka",
+      "no": "Universitet • domkirke",
+      "da": "Universitet • domkirke"
+    }
+  },
+  {
+    "name": "Linköping",
+    "regionId": "ostergotland",
+    "country": "SE",
+    "lat": 58.41,
+    "lng": 15.62,
+    "note": {
+      "en": "Tech • aviation",
+      "fi": "Teknologia • ilmailu",
+      "sv": "Teknik • flyg",
+      "no": "Teknologi • luftfart",
+      "da": "Teknologi • luftfart"
+    }
+  },
+  {
+    "name": "Västerås",
+    "regionId": "vastmanland",
+    "country": "SE",
+    "lat": 59.61,
+    "lng": 16.54,
+    "note": {
+      "en": "Industry • lake",
+      "fi": "Teollisuus • järvi",
+      "sv": "Industri • sjö",
+      "no": "Industri • innsjø",
+      "da": "Industri • sø"
+    }
+  },
+  {
+    "name": "Örebro",
+    "regionId": "orebro",
+    "country": "SE",
+    "lat": 59.27,
+    "lng": 15.21,
+    "note": {
+      "en": "Castle • logistics",
+      "fi": "Linna • logistiikka",
+      "sv": "Slott • logistik",
+      "no": "Slott • logistikk",
+      "da": "Slot • logistik"
+    }
+  },
+  {
+    "name": "Sundsvall",
+    "regionId": "vasternorrland",
+    "country": "SE",
+    "lat": 62.39,
+    "lng": 17.31,
+    "note": {
+      "en": "Stone city • coast",
+      "fi": "Kivikaupunki • rannikko",
+      "sv": "Stenstaden • kust",
+      "no": "Steinbyen • kyst",
+      "da": "Stenbyen • kyst"
+    }
+  },
+  {
+    "name": "Umeå",
+    "regionId": "vasterbotten",
+    "country": "SE",
+    "lat": 63.83,
+    "lng": 20.26,
+    "note": {
+      "en": "Students • north hub",
+      "fi": "Opiskelijoita • pohjoinen",
+      "sv": "Studenter • norrnav",
+      "no": "Studenter • nordnav",
+      "da": "Studerende • nordnav"
+    }
+  },
+  {
+    "name": "Luleå",
+    "regionId": "norrbotten",
+    "country": "SE",
+    "lat": 65.58,
+    "lng": 22.15,
+    "note": {
+      "en": "Arctic • steel",
+      "fi": "Arktinen • teräs",
+      "sv": "Arktis • stål",
+      "no": "Arktisk • stål",
+      "da": "Arktisk • stål"
+    }
+  },
+  {
+    "name": "Oslo",
+    "regionId": "oslo",
+    "country": "NO",
+    "lat": 59.91,
+    "lng": 10.75,
+    "note": {
+      "en": "Capital • 1-bed ~€1,880",
+      "fi": "Pääkaupunki • yksiö ~1 880 €",
+      "sv": "Huvudstad • etta ~1 880 €",
+      "no": "Hovedstad • 1-roms ~1 880 €",
+      "da": "Hovedstad • 1-værelses ~1 880 €"
+    }
+  },
+  {
+    "name": "Bergen",
+    "regionId": "vestland",
+    "country": "NO",
+    "lat": 60.39,
+    "lng": 5.32,
+    "note": {
+      "en": "Bryggen • rain",
+      "fi": "Bryggen • sade",
+      "sv": "Bryggen • regn",
+      "no": "Bryggen • regn",
+      "da": "Bryggen • regn"
+    }
+  },
+  {
+    "name": "Trondheim",
+    "regionId": "trondelag",
+    "country": "NO",
+    "lat": 63.43,
+    "lng": 10.4,
+    "note": {
+      "en": "NTNU • cathedral",
+      "fi": "NTNU • tuomiokirkko",
+      "sv": "NTNU • domkyrka",
+      "no": "NTNU • domkirke",
+      "da": "NTNU • domkirke"
+    }
+  },
+  {
+    "name": "Stavanger",
+    "regionId": "rogaland",
+    "country": "NO",
+    "lat": 58.97,
+    "lng": 5.73,
+    "note": {
+      "en": "Oil • Lysefjord",
+      "fi": "Öljy • Lysevuono",
+      "sv": "Olja • Lysefjorden",
+      "no": "Olje • Lysefjorden",
+      "da": "Olie • Lysefjorden"
+    }
+  },
+  {
+    "name": "Tromsø",
+    "regionId": "troms",
+    "country": "NO",
+    "lat": 69.65,
+    "lng": 18.96,
+    "note": {
+      "en": "Aurora • Arctic uni",
+      "fi": "Revontulet • arktinen yliopisto",
+      "sv": "Norrsken • arktiskt uni",
+      "no": "Nordlys • arktisk uni",
+      "da": "Nordlys • arktisk uni"
+    }
+  },
+  {
+    "name": "Drammen",
+    "regionId": "buskerud",
+    "country": "NO",
+    "lat": 59.74,
+    "lng": 10.2,
+    "note": {
+      "en": "Fjord city",
+      "fi": "Vuonokaupunki",
+      "sv": "Fjordstad",
+      "no": "Fjordby",
+      "da": "Fjordby"
+    }
+  },
+  {
+    "name": "Kristiansand",
+    "regionId": "agder",
+    "country": "NO",
+    "lat": 58.15,
+    "lng": 8,
+    "note": {
+      "en": "Riviera • sun",
+      "fi": "Riviera • aurinko",
+      "sv": "Riviera • sol",
+      "no": "Riviera • sol",
+      "da": "Riviera • sol"
+    }
+  },
+  {
+    "name": "Ålesund",
+    "regionId": "moreogromsdal",
+    "country": "NO",
+    "lat": 62.47,
+    "lng": 6.16,
+    "note": {
+      "en": "Art nouveau • fjords",
+      "fi": "Jugend • vuonot",
+      "sv": "Jugend • fjordar",
+      "no": "Jugend • fjorder",
+      "da": "Jugend • fjorde"
+    }
+  },
+  {
+    "name": "Bodø",
+    "regionId": "nordland",
+    "country": "NO",
+    "lat": 67.28,
+    "lng": 14.41,
+    "note": {
+      "en": "Arctic • Lofoten",
+      "fi": "Arktinen • Lofootit",
+      "sv": "Arktis • Lofoten",
+      "no": "Arktisk • Lofoten",
+      "da": "Arktisk • Lofoten"
+    }
+  },
+  {
+    "name": "Copenhagen",
+    "regionId": "hovedstaden",
+    "country": "DK",
+    "lat": 55.68,
+    "lng": 12.57,
+    "note": {
+      "en": "Capital • 1-bed ~€1,860",
+      "fi": "Pääkaupunki • yksiö ~1 860 €",
+      "sv": "Huvudstad • etta ~1 860 €",
+      "no": "Hovedstad • 1-roms ~1 860 €",
+      "da": "Hovedstad • 1-værelses ~1 860 €"
+    }
+  },
+  {
+    "name": "Aarhus",
+    "regionId": "midtjylland",
+    "country": "DK",
+    "lat": 56.16,
+    "lng": 10.21,
+    "note": {
+      "en": "ARoS • students",
+      "fi": "ARoS • opiskelijat",
+      "sv": "ARoS • studenter",
+      "no": "ARoS • studenter",
+      "da": "ARoS • studerende"
+    }
+  },
+  {
+    "name": "Odense",
+    "regionId": "syddanmark",
+    "country": "DK",
+    "lat": 55.4,
+    "lng": 10.39,
+    "note": {
+      "en": "Andersen • Lego land",
+      "fi": "Andersen • Legomaa",
+      "sv": "Andersen • Legoland",
+      "no": "Andersen • Legoland",
+      "da": "Andersen • Legoland"
+    }
+  },
+  {
+    "name": "Aalborg",
+    "regionId": "nordjylland",
+    "country": "DK",
+    "lat": 57.05,
+    "lng": 9.92,
+    "note": {
+      "en": "Waterfront • north",
+      "fi": "Ranta • pohjoinen",
+      "sv": "Hamnen • norr",
+      "no": "Havnen • nord",
+      "da": "Havnen • nord"
+    }
+  },
+  {
+    "name": "Roskilde",
+    "regionId": "sjaelland",
+    "country": "DK",
+    "lat": 55.64,
+    "lng": 12.09,
+    "note": {
+      "en": "Vikings • festival",
+      "fi": "Viikingit • festivaali",
+      "sv": "Vikingar • festival",
+      "no": "Vikinger • festival",
+      "da": "Vikinger • festival"
+    }
+  },
+  {
+    "name": "Esbjerg",
+    "regionId": "syddanmark",
+    "country": "DK",
+    "lat": 55.47,
+    "lng": 8.45,
+    "note": {
+      "en": "Harbour • west",
+      "fi": "Satama • länsi",
+      "sv": "Hamn • väst",
+      "no": "Havn • vest",
+      "da": "Havn • vest"
+    }
+  }
+]

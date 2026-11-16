@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "FI": {
+      "center": [
+        65.2,
+        26.5
+      ],
+      "zoom": 5
+    },
+    "SE": {
+      "center": [
+        62.8,
+        15
+      ],
+      "zoom": 5
+    },
+    "NO": {
+      "center": [
+        64.8,
+        11.5
+      ],
+      "zoom": 5
+    },
+    "DK": {
+      "center": [
+        56.1,
+        10.2
+      ],
+      "zoom": 6
+    }
+  },
+  "base": {
+    "SE": {
+      "market": 4440,
+      "fatura": 2110,
+      "internet": 310,
+      "benzin": 15.8,
+      "bilet": 36,
+      "aylikKart": 640,
+      "taksi": 15.6,
+      "ucuzOgun": 140,
+      "ortaRestoran": 870,
+      "kahve": 51,
+      "bira": 76,
+      "sut": 16,
+      "ekmek": 30,
+      "yumurta12": 42,
+      "tavukKg": 120,
+      "elmaKg": 30
+    },
+    "NO": {
+      "market": 4970,
+      "fatura": 2500,
+      "internet": 370,
+      "benzin": 23.5,
+      "bilet": 40,
+      "aylikKart": 530,
+      "taksi": 18,
+      "ucuzOgun": 190,
+      "ortaRestoran": 1110,
+      "kahve": 55,
+      "bira": 110,
+      "sut": 23,
+      "ekmek": 39,
+      "yumurta12": 56,
+      "tavukKg": 150,
+      "elmaKg": 31
+    },
+    "DK": {
+      "market": 3290,
+      "fatura": 1200,
+      "internet": 250,
+      "benzin": 17.5,
+      "bilet": 24,
+      "aylikKart": 530,
+      "taksi": 15,
+      "ucuzOgun": 130,
+      "ortaRestoran": 750,
+      "kahve": 45,
+      "bira": 64,
+      "sut": 13,
+      "ekmek": 30,
+      "yumurta12": 39,
+      "tavukKg": 92,
+      "elmaKg": 22
+    }
+  }
+}

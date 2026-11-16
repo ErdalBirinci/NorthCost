@@ -1,13 +1,8 @@
 import './style.css';
 import './extra.css';
-import { REGIONS as FI_REGIONS, CITIES as FI_CITIES, fmtMoney, CURRENCIES } from './data.js';
-import { REGIONS_NORDIC, CITIES_NORDIC, COUNTRY } from './data_nordic.js';
+import { REGIONS, CITIES, COUNTRY, fmtMoney, CURRENCIES } from './data.js';
 import { STR } from './i18n.js';
 import { EXT } from './extra.js';
-
-FI_REGIONS.forEach(r => { r.country = 'FI'; r.cur = 'EUR'; });
-const REGIONS = [...FI_REGIONS, ...REGIONS_NORDIC];
-const CITIES = [...FI_CITIES, ...CITIES_NORDIC];
 
 let lang = 'en';
 let profile = 'single';

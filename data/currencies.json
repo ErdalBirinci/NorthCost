@@ -1,0 +1,27 @@
+{
+  "EUR": {
+    "rate": 1,
+    "sym": "€",
+    "before": false
+  },
+  "USD": {
+    "rate": 1.1052,
+    "sym": "$",
+    "before": true
+  },
+  "SEK": {
+    "rate": 11.1075,
+    "sym": "kr",
+    "before": false
+  },
+  "NOK": {
+    "rate": 10.5695,
+    "sym": "kr",
+    "before": false
+  },
+  "DKK": {
+    "rate": 7.4753,
+    "sym": "kr",
+    "before": false
+  }
+}

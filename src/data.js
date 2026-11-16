@@ -1,71 +1,84 @@
-// Cost of living estimates (EUR/month) for 19 Finnish regions.
-// Price level: November 2026.
-// Anchors: crowd-sourced city price surveys (6-11 Nov 2026), Statistics Finland Q3 2026 rents
-// (Helsinki €21.37/m², Tampere €16.98, Turku €15.64, Oulu €14.19), HSL 2026 fares,
-// Nysse 2026 (€65/30d, single €2.50), Föli 2026 (€57/30d), EU Weekly Oil Bulletin
-// petrol €2.14/L (w/o 9 Nov 2026), ECB €1 = $1.1052 (13 Nov 2026), S-kaupat listings,
-// Taksi Helsinki tariff (€1.14-1.30/km). Regional values scaled from these anchors.
-// Display currencies. Rates are EUR-based (ECB, Nov 2026). This is the single FX
-// source of truth: data.js stores EUR, data_nordic.js stores native kr and
-// converts through these rates.
-export const CURRENCIES = {
-  EUR: { rate: 1, sym: '€', before: false },
-  USD: { rate: 1.1052, sym: '$', before: true },
-  SEK: { rate: 11.1075, sym: 'kr', before: false },
-  NOK: { rate: 10.5695, sym: 'kr', before: false },
-  DKK: { rate: 7.4753, sym: 'kr', before: false },
-};
+// NorthCost data layer.
+//
+// Raw source values live in /data/*.json and are never edited here:
+//   data/regions.fi.json    19 Finnish regions, EUR
+//   data/regions.nordic.json 41 Swedish/Norwegian/Danish regions, native kr
+//   data/cities.json        map pins
+//   data/currencies.json    single FX source of truth (ECB, Nov 2026)
+//   data/countries.json     per-country cost defaults + map view
+//
+// Everything that can be computed is computed here, so the JSON only stores
+// measurements: outside-centre and 3-bedroom rents (unless a region overrides
+// the default ratio), the monthly transport cost, all four household totals,
+// and the EUR conversion. scripts/validate-data.mjs re-derives the same values
+// and fails the build if anything drifts.
+import currencies from '../data/currencies.json' with { type: 'json' };
+import countries from '../data/countries.json' with { type: 'json' };
+import fiRegions from '../data/regions.fi.json' with { type: 'json' };
+import nordicRegions from '../data/regions.nordic.json' with { type: 'json' };
+import cities from '../data/cities.json' with { type: 'json' };
+
+export const CURRENCIES = currencies;
+export const COUNTRY = countries.meta;
+export const BASE = countries.base;
+export const LANGS = ['en', 'fi', 'sv', 'no', 'da'];
+
+// Transport cost = monthly pass + 15% for occasional single trips.
+export const TRANSPORT_FACTOR = 1.15;
+export const OUTSIDE_RATIO = 0.72;   // outside-centre vs centre rent
+export const THREE_BED_RATIO = 1.7;  // 3-bedroom vs 1-bedroom rent
+export const MISC_EUR = 150;         // eating out + personal care in the total
+
+export const r10 = n => Math.round(n / 10) * 10;
+const rateOf = cur => CURRENCIES[cur]?.rate ?? 1;
+
+// Derive every computed figure for one region, in its own currency.
+export function deriveNative(r) {
+  const c = { ...BASE[r.country], ...r.cost };
+  const kira1d = c.kira1d ?? r10(c.kira1 * OUTSIDE_RATIO);
+  const kira3 = c.kira3 ?? r10(c.kira1 * THREE_BED_RATIO);
+  const ulasim = c.ulasim ?? r10(c.aylikKart * TRANSPORT_FACTOR);
+  const single = r10(c.kira1 + c.market + ulasim + c.fatura + MISC_EUR * rateOf(r.currency));
+  return {
+    ...c,
+    kira1d, kira3, ulasim, single,
+    student: r10(single * 0.6),
+    couple: r10(single * 1.38),
+    family: r10(single * 2.02),
+  };
+}
+
+function buildRegion(raw) {
+  const rate = rateOf(raw.currency);
+  const eur = n => n / rate;
+  const n = deriveNative(raw);
+  const lang = (obj, key) => Object.fromEntries(LANGS.map(l => [key + '_' + l, obj[l] ?? obj.en]));
+  return {
+    id: raw.id, country: raw.country, cur: raw.currency,
+    fi: raw.fi, geo: raw.geo, geoAlt: raw.geoAlt,
+    ...lang(raw.name, 'name'),
+    center: raw.center, cities: raw.cities,
+    ...lang(raw.blurb, 'blurb'),
+    ...lang(raw.tags, 'tags'),
+    maas: eur(n.maas),
+    kira1: eur(n.kira1), kira1d: eur(n.kira1d), kira3: eur(n.kira3),
+    market: eur(n.market), ulasim: eur(n.ulasim), fatura: eur(n.fatura), internet: eur(n.internet),
+    benzin: eur(n.benzin), bilet: eur(n.bilet), aylikKart: eur(n.aylikKart), taksi: eur(n.taksi),
+    ucuzOgun: eur(n.ucuzOgun), ortaRestoran: eur(n.ortaRestoran), kahve: eur(n.kahve), bira: eur(n.bira),
+    sut: eur(n.sut), ekmek: eur(n.ekmek), yumurta12: eur(n.yumurta12), tavukKg: eur(n.tavukKg), elmaKg: eur(n.elmaKg),
+    profiles: { student: eur(n.student), single: eur(n.single), couple: eur(n.couple), family: eur(n.family) },
+    skor: raw.skor,
+  };
+}
+
+export const REGIONS = [...fiRegions, ...nordicRegions].map(buildRegion);
+
+export const CITIES = cities.map(c => ({
+  name: c.name, regionId: c.regionId, country: c.country, lat: c.lat, lng: c.lng,
+  ...Object.fromEntries(LANGS.map(l => ['note_' + l, c.note[l] ?? c.note.en])),
+}));
+
 const LOCALES = { en: 'en-US', fi: 'fi-FI', sv: 'sv-SE', no: 'nb-NO', da: 'da-DK' };
-
-export const REGIONS = [
-  { id:"uusimaa", fi:"Uusimaa", name_en:"Uusimaa (Helsinki region)", name_fi:"Uusimaa (Helsingin seutu)", name_sv:"Nyland (Helsingforsregionen)", center:[60.25,24.9], cities:["Helsinki","Espoo","Vantaa"], blurb_en:"The country's economic heart. Highest salaries, by far the priciest rents. Metro, trams and job opportunities at their peak.", blurb_fi:"Maan taloudellinen keskus. Korkeimmat palkat, selvästi kalleimmat vuokrat. Metro, ratikat ja parhaat työmahdollisuudet.", tags_en:["💼 Business capital","🚇 Metro","🌊 Baltic coast"], tags_fi:["💼 Työn keskus","🚇 Metro","🌊 Itämeren rannikko"], maas:2950, kira1:1100, kira1d:790, kira3:1870, market:380, ulasim:90, fatura:131, internet:30, benzin:2.12, bilet:3.3, aylikKart:74, taksi:1.2, ucuzOgun:15, ortaRestoran:90, kahve:5.2, bira:7, sut:1.0, ekmek:2.0, yumurta12:3.1, tavukKg:12.5, elmaKg:1.8, profiles:{student:1110,single:1850,couple:2550,family:3740}, skor:{is:98,ogrenci:92,doga:70,ulasim:100} },
-  { id:"pirkanmaa", fi:"Pirkanmaa", name_en:"Pirkanmaa (Tampere region)", name_fi:"Pirkanmaa (Tampereen seutu)", name_sv:"Birkaland (Tammerfors)", center:[61.7,23.9], cities:["Tampere","Nokia","Ylöjärvi"], blurb_en:"Student-friendly tech city Tampere. Rents ~20% below Helsinki, strong university and startup scene.", blurb_fi:"Opiskelijaystävällinen teknologiakaupunki Tampere. Vuokrat ~20 % Helsinkiä edullisemmat, vahva yliopisto ja startup-kenttä.", tags_en:["🎓 Student paradise","🏭 Technology","🌲 Lake district"], tags_fi:["🎓 Opiskelijaparatiisi","🏭 Teknologia","🌲 Järvialue"], maas:2610, kira1:850, kira1d:610, kira3:1450, market:340, ulasim:70, fatura:110, internet:28, benzin:2.15, bilet:2.5, aylikKart:65, taksi:1.2, ucuzOgun:13, ortaRestoran:80, kahve:4.8, bira:6.5, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:910,single:1520,couple:2100,family:3070}, skor:{is:85,ogrenci:98,doga:80,ulasim:88} },
-  { id:"varsinaissuomi", fi:"Varsinais-Suomi", name_en:"Southwest Finland (Turku)", name_fi:"Varsinais-Suomi (Turun seutu)", name_sv:"Egentliga Finland (Åbo)", center:[60.4,22.4], cities:["Turku","Kaarina","Raisio"], blurb_en:"Historic former capital Turku, gateway to the archipelago. Reasonable rents, lively summers, ferry link to Sweden.", blurb_fi:"Historiallinen entinen pääkaupunki Turku, saariston portti. Kohtuulliset vuokrat, vilkas kesä, laivayhteys Ruotsiin.", tags_en:["⛴️ Archipelago","🏰 History","🎓 University"], tags_fi:["⛴️ Saaristo","🏰 Historia","🎓 Yliopisto"], maas:2520, kira1:780, kira1d:560, kira3:1330, market:340, ulasim:70, fatura:108, internet:28, benzin:2.15, bilet:3.0, aylikKart:57, taksi:1.2, ucuzOgun:13, ortaRestoran:78, kahve:4.7, bira:6.5, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:870,single:1450,couple:2000,family:2930}, skor:{is:80,ogrenci:94,doga:82,ulasim:85} },
-  { id:"pohjoispohjanmaa", fi:"Pohjois-Pohjanmaa", name_en:"North Ostrobothnia (Oulu)", name_fi:"Pohjois-Pohjanmaa (Oulu)", name_sv:"Norra Österbotten (Uleåborg)", center:[65.0,25.5], cities:["Oulu","Kempele","Raahe"], blurb_en:"The North's tech star Oulu. Low rents, nature and northern lights on your doorstep, 5G and game studios here.", blurb_fi:"Pohjoisen teknologiakaupunki Oulu. Edulliset vuokrat, luonto ja revontulet lähellä, 5G ja pelistudiot täällä.", tags_en:["🌌 Northern lights","📡 6G trials","🎿 Winter sports"], tags_fi:["🌌 Revontulet","📡 6G-testit","🎿 Talviurheilu"], maas:2570, kira1:710, kira1d:510, kira3:1210, market:335, ulasim:70, fatura:115, internet:27, benzin:2.16, bilet:2.8, aylikKart:64, taksi:1.2, ucuzOgun:12.5, ortaRestoran:78, kahve:4.6, bira:6.5, sut:1.0, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.8, profiles:{student:830,single:1380,couple:1900,family:2790}, skor:{is:82,ogrenci:88,doga:95,ulasim:78} },
-  { id:"lappi", fi:"Lappi", name_en:"Lapland (Rovaniemi)", name_fi:"Lappi (Rovaniemi)", name_sv:"Lappland (Rovaniemi)", center:[67.5,26.5], cities:["Rovaniemi","Kemi","Tornio"], blurb_en:"Santa's home, polar nights and husky safaris. Cheap rents, but heating and distances push costs up.", blurb_fi:"Joulupukin koti, kaamos ja huskysafarit. Edulliset vuokrat, mutta lämmitys ja etäisyydet nostavat kuluja.", tags_en:["🎅 Santa Claus","🦌 Reindeer","❄️ Polar night"], tags_fi:["🎅 Joulupukki","🦌 Porot","❄️ Kaamos"], maas:2390, kira1:730, kira1d:530, kira3:1240, market:370, ulasim:70, fatura:160, internet:28, benzin:2.2, bilet:3.3, aylikKart:57, taksi:1.3, ucuzOgun:14, ortaRestoran:82, kahve:5, bira:6.8, sut:1.05, ekmek:2.2, yumurta12:3.3, tavukKg:12.8, elmaKg:2.2, profiles:{student:890,single:1480,couple:2040,family:2990}, skor:{is:65,ogrenci:70,doga:100,ulasim:60} },
-  { id:"kesksuomi", fi:"Keski-Suomi", name_en:"Central Finland (Jyväskylä)", name_fi:"Keski-Suomi (Jyväskylä)", name_sv:"Mellersta Finland (Jyväskylä)", center:[62.4,25.8], cities:["Jyväskylä","Muurame","Laukaa"], blurb_en:"University city Jyväskylä amid a thousand lakes. Balanced costs, strong sports and education culture.", blurb_fi:"Yliopistokaupunki Jyväskylä tuhansien järvien keskellä. Tasapainoiset kulut, vahva urheilu- ja koulutuskulttuuri.", tags_en:["🏃 Sports capital","📚 University","🌊 Lakes"], tags_fi:["🏃 Urheilupääkaupunki","📚 Yliopisto","🌊 Järvet"], maas:2440, kira1:730, kira1d:530, kira3:1240, market:330, ulasim:70, fatura:112, internet:27, benzin:2.15, bilet:2.7, aylikKart:60, taksi:1.2, ucuzOgun:12, ortaRestoran:76, kahve:4.6, bira:6.3, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:830,single:1390,couple:1920,family:2810}, skor:{is:72,ogrenci:90,doga:92,ulasim:72} },
-  { id:"pohjoissavo", fi:"Pohjois-Savo", name_en:"North Savo (Kuopio)", name_fi:"Pohjois-Savo (Kuopio)", name_sv:"Norra Savolax (Kuopio)", center:[63.0,27.6], cities:["Kuopio","Siilinjärvi","Varkaus"], blurb_en:"Lakeside Kuopio, home of health research and kalakukko. Affordable rents, calm living.", blurb_fi:"Järvenrantakaupunki Kuopio, terveystutkimuksen ja kalakukon koti. Edulliset vuokrat, rauhallinen elämä.", tags_en:["🐟 Kalakukko","🏥 Health hub","🌲 Calm living"], tags_fi:["🐟 Kalakukko","🏥 Terveyskeskus","🌲 Rauhallinen elämä"], maas:2390, kira1:750, kira1d:540, kira3:1280, market:325, ulasim:70, fatura:110, internet:27, benzin:2.15, bilet:2.7, aylikKart:62, taksi:1.2, ucuzOgun:12, ortaRestoran:75, kahve:4.5, bira:6.2, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:850,single:1410,couple:1950,family:2850}, skor:{is:68,ogrenci:82,doga:93,ulasim:68} },
-  { id:"pohjoiskarjala", fi:"Pohjois-Karjala", name_en:"North Karelia (Joensuu)", name_fi:"Pohjois-Karjala (Joensuu)", name_sv:"Norra Karelen (Joensuu)", center:[62.8,30.0], cities:["Joensuu","Kontiolahti","Lieksa"], blurb_en:"Forest region near the Russian border. Among Finland's cheapest rents — a nature lover's dream.", blurb_fi:"Metsäaluetta Venäjän rajan tuntumassa. Maan edullisimpia vuokria — luonnonystävän unelma.", tags_en:["🌲 Forest","💰 Cheapest rents","🦉 Wildlife"], tags_fi:["🌲 Metsä","💰 Edullisin vuokra","🦉 Villieläimet"], maas:2270, kira1:720, kira1d:520, kira3:1220, market:320, ulasim:80, fatura:112, internet:26, benzin:2.18, bilet:2.6, aylikKart:69, taksi:1.3, ucuzOgun:11.5, ortaRestoran:72, kahve:4.3, bira:6, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:830,single:1380,couple:1900,family:2790}, skor:{is:60,ogrenci:78,doga:96,ulasim:60} },
-  { id:"etelasavo", fi:"Etelä-Savo", name_en:"South Savo (Mikkeli)", name_fi:"Etelä-Savo (Mikkeli)", name_sv:"Södra Savolax (S:t Michel)", center:[61.9,27.5], cities:["Mikkeli","Savonlinna","Pieksämäki"], blurb_en:"Lake Saimaa and the Savonlinna Opera Festival. The cottage (mökki) capital — ideal for retirement.", blurb_fi:"Saimaan ja Savonlinnan oopperajuhlien aluetta. Kesämökkien pääkaupunki — ihanteellinen eläköitymiseen.", tags_en:["🎭 Opera festival","🏡 Cottage culture","🦭 Saimaa seal"], tags_fi:["🎭 Oopperajuhlat","🏡 Mökkikulttuuri","🦭 Saimaannorppa"], maas:2220, kira1:640, kira1d:460, kira3:1090, market:325, ulasim:70, fatura:115, internet:26, benzin:2.15, bilet:2.6, aylikKart:62, taksi:1.2, ucuzOgun:11.5, ortaRestoran:72, kahve:4.3, bira:6, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:780,single:1300,couple:1790,family:2630}, skor:{is:55,ogrenci:65,doga:97,ulasim:58} },
-  { id:"etelakarjala", fi:"Etelä-Karjala", name_en:"South Karelia (Lappeenranta)", name_fi:"Etelä-Karjala (Lappeenranta)", name_sv:"Södra Karelen (Villmanstrand)", center:[61.06,28.18], cities:["Lappeenranta","Imatra"], blurb_en:"Border-trade city Lappeenranta. Lakeside living at low cost, with a surprising number of sunny days.", blurb_fi:"Rajakaupan kaupunki Lappeenranta. Järven rannalla edullisesti, aurinkoisia päiviä yllättävän paljon.", tags_en:["☀️ Sunny","🏒 Border city","🌊 Saimaa"], tags_fi:["☀️ Aurinkoinen","🏒 Rajakaupunki","🌊 Saimaa"], maas:2310, kira1:700, kira1d:500, kira3:1190, market:325, ulasim:70, fatura:112, internet:26, benzin:2.15, bilet:2.6, aylikKart:62, taksi:1.2, ucuzOgun:12, ortaRestoran:74, kahve:4.4, bira:6.2, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:820,single:1360,couple:1880,family:2750}, skor:{is:62,ogrenci:75,doga:88,ulasim:66} },
-  { id:"kymenlaakso", fi:"Kymenlaakso", name_en:"Kymenlaakso (Kotka–Kouvola)", name_fi:"Kymenlaakso (Kotka–Kouvola)", name_sv:"Kymmenedalen (Kotka–Kouvola)", center:[60.7,27.0], cities:["Kotka","Kouvola","Hamina"], blurb_en:"Port city Kotka and national parks. One hour by train to Helsinki, half the rents.", blurb_fi:"Satamakaupunki Kotka ja kansallispuistot. Helsinkiin junalla tunti, vuokrat puolet.", tags_en:["⚓ Harbour","🚂 Near Helsinki","🌲 National parks"], tags_fi:["⚓ Satama","🚂 Lähellä Helsinkiä","🌲 Kansallispuisto"], maas:2350, kira1:630, kira1d:450, kira3:1070, market:325, ulasim:70, fatura:110, internet:26, benzin:2.15, bilet:2.7, aylikKart:62, taksi:1.2, ucuzOgun:12, ortaRestoran:74, kahve:4.4, bira:6.2, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:770,single:1290,couple:1780,family:2610}, skor:{is:64,ogrenci:68,doga:85,ulasim:74} },
-  { id:"paijathame", fi:"Päijät-Häme", name_en:"Päijät-Häme (Lahti)", name_fi:"Päijät-Häme (Lahti)", name_sv:"Päijänne-Tavastland (Lahtis)", center:[60.98,25.65], cities:["Lahti","Hollola","Orimattila"], blurb_en:"Ski and design city Lahti. One hour to the capital, affordable rents, winter sports close by.", blurb_fi:"Hiihto- ja muotoilukaupunki Lahti. Pääkaupunkiin tunti, edulliset vuokrat, talviurheilu lähellä.", tags_en:["🎿 Skiing","🎨 Design","🚄 Fast train"], tags_fi:["🎿 Hiihto","🎨 Muotoilu","🚄 Pikajuna"], maas:2390, kira1:670, kira1d:480, kira3:1140, market:330, ulasim:70, fatura:110, internet:26, benzin:2.15, bilet:2.8, aylikKart:62, taksi:1.2, ucuzOgun:12, ortaRestoran:75, kahve:4.5, bira:6.3, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:800,single:1330,couple:1840,family:2690}, skor:{is:68,ogrenci:72,doga:86,ulasim:78} },
-  { id:"kantahame", fi:"Kanta-Häme", name_en:"Tavastia Proper (Hämeenlinna)", name_fi:"Kanta-Häme (Hämeenlinna)", name_sv:"Egentliga Tavastland (Tavastehus)", center:[60.9,24.4], cities:["Hämeenlinna","Riihimäki","Forssa"], blurb_en:"Medieval castle Hämeenlinna, halfway between Helsinki and Tampere. A favourite for suburban living.", blurb_fi:"Keskiaikainen Hämeen linna, puolimatkassa Helsinki–Tampere. Suosittu väljä asuminen.", tags_en:["🏰 Castle","🚂 Rail hub","🌾 Rural calm"], tags_fi:["🏰 Linna","🚂 Vaihtoyhteys","🌾 Maalaisrauha"], maas:2390, kira1:730, kira1d:530, kira3:1240, market:330, ulasim:70, fatura:110, internet:26, benzin:2.15, bilet:2.8, aylikKart:62, taksi:1.2, ucuzOgun:12, ortaRestoran:75, kahve:4.5, bira:6.3, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:830,single:1390,couple:1920,family:2810}, skor:{is:66,ogrenci:66,doga:82,ulasim:80} },
-  { id:"satakunta", fi:"Satakunta", name_en:"Satakunta (Pori)", name_fi:"Satakunta (Pori)", name_sv:"Satakunta (Björneborg)", center:[61.4,22.2], cities:["Pori","Rauma","Ulvila"], blurb_en:"Summer festival Pori Jazz and UNESCO-listed Old Rauma. Affordable coastal living by the sea.", blurb_fi:"Kesäfestivaali Pori Jazz ja Unescon Vanha Rauma. Edullista rannikkoasumista meren äärellä.", tags_en:["🎷 Pori Jazz","🏘️ UNESCO Rauma","🏖️ Beach"], tags_fi:["🎷 Pori Jazz","🏘️ Unescon Rauma","🏖️ Ranta"], maas:2350, kira1:550, kira1d:400, kira3:940, market:325, ulasim:70, fatura:108, internet:26, benzin:2.15, bilet:2.6, aylikKart:62, taksi:1.2, ucuzOgun:12, ortaRestoran:74, kahve:4.4, bira:6.2, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:720,single:1200,couple:1660,family:2420}, skor:{is:64,ogrenci:68,doga:84,ulasim:66} },
-  { id:"etelapohjanmaa", fi:"Etelä-Pohjanmaa", name_en:"South Ostrobothnia (Seinäjoki)", name_fi:"Etelä-Pohjanmaa (Seinäjoki)", name_sv:"Södra Österbotten (Seinäjoki)", center:[62.8,22.8], cities:["Seinäjoki","Lapua","Kauhava"], blurb_en:"Entrepreneurial plains region. Spacious homes, low rents, strong local economy.", blurb_fi:"Yrittäjähenkinen lakeus. Tilavat kodit, edulliset vuokrat, vahva paikallistalous.", tags_en:["🤠 Enterprise","🌲 Plains","🏠 Spacious homes"], tags_fi:["🤠 Yrittäjyys","🌾 Lakeus","🏠 Tilavat kodit"], maas:2350, kira1:720, kira1d:520, kira3:1220, market:320, ulasim:70, fatura:110, internet:26, benzin:2.16, bilet:2.6, aylikKart:62, taksi:1.2, ucuzOgun:11.5, ortaRestoran:73, kahve:4.3, bira:6, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:820,single:1370,couple:1890,family:2770}, skor:{is:66,ogrenci:62,doga:78,ulasim:64} },
-  { id:"pohjanmaa", fi:"Pohjanmaa", name_en:"Ostrobothnia (Vaasa)", name_fi:"Pohjanmaa (Vaasa)", name_sv:"Österbotten (Vasa)", center:[63.0,21.6], cities:["Vaasa","Jakobstad","Kokkola"], blurb_en:"Swedish-speaking coast, energy-tech hub Vaasa. Bilingual, tidy, windy.", blurb_fi:"Ruotsinkielinen rannikko, energiateknologian keskus Vaasa. Kaksikielinen, siisti, tuulinen.", tags_en:["🔋 Energy hub","🇸🇪 Bilingual","⛴️ Ferry to Umeå"], tags_fi:["🔋 Energia","🇸🇪 Kaksikielinen","⛴️ Lautta Uumajaan"], maas:2480, kira1:660, kira1d:480, kira3:1120, market:335, ulasim:70, fatura:110, internet:27, benzin:2.16, bilet:2.8, aylikKart:62, taksi:1.2, ucuzOgun:12.5, ortaRestoran:76, kahve:4.6, bira:6.4, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:800,single:1330,couple:1840,family:2690}, skor:{is:74,ogrenci:74,doga:86,ulasim:70} },
-  { id:"keskipohjanmaa", fi:"Keski-Pohjanmaa", name_en:"Central Ostrobothnia (Kokkola)", name_fi:"Keski-Pohjanmaa (Kokkola)", name_sv:"Mellersta Österbotten (Karleby)", center:[63.8,23.8], cities:["Kokkola","Kannus"], blurb_en:"Small but efficient coastal region. Known for chemicals and choirs, very affordable rents.", blurb_fi:"Pieni mutta tehokas rannikkoalue. Kemian ja kuoromusiikin tuntema, erittäin edulliset vuokrat.", tags_en:["🎶 Music","⚗️ Chemicals","💰 Affordable"], tags_fi:["🎶 Musiikki","⚗️ Kemia","💰 Edullinen"], maas:2310, kira1:670, kira1d:480, kira3:1140, market:320, ulasim:70, fatura:112, internet:26, benzin:2.16, bilet:2.6, aylikKart:62, taksi:1.2, ucuzOgun:11.5, ortaRestoran:73, kahve:4.3, bira:6, sut:0.95, ekmek:2.0, yumurta12:3.1, tavukKg:12, elmaKg:1.7, profiles:{student:790,single:1320,couple:1820,family:2670}, skor:{is:60,ogrenci:60,doga:80,ulasim:60} },
-  { id:"kainuu", fi:"Kainuu", name_en:"Kainuu (Kajaani)", name_fi:"Kainuu (Kajaani)", name_sv:"Kajanaland (Kajana)", center:[64.2,27.7], cities:["Kajaani","Kuhmo","Sotkamo"], blurb_en:"Wilderness and the LUMI supercomputer. Among Finland's cheapest regions — a hidden gem for remote workers.", blurb_fi:"Erämaata ja supertietokone LUMI. Maan edullisimpia alueita — etätyöläisen salainen aarre.", tags_en:["💻 Supercomputer","🐻 Wilderness","💰 Cheapest"], tags_fi:["💻 Supertietokone","🐻 Erämaa","💰 Edullisin"], maas:2220, kira1:670, kira1d:480, kira3:1140, market:330, ulasim:70, fatura:118, internet:27, benzin:2.2, bilet:2.7, aylikKart:62, taksi:1.3, ucuzOgun:11.5, ortaRestoran:70, kahve:4.3, bira:6, sut:1.0, ekmek:2.1, yumurta12:3.2, tavukKg:12.3, elmaKg:1.9, profiles:{student:800,single:1340,couple:1850,family:2710}, skor:{is:52,ogrenci:58,doga:98,ulasim:52} },
-  { id:"ahvenanmaa", fi:"Ahvenanmaa", name_en:"Åland (Mariehamn)", name_fi:"Ahvenanmaa (Maarianhamina)", name_sv:"Åland (Mariehamn)", center:[60.15,19.95], cities:["Mariehamn","Jomala"], blurb_en:"Autonomous Swedish-speaking archipelago. Shipping and tourism, tax-free shopping, calm island rhythm.", blurb_fi:"Itsehallinnollinen ruotsinkielinen saaristo. Merenkulkua ja matkailua, verotonta ostosta, rauhallinen saarirytmi.", tags_en:["🏝️ Autonomous islands","🛳️ Shipping","🛍️ Tax-free"], tags_fi:["🏝️ Itsehallinto","🛳️ Merenkulku","🛍️ Veroton"], maas:2480, kira1:720, kira1d:520, kira3:1220, market:360, ulasim:60, fatura:112, internet:29, benzin:2.18, bilet:3, aylikKart:55, taksi:1.2, ucuzOgun:13, ortaRestoran:82, kahve:4.8, bira:6.5, sut:1.05, ekmek:2.2, yumurta12:3.3, tavukKg:12.8, elmaKg:2.0, profiles:{student:840,single:1400,couple:1930,family:2830}, skor:{is:62,ogrenci:55,doga:99,ulasim:55} },
-];
-
-export const CITIES = [
-  { name:"Helsinki", regionId:"uusimaa", lat:60.1699, lng:24.9384, note_en:"Capital • central 1-bed ~€1,100", note_fi:"Pääkaupunki • yksiö keskustassa ~1 100 €" },
-  { name:"Espoo", regionId:"uusimaa", lat:60.2055, lng:24.6559, note_en:"Tech campuses", note_fi:"Teknologiakampukset" },
-  { name:"Vantaa", regionId:"uusimaa", lat:60.2941, lng:25.0408, note_en:"Airport • cheaper rents", note_fi:"Lentoasema • edullisempi vuokra" },
-  { name:"Tampere", regionId:"pirkanmaa", lat:61.4978, lng:23.761, note_en:"Student city • 1-bed ~€900", note_fi:"Opiskelijakaupunki • yksiö ~900 €" },
-  { name:"Turku", regionId:"varsinaissuomi", lat:60.4518, lng:22.2666, note_en:"Old capital • 1-bed ~€800", note_fi:"Vanha pääkaupunki • yksiö ~800 €" },
-  { name:"Oulu", regionId:"pohjoispohjanmaa", lat:65.0121, lng:25.4651, note_en:"Northern tech hub", note_fi:"Pohjoisen teknokeskus" },
-  { name:"Jyväskylä", regionId:"kesksuomi", lat:62.2426, lng:25.7473, note_en:"University + lakes", note_fi:"Yliopisto + järvet" },
-  { name:"Kuopio", regionId:"pohjoissavo", lat:62.8924, lng:27.677, note_en:"Lakeland • calm living", note_fi:"Järvialue • rauhallinen elämä" },
-  { name:"Lahti", regionId:"paijathame", lat:60.9827, lng:25.6615, note_en:"Skiing • 1 hour to Helsinki", note_fi:"Hiihto • Helsinkiin tunti" },
-  { name:"Lappeenranta", regionId:"etelakarjala", lat:61.0587, lng:28.1887, note_en:"Border + lake", note_fi:"Raja + järvi" },
-  { name:"Kotka", regionId:"kymenlaakso", lat:60.4666, lng:26.945, note_en:"Harbour city", note_fi:"Satamakaupunki" },
-  { name:"Kouvola", regionId:"kymenlaakso", lat:60.8674, lng:26.7042, note_en:"Railway junction", note_fi:"Rautatieristeys" },
-  { name:"Hämeenlinna", regionId:"kantahame", lat:60.9959, lng:24.4663, note_en:"Castle town", note_fi:"Linnakaupunki" },
-  { name:"Pori", regionId:"satakunta", lat:61.4851, lng:21.7975, note_en:"Pori Jazz • beach", note_fi:"Pori Jazz • ranta" },
-  { name:"Rauma", regionId:"satakunta", lat:61.1272, lng:21.5113, note_en:"UNESCO old town", note_fi:"Unescon vanhakaupunki" },
-  { name:"Seinäjoki", regionId:"etelapohjanmaa", lat:62.7875, lng:22.8504, note_en:"Entrepreneurial plains", note_fi:"Yrittäjälakeus" },
-  { name:"Vaasa", regionId:"pohjanmaa", lat:63.0951, lng:21.6165, note_en:"Energy + two languages", note_fi:"Energia + kaksi kieltä" },
-  { name:"Kokkola", regionId:"keskipohjanmaa", lat:63.8385, lng:23.1307, note_en:"Coast • affordable rents", note_fi:"Rannikko • edullinen vuokra" },
-  { name:"Joensuu", regionId:"pohjoiskarjala", lat:62.601, lng:29.7636, note_en:"Forest capital", note_fi:"Metsäpääkaupunki" },
-  { name:"Mikkeli", regionId:"etelasavo", lat:61.6887, lng:27.2722, note_en:"Cottage country", note_fi:"Mökkialue" },
-  { name:"Savonlinna", regionId:"etelasavo", lat:61.8687, lng:28.8863, note_en:"Opera festival", note_fi:"Oopperajuhlat" },
-  { name:"Rovaniemi", regionId:"lappi", lat:66.5039, lng:25.7294, note_en:"Santa Claus • Arctic", note_fi:"Joulupukki • napa" },
-  { name:"Kajaani", regionId:"kainuu", lat:64.2222, lng:27.7279, note_en:"Cheapest • wilderness", note_fi:"Edullisin • erämaa" },
-  { name:"Mariehamn", regionId:"ahvenanmaa", lat:60.0971, lng:19.9348, note_en:"Autonomous capital", note_fi:"Itsehallinnon pääkaupunki" },
-  { name:"Imatra", regionId:"etelakarjala", lat:61.1711, lng:28.7524, note_en:"Rapids + border", note_fi:"Putous + raja" },
-];
 
 // mode: 'eur' | 'usd' | 'local'. cur: the region's ISO code (EUR/SEK/NOK/DKK).
 // 'local' shows the region's own currency (falls back to EUR for EUR regions).
