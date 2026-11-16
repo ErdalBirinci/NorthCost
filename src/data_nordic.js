@@ -4,6 +4,8 @@
 // FX: EURSEK 11.1075, EURNOK 10.5695, EURDKK 7.4753, EURUSD 1.1052.
 // mkR() converts native → EUR once (NATIVE_RATE), so the app pipeline stays in EUR
 // while the source of truth is kr-based and LOCAL mode shows clean native figures.
+import { CURRENCIES } from './data.js';
+
 export const COUNTRY = {
   FI: { center: [65.2, 26.5], zoom: 5 },
   SE: { center: [62.8, 15.0], zoom: 5 },
@@ -12,24 +14,26 @@ export const COUNTRY = {
 };
 
 const BASE = {
-  SE: { market:4440, ulasim:720, fatura:2110, internet:310, gsm:220, benzin:15.8, bilet:36, aylikKart:640, taksi:15.6, ucuzOgun:140, ortaRestoran:870, kahve:51, bira:76, sut:16, ekmek:30, yumurta12:42, tavukKg:120, elmaKg:30 },
-  NO: { market:4970, ulasim:690, fatura:2500, internet:370, gsm:260, benzin:23.5, bilet:40, aylikKart:530, taksi:18, ucuzOgun:190, ortaRestoran:1110, kahve:55, bira:110, sut:23, ekmek:39, yumurta12:56, tavukKg:150, elmaKg:31 },
-  DK: { market:3290, ulasim:600, fatura:1200, internet:250, gsm:150, benzin:17.5, bilet:24, aylikKart:530, taksi:15, ucuzOgun:130, ortaRestoran:750, kahve:45, bira:64, sut:13, ekmek:30, yumurta12:39, tavukKg:92, elmaKg:22 },
+  SE: { market:4440, ulasim:720, fatura:2110, internet:310, benzin:15.8, bilet:36, aylikKart:640, taksi:15.6, ucuzOgun:140, ortaRestoran:870, kahve:51, bira:76, sut:16, ekmek:30, yumurta12:42, tavukKg:120, elmaKg:30 },
+  NO: { market:4970, ulasim:690, fatura:2500, internet:370, benzin:23.5, bilet:40, aylikKart:530, taksi:18, ucuzOgun:190, ortaRestoran:1110, kahve:55, bira:110, sut:23, ekmek:39, yumurta12:56, tavukKg:150, elmaKg:31 },
+  DK: { market:3290, ulasim:600, fatura:1200, internet:250, benzin:17.5, bilet:24, aylikKart:530, taksi:15, ucuzOgun:130, ortaRestoran:750, kahve:45, bira:64, sut:13, ekmek:30, yumurta12:39, tavukKg:92, elmaKg:22 },
 };
 
-// All money literals below are in NATIVE currency (SEK/NOK/DKK).
-// They are converted to EUR here once, so the whole app pipeline keeps working in EUR.
-const NATIVE_RATE = { SEK: 11.1075, NOK: 10.5695, DKK: 7.4753 };
+// All money literals below are in NATIVE currency (SEK/NOK/DKK) and converted
+// to EUR once, so the app pipeline stays EUR while LOCAL mode shows clean figures.
+const rateOf = cur => CURRENCIES[cur]?.rate ?? 1;
+const r10 = n => Math.round(n / 10) * 10;      // kr amounts round to 10
+const MISC_EUR = 150;                           // eating out + personal care in the monthly total
+
 function mkR(o) {
   const v = { ...BASE[o.country], ...o };
-  const rate = NATIVE_RATE[v.cur] || 1;
+  const rate = rateOf(v.cur);
   const eur = n => n / rate;
-  // Totals are computed in NATIVE currency (rounded to 10 kr), then converted —
+  // Totals are computed in native currency (rounded to 10 kr), then converted,
   // so LOCAL mode shows clean native figures and EUR is derived from them.
-  const kira1d = v.kira1d ?? Math.round(v.kira1 * 0.72 / 10) * 10;
-  const kira3 = v.kira3 ?? Math.round(v.kira1 * 1.7 / 10) * 10;
-  const kira3d = Math.round(kira3 * 0.74 / 10) * 10;
-  const single = Math.round((v.kira1 + v.market + v.ulasim + v.fatura + 150 * rate) / 10) * 10;
+  const kira1d = v.kira1d ?? r10(v.kira1 * 0.72);
+  const kira3 = v.kira3 ?? r10(v.kira1 * 1.7);
+  const single = r10(v.kira1 + v.market + v.ulasim + v.fatura + MISC_EUR * rate);
   return {
     id: v.id, country: v.country, cur: v.cur, fi: v.fi, geo: v.geo, geoAlt: v.geoAlt,
     name_en: v.en, name_fi: v.fiN || v.en, name_sv: v.svN || v.en, name_no: v.noN || v.svN || v.daN || v.en, name_da: v.daN || v.svN || v.noN || v.en,
@@ -37,12 +41,12 @@ function mkR(o) {
     blurb_en: v.be, blurb_fi: v.bf, blurb_sv: v.bs, blurb_no: v.bn, blurb_da: v.bd,
     tags_en: v.te, tags_fi: v.tf, tags_sv: v.ts, tags_no: v.tn, tags_da: v.td,
     maas: eur(v.maas), kira1: eur(v.kira1), kira1d: eur(kira1d),
-    kira3: eur(kira3), kira3d: eur(kira3d),
-    market: eur(v.market), ulasim: eur(v.ulasim), fatura: eur(v.fatura), internet: eur(v.internet), gsm: eur(v.gsm),
+    kira3: eur(kira3),
+    market: eur(v.market), ulasim: eur(v.ulasim), fatura: eur(v.fatura), internet: eur(v.internet),
     benzin: eur(v.benzin), bilet: eur(v.bilet), aylikKart: eur(v.aylikKart), taksi: eur(v.taksi),
     ucuzOgun: eur(v.ucuzOgun), ortaRestoran: eur(v.ortaRestoran), kahve: eur(v.kahve), bira: eur(v.bira),
     sut: eur(v.sut), ekmek: eur(v.ekmek), yumurta12: eur(v.yumurta12), tavukKg: eur(v.tavukKg), elmaKg: eur(v.elmaKg),
-    profiles: { student: eur(Math.round(single * 0.6 / 10) * 10), single: eur(single), couple: eur(Math.round(single * 1.38 / 10) * 10), family: eur(Math.round(single * 2.02 / 10) * 10) },
+    profiles: { student: eur(r10(single * 0.6)), single: eur(single), couple: eur(r10(single * 1.38)), family: eur(r10(single * 2.02)) },
     skor: v.skor,
   };
 }
