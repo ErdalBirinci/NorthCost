@@ -11,6 +11,9 @@ let rentMode = 'contract'; // 'contract' | 'sh'
 // Effective region under the rent-market switch: SE/DK rents scale by the
 // second-hand premium, everything else passes through untouched.
 const E = r => effRegion(r, rentMode === 'sh');
+let incomeCap = null; // EUR/month net — regions where rent tops 30% of it are filtered out
+const INCOME_RATIO = 0.30;
+const passesIncome = r => incomeCap == null || E(r).kira1 <= incomeCap * INCOME_RATIO;
 let country = 'ALL'; // 'ALL' | 'FI' | 'SE' | 'NO' | 'DK'
 let selectedId = 'stockholm';
 let metric = 'total';
@@ -42,7 +45,7 @@ const altMoney = (v, cur) => {
   if (curMode === 'eur') return (cur && cur !== 'EUR') ? fmtMoney(v, 'local', lang, cur) : fmtMoney(v, 'usd', lang);
   return fmtMoney(v, 'eur', lang);
 };
-const visRegions = () => country === 'ALL' ? REGIONS : REGIONS.filter(r => r.country === country);
+const visRegions = () => (country === 'ALL' ? REGIONS : REGIONS.filter(r => r.country === country)).filter(passesIncome);
 function minMax() { const v = visRegions().map(metricValue); return [Math.min(...v), Math.max(...v)]; }
 // December daylight hours from latitude (winter solstice); null when the sun never rises.
 function growthOf(r) {
@@ -83,7 +86,7 @@ const GEO_SOURCES = [
   { url: "geo/dk-regions.geojson", pick: f => f.properties.NUTS_NAME },
 ];
 function styleFor(r, min, max) {
-  if (!r || (country !== 'ALL' && r.country !== country)) return { color: '#ffffff', weight: 1.2, fillColor: '#9aa3b2', fillOpacity: 0.22 };
+  if (!r || (country !== 'ALL' && r.country !== country) || !passesIncome(r)) return { color: '#ffffff', weight: 1.2, fillColor: '#9aa3b2', fillOpacity: 0.22 };
   return { color: '#ffffff', weight: 1.2, fillColor: colorFor(metricValue(r), min, max), fillOpacity: 0.62 };
 }
 
@@ -191,9 +194,10 @@ function refreshMarkers() {
   const useCluster = typeof L.markerClusterGroup === 'function';
   if (useCluster) clusterGroup = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 42 });
   const [min, max] = minMax();
+  const vis = new Set(visRegions().map(x => x.id));
   CITIES.forEach(c => {
     const r = E(byId[c.regionId]);
-    if (!r || (country !== 'ALL' && r.country !== country)) return;
+    if (!r || !vis.has(r.id)) return;
     const v = r.profiles[profile];
     const pill = metric === 'afford' ? pct1(metricValue(r)) : M(v, r.cur);
     const icon = L.divIcon({ className: '', html: `<div class="price-pill ${pillClass(metricValue(r), min, max)}">${c.name} • ${pill}</div>`, iconSize: null });
@@ -262,6 +266,7 @@ function renderPanel() {
       <div class="gauge-lbls"><span>0%</span><span>30%</span><span>60%</span></div>
     </div>
     ${rentMode === 'sh' ? `<div class="compare-note">${SECONDHAND[r0.country] ? '🔑 ' + t.shOn(SECONDHAND[r0.country]) : '📜 ' + t.shSame}</div>` : ''}
+    ${incomeCap != null ? `<div class="compare-note">${t.yourRent(Math.round(r.kira1 / incomeCap * 100))}</div>` : ''}
     <div class="compare-note">${t.affordT(pct, band)}</div>
     <div class="section-title">${t.expenses}</div>
     <div class="bars">
@@ -580,7 +585,9 @@ function initCalc() {
 
 // ---------- deep links ----------
 function syncURL() {
-  const p = new URLSearchParams({ region: selectedId, profile, lang, metric, country, cur: curMode, rent: rentMode });
+  const q = { region: selectedId, profile, lang, metric, country, cur: curMode, rent: rentMode };
+  if (incomeCap != null) q.income = Math.round(incomeCap);
+  const p = new URLSearchParams(q);
   history.replaceState(null, '', location.pathname + '?' + p.toString());
 }
 function applyFromURL() {
@@ -597,6 +604,11 @@ function applyFromURL() {
   const rn = p.get('rent'); if (rn === 'sh' || rn === 'contract') {
     rentMode = rn;
     document.querySelectorAll('#rentSegment button').forEach(x => x.classList.toggle('active', x.dataset.rent === rn));
+  }
+  const inc = parseFloat(p.get('income'));
+  if (Number.isFinite(inc) && inc > 0) {
+    incomeCap = inc;
+    document.getElementById('incomeInput').value = Math.round(inc);
   }
 }
 
@@ -640,7 +652,8 @@ function renderRank() {
   rows.sort((x, y) => (x[rankKey] - y[rankKey]) * rankDir);
   const th = (k, label) => `<th data-k="${k}">${label}${rankKey === k ? (rankDir === 1 ? ' ▲' : ' ▼') : ''}</th>`;
   const box = document.getElementById('rankResult');
-  box.innerHTML = `<table class="home-table rank-table"><tr><th>${t.cRegion}</th>${th('total', t.rkTotal + (rentMode === 'sh' ? ' · 🔑' : ''))}${th('rent', t.cmpRent)}${th('salary', t.cmpSalary)}${th('burden', t.rkBurden)}${th('day', t.rkDay)}</tr>` +
+  const incomeLine = incomeCap != null ? `<div class="compare-note">${t.incomeCount(rows.length, Math.round(incomeCap))}</div>` : '';
+  box.innerHTML = incomeLine + `<table class="home-table rank-table"><tr><th>${t.cRegion}</th>${th('total', t.rkTotal + (rentMode === 'sh' ? ' · 🔑' : ''))}${th('rent', t.cmpRent)}${th('salary', t.cmpSalary)}${th('burden', t.rkBurden)}${th('day', t.rkDay)}</tr>` +
     rows.map(({ r, total, rent, salary, burden, day }, i) => `<tr data-id="${r.id}"><td><b>#${i + 1}</b> ${rname(r)}</td><td>${Mx(total)}${natSub(total, r.cur)}</td><td>${Mx(rent)}${natSub(rent, r.cur)}</td><td>${Mx(salary)}${natSub(salary, r.cur)}</td><td>${pct1(burden)}</td><td>${day < 0 ? '—' : '☀ ' + day.toFixed(1) + 'h'}</td></tr>`).join('') + `</table>`;
   box.querySelectorAll('th[data-k]').forEach(h => h.onclick = () => { const k = h.dataset.k; if (rankKey === k) rankDir *= -1; else { rankKey = k; rankDir = 1; } renderRank(); });
   box.querySelectorAll('tr[data-id]').forEach(tr => tr.onclick = () => { document.getElementById('rankModal').classList.add('hidden'); selectRegion(tr.dataset.id, true); });
@@ -919,6 +932,17 @@ document.getElementById('basemapBtn').onclick = e => {
   e.target.textContent = blabel(b);
 };
 document.getElementById('metricSelect').onchange = e => { metric = e.target.value; refreshLegend(); syncURL(); };
+document.getElementById('incomeInput').addEventListener('input', e => {
+  const v = parseFloat(e.target.value);
+  incomeCap = (Number.isFinite(v) && v > 0) ? v : null;
+  renderStats(); renderPanel(); refreshLegend(); refreshMarkers();
+  const cm = document.getElementById('compareModal');
+  if (!cm.classList.contains('hidden')) cm._render();
+  const lm = document.getElementById('calcModal');
+  if (!lm.classList.contains('hidden')) lm._render();
+  if (window._toolRerender) window._toolRerender();
+  syncURL();
+});
 
 applyStatic();
 applyFromURL();

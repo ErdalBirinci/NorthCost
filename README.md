@@ -37,6 +37,13 @@ has a **shareable link** (`?cmp=id1,id2,…`) that re-opens the exact setup.
 Sortable leaderboard of all 60 regions by total cost, rent, salary,
 rent burden or December daylight. Click any row to jump to that region.
 
+### 💰 Income filter
+Type your monthly **net** income (€) into the map toolbar and every region
+whose 1-bedroom rent tops **30%** of it drops out of the map, the ranking
+and the stats strip; each remaining panel shows what share of *your* income
+its rent would take. The filter combines with the contract/second-hand
+switch and survives in share links (`&income=3000`).
+
 ### 💸 Salary duel
 Two cities, two **net** salaries — the simulator subtracts the local
 single-person budget from each paycheck and shows where more money stays

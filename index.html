@@ -91,6 +91,9 @@
                 <option value="afford" data-i18n="mAfford">Rent burden</option>
               </select>
             </label>
+            <label><span data-i18n="incomeLbl">💰 Net €/mo:</span>
+              <input id="incomeInput" type="number" min="0" step="100" data-i18n-ph="incomePh" data-i18n-title="incomeT" placeholder="e.g. 3000" title="Monthly net income — regions where rent exceeds 30% are filtered out" inputmode="numeric" />
+            </label>
             <button id="compareBtn" class="ghost-btn" data-i18n="compare">⚖️ Compare</button>
             <button id="rankBtn" class="ghost-btn" data-i18n="rankBtn">🏆 Ranking</button>
             <button id="printBtn" class="ghost-btn" data-i18n="printBtn">🖨️ Print</button>
