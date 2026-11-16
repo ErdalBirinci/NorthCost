@@ -92,10 +92,10 @@ const shoot = (html, name) => {
   ], { stdio: 'ignore' });
 };
 
-const only = process.env.OG_ONLY;
+const only = process.env.OG_ONLY?.split(',');
 let n = 0;
 for (const r of REGIONS) {
-  if (only && r.id !== only) continue;
+  if (only && !only.includes(r.id)) continue;
   shoot(card(r), r.id); n++;
 }
 shoot(card({
