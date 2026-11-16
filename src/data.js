@@ -81,6 +81,18 @@ export const REGIONS = [...fiRegions, ...nordicRegions].map(buildRegion);
 
 // Presentation transform for the contract/second-hand switch. Only SE and DK
 // carry a premium; everywhere else the region passes through untouched.
+// Cash needed on day one: deposit + prepaid rent + first month, all computed
+// on the displayed (mode-adjusted) rent. Deposits follow national practice:
+// FI 2 months (usual; legal max 3), SE 0 for first-hand / 1 for second-hand,
+// NO 3 (usual; legal max 6, blocked account), DK 3 + 3 prepaid (both capped).
+export function moveinCash(r, secondhand) {
+  const m = countries.movein?.[r.country] ?? { deposit: 0, prepaid: 0 };
+  const depM = secondhand ? (m.depositSecondhand ?? m.deposit) : m.deposit;
+  const preM = m.prepaid ?? 0;
+  const dep = r.kira1 * depM, pre = r.kira1 * preM, first = r.kira1;
+  return { cash: dep + pre + first, dep, pre, first };
+}
+
 export function effRegion(r, secondhand) {
   if (!secondhand) return r;
   const f = SECONDHAND[r.country];

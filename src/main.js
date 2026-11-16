@@ -1,6 +1,6 @@
 import './style.css';
 import './extra.css';
-import { REGIONS, CITIES, COUNTRY, fmtMoney, CURRENCIES, SECONDHAND, effRegion } from './data.js';
+import { REGIONS, CITIES, COUNTRY, fmtMoney, CURRENCIES, SECONDHAND, effRegion, moveinCash } from './data.js';
 import { STR } from './i18n.js';
 import { EXT } from './extra.js';
 
@@ -308,6 +308,11 @@ function renderPanel() {
       <tr><td>${t.dEgg}</td><td>${M(r.yumurta12, r.cur)} / ${M(r.tavukKg, r.cur)}${natPair(r.yumurta12, r.tavukKg, r.cur)}</td></tr>
       <tr><td>${t.dApple}</td><td>${Md(r.elmaKg, r.cur)}${natSub(r.elmaKg, r.cur)}</td></tr>
     </table>
+    ${(() => { const mv = moveinCash(r, rentMode === 'sh'); const parts = [];
+      if (mv.dep > 0) parts.push(`${t.moveinDep} ${M(mv.dep, r.cur)}`);
+      if (mv.pre > 0) parts.push(`${t.moveinPre} ${M(mv.pre, r.cur)}`);
+      parts.push(`${t.moveinFirst} ${M(mv.first, r.cur)}`);
+      return `<div class="compare-note">${t.movein(M(mv.cash, r.cur) + natSub(mv.cash, r.cur), parts.join(' + '))}</div>`; })()}
     <div class="section-title">${t.citiesIn}</div>
     <div class="city-chips">${r.cities.map(c => `<button data-city="${c}">${c}</button>`).join('')}</div>
     <div class="section-title">${t.jobsT}</div>

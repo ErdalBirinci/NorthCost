@@ -33,6 +33,12 @@
     "SE": 1.5,
     "DK": 1.3
   },
+  "movein": {
+    "FI": { "deposit": 2, "prepaid": 0 },
+    "SE": { "deposit": 0, "depositSecondhand": 1, "prepaid": 0 },
+    "NO": { "deposit": 3, "prepaid": 0 },
+    "DK": { "deposit": 3, "prepaid": 3 }
+  },
   "base": {
     "SE": {
       "market": 4440,

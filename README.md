@@ -114,6 +114,16 @@ Why the split: national statistics offices publish rent *levels* by region and r
 Two deliberate consequences, both backed by the official data rather than by intuition:
 
 - **Uppsala is marginally the most expensive Swedish region** (SCB 146 vs 144 kr/m², listings +5%).
+- **Move-in cash** (🛬 line in every region panel) adds deposit + prepaid rent + first month on top of the displayed rent — the part newcomers most often underestimate:
+
+  | Country | Deposit | Prepaid | Cash at signing | Basis |
+  |---|---|---|---|
+  | 🇫🇮 Finland | 2 months (usual; legal max 3) | — | **3× rent** | Act on Residential Leases 481/1995; InfoFinland (usually 2 months), KKV, Vuokralaiset ry |
+  | 🇸🇪 Sweden | 0 contract / 1 second-hand | — | **1× / 2× rent** | First-hand contracts usually need none; andrahand typically asks 1–3 (Hyresgästföreningen: max a couple); max 1 month advance rent |
+  | 🇳🇴 Norway | 3 months (usual; legal max 6) | — | **4× rent** | Husleieloven §3-5; blocked deposit account; Oslo kommune, Forbrukerrådet |
+  | 🇩🇰 Denmark | 3 months (capped) | 3 months (capped) | **7× rent** | Lejeloven caps; 3+3 is standard in Copenhagen |
+
+  The deposit is computed on the rent actually shown, so the second-hand switch raises it too.
 - **Swedish totals look low next to the other three countries** because the default rent line is the *first-hand contract* market. The 📜 Contract / 🔑 2nd-hand switch in the top bar re-prices Sweden and Denmark to the second-hand market: totals, ranking, map colours and share cards all follow. The premium is ×1.5 for Sweden (andrahand contracts typically run 40–60% above first-hand) and ×1.3 for Denmark (furnished/fremleje sublets typically run 20–40% above standard leases). Both factors are labelled estimates; Finland and Norway have no factor because their rental markets are effectively free-market already.
 
 Transport costs use each region's official 30-day pass plus 15% for occasional trips; where a regional operator publishes no pass, the national median applies. Outside-centre rents are 72% of the centre figure and 3-bedroom rents 1.7× the 1-bedroom figure, uniformly across the dataset.

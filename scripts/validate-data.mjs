@@ -61,6 +61,25 @@ else {
   if (SH.DK !== 1.3) fail('secondhand: DK factor must be 1.3 (fremleje 20-40%)');
 }
 
+// ---------- move-in cash rules (deposit + prepaid, in months of rent) ----------
+const MV = countriesRaw.movein;
+if (!MV || typeof MV !== 'object') fail('countries: movein map missing');
+else {
+  for (const [cc, m] of Object.entries(MV)) {
+    if (!CURRENCY_OF[cc]) fail(`movein: unknown country ${cc}`);
+    if (!(typeof m?.deposit === 'number' && m.deposit >= 0 && m.deposit <= 6)) fail(`movein: ${cc} deposit out of 0-6`);
+    if (!(typeof m?.prepaid === 'number' && m.prepaid >= 0 && m.prepaid <= 3)) fail(`movein: ${cc} prepaid out of 0-3`);
+    if (m.depositSecondhand != null && !(m.depositSecondhand >= 0 && m.depositSecondhand <= 3)) {
+      fail(`movein: ${cc} depositSecondhand out of 0-3`);
+    }
+  }
+  const eq = (cc, d, p, ds) => MV[cc]?.deposit === d && MV[cc]?.prepaid === p && (MV[cc]?.depositSecondhand ?? null) === ds;
+  if (!eq('FI', 2, 0, null)) fail('movein: FI must be deposit 2 + prepaid 0 (usual; legal max 3)');
+  if (!eq('SE', 0, 0, 1)) fail('movein: SE must be deposit 0 / 1 second-hand + prepaid 0');
+  if (!eq('NO', 3, 0, null)) fail('movein: NO must be deposit 3 + prepaid 0 (usual; legal max 6)');
+  if (!eq('DK', 3, 3, null)) fail('movein: DK must be deposit 3 + prepaid 3 (both capped)');
+}
+
 // ---------- regions ----------
 const all = [...fiRaw, ...noRaw];
 if (all.length !== 60) fail(`regions: expected 60, found ${all.length}`);
@@ -153,6 +172,26 @@ for (const g of GOLDEN) {
   const expected = 19900 + 9600 * (1.5 - 1); // 24700 kr
   if (r && f && !near((r.profiles.single + r.kira1 * (f - 1)) * CURRENCIES.SEK.rate, expected)) {
     fail('secondhand: Stockholm effective total changed — check the premium math');
+  }
+}
+// move-in cash, pinned end to end in native currency (deposit + prepaid + first month)
+{
+  const cash = (id, sh) => {
+    const raw = all.find(x => x.id === id);
+    const m = countriesRaw.movein[raw.country];
+    const f = sh ? countriesRaw.secondhand[raw.country] ?? 1 : 1; // deposit scales with the displayed rent
+    const depM = sh ? (m.depositSecondhand ?? m.deposit) : m.deposit;
+    return raw.cost.kira1 * f * (depM + (m.prepaid ?? 0) + 1);
+  };
+  const cases = [
+    ['hovedstaden', false, 14850 * 7],   // DK: 3 deposit + 3 prepaid + first month
+    ['oslo', false, 19000 * 4],          // NO: 3 deposit + first month
+    ['uusimaa', false, 1100 * 3],        // FI: 2 deposit + first month
+    ['stockholm', false, 9600 * 1],      // SE contract: first-hand needs no deposit
+    ['stockholm', true, 14400 * 2],      // SE second-hand: 1 deposit on the sh rent
+  ];
+  for (const [id, sh, expected] of cases) {
+    if (cash(id, sh) !== expected) fail(`movein: ${id}${sh ? ' (second-hand)' : ''} cash changed — check the deposit rules`);
   }
 }
 
